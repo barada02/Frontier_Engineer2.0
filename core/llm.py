@@ -188,8 +188,16 @@ class GeminiLLM:
 
 def _is_retryable(e: Exception) -> bool:
     s = str(e).lower()
+    name = type(e).__name__.lower()
     code = getattr(e, "code", None) or getattr(e, "status_code", None)
     if code in (429, 500, 502, 503, 504):
         return True
+    # Transport failures are retryable too. A dropped connection mid-run
+    # otherwise scores as a missed bug, which silently understates the agent
+    # and makes results depend on network luck rather than on the model.
+    if any(k in name for k in ("connection", "timeout", "ratelimit")):
+        return True
     return any(k in s for k in ("429", "resource_exhausted", "rate limit",
-                                "unavailable", "deadline", "timeout", "503"))
+                                "unavailable", "deadline", "timeout", "503",
+                                "forcibly closed", "connection reset",
+                                "connection aborted", "10054", "eof"))

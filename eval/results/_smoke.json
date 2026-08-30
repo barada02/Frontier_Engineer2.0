@@ -1,0 +1,55 @@
+{
+  "name": "agent-proof",
+  "aggregate": {
+    "n_bug": 2,
+    "n_clean": 1,
+    "verified_detection_rate": 0.5,
+    "localization_rate": 0.5,
+    "claimed_detection_rate": 0.5,
+    "false_alarm_rate": 0.0,
+    "total_cost_usd": 0.10384425,
+    "cost_per_case": 0.03461475,
+    "seconds_per_case": 42.72
+  },
+  "scores": [
+    {
+      "case_id": "click-07c909f2",
+      "kind": "bug",
+      "verdict_correct": true,
+      "localized": true,
+      "verified": true,
+      "false_alarm": false,
+      "proof_outcome": "verified",
+      "cost_usd": 0.10384425,
+      "seconds": 128.16,
+      "steps": 12,
+      "note": "fails buggy, passes fixed"
+    },
+    {
+      "case_id": "more-itertools-d992be0d",
+      "kind": "bug",
+      "verdict_correct": false,
+      "localized": false,
+      "verified": false,
+      "false_alarm": false,
+      "proof_outcome": "none",
+      "cost_usd": 0.0,
+      "seconds": 0.0,
+      "steps": 0,
+      "note": "harness error: APIConnectionError: [WinError 10054] An existing connection was forcibly closed by the remote host"
+    },
+    {
+      "case_id": "click-8f300853-clean",
+      "kind": "clean",
+      "verdict_correct": false,
+      "localized": false,
+      "verified": false,
+      "false_alarm": false,
+      "proof_outcome": "none",
+      "cost_usd": 0.0,
+      "seconds": 0.0,
+      "steps": 0,
+      "note": "harness error: APIConnectionError: [WinError 10054] An existing connection was forcibly closed by the remote host"
+    }
+  ]
+}

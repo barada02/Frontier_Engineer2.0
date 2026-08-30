@@ -1,0 +1,59 @@
+solver=baseline  model=gemini-3.7-flash  cases=21
+
+[ 1/21] click-07c909f2                 bug   VERIFIED  verified  fails buggy, passes fixed
+[ 2/21] more-itertools-d992be0d        bug   miss      none      missed the bug
+[ 3/21] attrs-97f8d175                 bug   VERIFIED  verified  fails buggy, passes fixed
+[ 4/21] click-bec59289                 bug   miss      none      missed the bug
+[ 5/21] more-itertools-f51a53bf        bug   VERIFIED  verified  fails buggy, passes fixed
+[ 6/21] attrs-af9c5109                 bug   VERIFIED  verified  fails buggy, passes fixed
+[ 7/21] click-762c97ee                 bug   loc-only  no_pass   still failed after the real fix
+[ 8/21] more-itertools-edb3346f        bug   VERIFIED  verified  fails buggy, passes fixed
+[ 9/21] attrs-ce89f5d1                 bug   VERIFIED  verified  fails buggy, passes fixed
+[10/21] attrs-000c5634                 bug   miss      none      missed the bug
+[11/21] click-82f377c5                 bug   loc-only  no_pass   still failed after the real fix
+[12/21] more-itertools-be5793a5        bug   loc-only  no_pass   still failed after the real fix
+[13/21] attrs-937b1e23                 bug   VERIFIED  verified  fails buggy, passes fixed
+[14/21] click-b7e5fd4c                 bug   VERIFIED  verified  fails buggy, passes fixed
+[15/21] more-itertools-06f31819        bug   VERIFIED  verified  fails buggy, passes fixed
+[16/21] click-8f300853-clean           clean quiet
+[17/21] more-itertools-6294fa61-clean  clean FALSE-ALARM
+[18/21] attrs-b1dc8f67-clean           clean quiet
+[19/21] click-d5da6358-clean           clean quiet
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\httpx\_transports\default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+httpcore.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\basesdk.py", line 269, in do
+    http_res = client.send(req, stream=stream)
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\httpx\_client.py", line 928, in send
+    raise exc
+httpx.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\run_eval.py", line 55, in main
+    out = args.out or ROOT / f"eval/results/{args.solver}.json"
+                                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\solvers.py", line 99, in solve
+    resp = self.llm.complete(history, [])
+google.genai._gaos.lib.compat_errors.APIConnectionError: [WinError 10054] An existing connection was forcibly closed by the remote host
+[20/21] more-itertools-3f43b98e-clean  clean quiet
+[21/21] attrs-c5baf90d-clean           clean quiet
+
+=== baseline ===
+  verified detection    60.0%   (15 bug cases)   <- primary
+  claimed detection     80.0%   (unproven claims included)
+  localization          80.0%
+  false alarm           16.7%   (6 clean controls)
+  cost / case          $0.0067
+  seconds / case       0.9
+
+saved -> C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\results\baseline.json

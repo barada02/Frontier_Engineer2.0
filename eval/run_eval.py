@@ -18,10 +18,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from core.config import Config
 from eval import harness
+from eval.agent_solver import AgentSolver
 from eval.solvers import BaselineSolver
 
 ROOT = Path(__file__).resolve().parent.parent
-SOLVERS = {"baseline": BaselineSolver}
+
+# Each entry is one row of the improvement changelog. Staging them as config
+# on a single agent keeps the comparison fair: only the named capability
+# changes between runs.
+SOLVERS = {
+    "baseline":    lambda cfg: BaselineSolver(cfg),
+    "agent-read":  lambda cfg: AgentSolver(cfg, allow_execution=False, require_proof=False),
+    "agent-exec":  lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=False),
+    "agent-proof": lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=True),
+}
 
 
 def main() -> None:
@@ -68,7 +78,9 @@ def main() -> None:
         if case["kind"] == "bug":
             mark = "VERIFIED" if score.verified else (
                 "loc-only" if score.localized else "miss")
-            print(f"{label} {mark:9} {score.proof_outcome:9} {score.note[:40]}")
+            extra = f" runs={stats['proof_runs']}" if stats.get("proof_runs") else ""
+            print(f"{label} {mark:9} {score.proof_outcome:9} "
+                  f"{score.note[:34]}{extra}")
         else:
             mark = "FALSE-ALARM" if score.false_alarm else "quiet"
             print(f"{label} {mark}")
