@@ -1,2 +1,11 @@
-google-genai>=1.0.0
+# Agent runtime
+google-genai>=2.20.0,<3
 python-dotenv>=1.0.0
+
+# Evaluation harness. pytest is pinned below 9 deliberately: pytest 9 promotes
+# PytestRemovedIn10Warning to a collection error, which breaks the older
+# parametrize style used by repos in the corpus. That is a toolchain
+# incompatibility, not a defect in the code under test.
+pytest>=8.3,<9
+pytest-timeout>=2.3
+hypothesis>=6.100

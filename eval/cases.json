@@ -1,0 +1,327 @@
+[
+  {
+    "case_id": "click-07c909f2",
+    "repo": "click",
+    "kind": "bug",
+    "sha": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+    "parent": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+    "subject": "Validate style() color arguments, fix explicit black color argument",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils/test_style.py"
+    ],
+    "buggy_summary": "1 failed, 44 passed in 0.37s",
+    "fixed_summary": "100 passed in 0.42s"
+  },
+  {
+    "case_id": "more-itertools-d992be0d",
+    "repo": "more-itertools",
+    "kind": "bug",
+    "sha": "d992be0de9383ddcaae3a24866a2d96b52132b07",
+    "parent": "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+    "subject": "Fix stability in running_min and running_max",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "buggy_summary": "1 failed, 578 passed in 5.35s",
+    "fixed_summary": "589 passed in 5.18s"
+  },
+  {
+    "case_id": "attrs-97f8d175",
+    "repo": "attrs",
+    "kind": "bug",
+    "sha": "97f8d175656bc03c373a1c9038048a4d312c307c",
+    "parent": "6851ab593cd25f3c14393e9355d57d22bec2a074",
+    "subject": "Fix ClassVar forward reference detection (#1593)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_annotations.py"
+    ],
+    "buggy_summary": "1 failed, 25 passed in 0.17s",
+    "fixed_summary": "50 passed in 0.13s"
+  },
+  {
+    "case_id": "click-bec59289",
+    "repo": "click",
+    "kind": "bug",
+    "sha": "bec59289d8cf9b9b4010642b2fee483e5f8eeefc",
+    "parent": "916883afad450c0c9bbc4212817900949131adbd",
+    "subject": "Fix `package_name` resolution when top-level module differs from distribution name",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [
+      "tests/test_basic.py"
+    ],
+    "buggy_summary": "1 failed, 90 passed in 0.59s",
+    "fixed_summary": "93 passed in 0.47s"
+  },
+  {
+    "case_id": "more-itertools-f51a53bf",
+    "repo": "more-itertools",
+    "kind": "bug",
+    "sha": "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+    "parent": "5d946b3590bfe92f1465c1b9b9830dd434745c84",
+    "subject": "fix: handle empty interleave_evenly input",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "buggy_summary": "1 failed, 107 passed in 1.01s",
+    "fixed_summary": "586 passed in 5.26s"
+  },
+  {
+    "case_id": "attrs-af9c5109",
+    "repo": "attrs",
+    "kind": "bug",
+    "sha": "af9c510912ce604a94896cc35c27368d5baf6ae6",
+    "parent": "ab7f8b2f4c0f747d5b1575247ce35e5adaad182e",
+    "subject": "Fix validators.disabled() to save/restore state on nesting (#1513)",
+    "source_files": [
+      "src/attr/validators.py"
+    ],
+    "test_files": [
+      "tests/test_validators.py"
+    ],
+    "buggy_summary": "1 failed, 7 passed in 0.14s",
+    "fixed_summary": "163 passed in 0.27s"
+  },
+  {
+    "case_id": "click-762c97ee",
+    "repo": "click",
+    "kind": "bug",
+    "sha": "762c97eef7c1b3779678992f26a553a2a8c80793",
+    "parent": "8929d392781c8113bc569f388c15c47b94f86581",
+    "subject": "Fix double-bracketing of choices in synopsis",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_basic.py"
+    ],
+    "buggy_summary": "1 failed, 79 passed in 0.58s",
+    "fixed_summary": "90 passed in 0.47s"
+  },
+  {
+    "case_id": "more-itertools-edb3346f",
+    "repo": "more-itertools",
+    "kind": "bug",
+    "sha": "edb3346f835ca917efbfda5e2d6664ab952da369",
+    "parent": "247e15b3a489d5805375c95dfa79486c9bd0eb1b",
+    "subject": "Fix empty ranges in numeric_range.__reversed__",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "buggy_summary": "1 failed, 232 passed in 1.15s",
+    "fixed_summary": "576 passed in 5.17s"
+  },
+  {
+    "case_id": "attrs-ce89f5d1",
+    "repo": "attrs",
+    "kind": "bug",
+    "sha": "ce89f5d11feb0805da9ed10bb165238cc959f1bb",
+    "parent": "eccd966d80aff5196efc959316961cfa780439f9",
+    "subject": "Fix message passing in frozen errors",
+    "source_files": [
+      "src/attr/exceptions.py"
+    ],
+    "test_files": [
+      "tests/test_functional.py"
+    ],
+    "buggy_summary": "1 failed, 12 passed in 0.33s",
+    "fixed_summary": "410 passed in 1.27s"
+  },
+  {
+    "case_id": "attrs-000c5634",
+    "repo": "attrs",
+    "kind": "bug",
+    "sha": "000c563473400aa086f6486a9c38ace0e77ea219",
+    "parent": "cbaef3f8f5ec3d6049b42c8c27f542c1571bb4c8",
+    "subject": "Fix slotted reference cycles on 3.14 (#1446)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "buggy_summary": "1 failed, 130 passed in 9.15s",
+    "fixed_summary": "264 passed, 1 skipped in 5.73s"
+  },
+  {
+    "case_id": "click-82f377c5",
+    "repo": "click",
+    "kind": "bug",
+    "sha": "82f377c547e1867d073f02bb8f476214d07e245b",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Fix deprecated label formatting",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py",
+      "tests/test_options.py"
+    ],
+    "buggy_summary": "1 failed, 72 passed in 0.76s",
+    "fixed_summary": "730 passed in 1.66s"
+  },
+  {
+    "case_id": "more-itertools-be5793a5",
+    "repo": "more-itertools",
+    "kind": "bug",
+    "sha": "be5793a55f58ee29521d8cbc9f14019f5833454e",
+    "parent": "fdbd43c569feb4388302ddee0551d18edd39fadc",
+    "subject": "Two fixes for repeat with iterator arguments",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "buggy_summary": "1 failed, 516 passed in 2.17s",
+    "fixed_summary": "567 passed in 5.24s"
+  },
+  {
+    "case_id": "attrs-937b1e23",
+    "repo": "attrs",
+    "kind": "bug",
+    "sha": "937b1e232803cc4ec9b9375ef525fc57c24ec498",
+    "parent": "94caa57142c057ce52504cdf239ae0ed3168f9b5",
+    "subject": "Fixes issue #1427 (#1428)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "buggy_summary": "1 failed, 49 passed in 2.35s",
+    "fixed_summary": "263 passed, 1 skipped, 1 xfailed in 5.56s"
+  },
+  {
+    "case_id": "click-b7e5fd4c",
+    "repo": "click",
+    "kind": "bug",
+    "sha": "b7e5fd4cc7de70280eccd39f2bb956df617e5519",
+    "parent": "5b1aba82745cbde04c75e0bab995e5ddf0804196",
+    "subject": "Fix broken fish completion and multiline help string",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "buggy_summary": "1 failed, 39 passed in 0.49s",
+    "fixed_summary": "53 passed in 0.40s"
+  },
+  {
+    "case_id": "more-itertools-06f31819",
+    "repo": "more-itertools",
+    "kind": "bug",
+    "sha": "06f31819121eb0620d3165fda73a44cbf71b140d",
+    "parent": "def2d821c0a15ede86578660e7dc48e44bad9579",
+    "subject": "Simplify nth_combination_with_replacement. Fix incorrect exception.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "buggy_summary": "1 failed, 400 passed in 1.99s",
+    "fixed_summary": "564 passed in 5.11s"
+  },
+  {
+    "case_id": "click-2fdde683-clean",
+    "repo": "click",
+    "kind": "clean",
+    "sha": "2fdde68324c386bd967b00ce422daa357432f7cd",
+    "parent": "cf1d891909fa19d40e7c60642b07a0f973a86320",
+    "subject": "Cleanup #3126",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "more-itertools-6d43b184-clean",
+    "repo": "more-itertools",
+    "kind": "clean",
+    "sha": "6d43b18491d6ae0388b5dfb7b0fad860f65fe745",
+    "parent": "63039f708e73ca46cc1dfbfa109e4ead84d1000a",
+    "subject": "Docs changes for 11.0.0",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "click-8386598a-clean",
+    "repo": "click",
+    "kind": "clean",
+    "sha": "8386598a77d5aa05c5239e8525b7b34eb75b4d57",
+    "parent": "2fbc8b1ea993c4d5549bcebe94a437d7a6a56b6f",
+    "subject": "Typo",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "1 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "more-itertools-b290c272-clean",
+    "repo": "more-itertools",
+    "kind": "clean",
+    "sha": "b290c272d9a238a2d942d83ece4d68180172db3e",
+    "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
+    "subject": "docs: add cross-references between groupby_transform, bucket, and map_reduce",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "click-50bfe239-clean",
+    "repo": "click",
+    "kind": "clean",
+    "sha": "50bfe239e327d0d91c460226fb87489c8a9d6e50",
+    "parent": "e26d89d96abc43cf5b8613f0a239a3131e7a6bb8",
+    "subject": "Cleanup handling files documentation.",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "2 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "more-itertools-8e590cba-clean",
+    "repo": "more-itertools",
+    "kind": "clean",
+    "sha": "8e590cba5dbaa811071d5c3c9b1b2cd45837b4d7",
+    "parent": "53091c9d226269423a36c687287421742b7bedd3",
+    "subject": "docs: Fix invisible REPL output in HTML dark mode",
+    "source_files": [
+      "docs/conf.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  }
+]

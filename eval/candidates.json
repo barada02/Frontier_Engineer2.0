@@ -1,0 +1,3081 @@
+[
+  {
+    "repo": "click",
+    "sha": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+    "parent": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+    "subject": "Validate style() color arguments, fix explicit black color argument",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils/test_style.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "bec59289d8cf9b9b4010642b2fee483e5f8eeefc",
+    "parent": "916883afad450c0c9bbc4212817900949131adbd",
+    "subject": "Fix `package_name` resolution when top-level module differs from distribution name",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [
+      "tests/test_basic.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "762c97eef7c1b3779678992f26a553a2a8c80793",
+    "parent": "8929d392781c8113bc569f388c15c47b94f86581",
+    "subject": "Fix double-bracketing of choices in synopsis",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_basic.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "7eb57cff7cd292fbd526eaf861c8f945ddeb07a3",
+    "parent": "1050d955ea5a219c72467ad832934ea80682b5fb",
+    "subject": "Fix pager test race by raising before yield",
+    "source_files": [
+      "src/click/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_stream_lifecycle.py",
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "82f377c547e1867d073f02bb8f476214d07e245b",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Fix deprecated label formatting",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py",
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "b7e5fd4cc7de70280eccd39f2bb956df617e5519",
+    "parent": "5b1aba82745cbde04c75e0bab995e5ddf0804196",
+    "subject": "Fix broken fish completion and multiline help string",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "c3535905c77a29afc84861b29d3ad366ce5451bd",
+    "parent": "bc36cd1a2b3bc18f401a98476154dbc5a2d212c9",
+    "subject": "Fix broken fish completion and multiline help string",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "7d05a59b9d46a415d85937630d1d812cf477f60a",
+    "parent": "4b24a6c8f6658ef89fd6db4dcaf8ee88eef75dfa",
+    "subject": "Fix get_parameter_source() during type conversion and eager callbacks",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_defaults.py",
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "d15f3c23a177e80c324e1ee9681c9449c31ac965",
+    "parent": "e0d1678ebc10cc663f2bc1973e0399b31415f8db",
+    "subject": "fix: Skip flaky pager test on macOS with free-threaded Python 3.14t",
+    "source_files": [
+      "src/click/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "0551bf53588ae87f462d336f24f853a156fefe3a",
+    "parent": "7c99ebe23b931f27562d926814423cce85fd9766",
+    "subject": "Fix `HelpFormatter.write_usage` producing spurious characters",
+    "source_files": [
+      "src/click/formatting.py"
+    ],
+    "test_files": [
+      "tests/test_formatting.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "2fdde68324c386bd967b00ce422daa357432f7cd",
+    "parent": "cf1d891909fa19d40e7c60642b07a0f973a86320",
+    "subject": "Cleanup #3126",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "0f71fe771ceefd5715b3b375c9b2e3a701c0648e",
+    "parent": "c943271a269e6941fcc51e3506ead074b9dda6be",
+    "subject": "Fix dual-option arbitration to respect explicit defaults",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a09c1c655eef3d43181eb46036b66cf058d72df4",
+    "parent": "fc6c7c47edd6110b6bd5a1a5297b2035214b0cd1",
+    "subject": "fix: show custom error message in prompt with hide_input=True",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "19fd4d6e18bc9fce451f92f422696b11169faa57",
+    "parent": "c69643b60cf971cd5d8e5d3902632807ceab9b8f",
+    "subject": "Fix: Ensure fish completion handles multiline help strings correctly (#3126)",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "2468b70997a6ec27ced4b4867954c90da3f92075",
+    "parent": "ddede2147c9370ab8275f81db4826b6895d2e7dc",
+    "subject": "Fix readline backspace/line-wrapping on linux (#2969)",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "b96c2601af4e01341b4d2c0db494ebee4aef8f42",
+    "parent": "04ef3a6f473deb2499721a8d11f92a7d2c0912f2",
+    "subject": "Document and fix command string sanitizing with `shlex.split`",
+    "source_files": [
+      "src/click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "d340b0c1202284a1b9d0ca892549208527d586ce",
+    "parent": "04ef3a6f473deb2499721a8d11f92a7d2c0912f2",
+    "subject": "Fix speculative speculative empty string check",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "546f2851f414b07413777ebcae89b2c21a685252",
+    "parent": "ae46cfd6bc997804893adc799589248eadcdbc29",
+    "subject": "Fix callable ``flag_value`` being instantiated when used as a default",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_defaults.py",
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "955ca492a6b9e8de0660dae1c415568ca6f9c4b3",
+    "parent": "91de59c6c8abc8251e7af551cd4546cc964288af",
+    "subject": "Cleanup changes to fix flag_value bug",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "91de59c6c8abc8251e7af551cd4546cc964288af",
+    "parent": "7f7bbe4569ea68e8dabee232eade069ef3310aea",
+    "subject": "Fix #3084: Correct flag optional value behavior and add comprehensive tests",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "1c20dc6e724cd5625faaa17b715ba928d44c08bf",
+    "parent": "6a1c0d077311f180b356965914e2de5b9e0fdb44",
+    "subject": "Fix default handling to defer UNSET normalization",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_defaults.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "8386598a77d5aa05c5239e8525b7b34eb75b4d57",
+    "parent": "2fbc8b1ea993c4d5549bcebe94a437d7a6a56b6f",
+    "subject": "Typo",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "701b313160be12752e49b3f7cea32402c0969a69",
+    "parent": "3be1f33c8e0b13295853f6aa64d1f7412b5312df",
+    "subject": "Fix completions for quoted/escaped parameters in Fish (#3013)",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "812b8000f79c1fbb747a2de5114fc74515558857",
+    "parent": "a8b41c077b225c30921a78190507a463a20ebb1b",
+    "subject": "Fix rendering when `prompt_suffix` is empty",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a1235aacb1be55dc66ddcfefbf64dec44b6ab54d",
+    "parent": "565f36d5bc4a15d304337b749e113fb4477b1843",
+    "subject": "Fix Zsh completions with colons (#2846)",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "93c6966eb3a575c2b600434d1cc9f4b3aee505ac",
+    "parent": "b63239d657aab7c4e04667a62e7177f617b37230",
+    "subject": "testing/CliRunner: Fix regression related to EOF introduced in 262bdf0",
+    "source_files": [
+      "src/click/testing.py"
+    ],
+    "test_files": [
+      "tests/test_chain.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "ac6a2acfdb4550c35ce69ce54db502ba96c96324",
+    "parent": "884af5c20fdc95c9c7352df35c37273391464fb9",
+    "subject": "Fix shell completion for nested groups",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "4fd2fea0db423d242aedcae0a5f664efe0a93484",
+    "parent": "9ce34f20d2370f2e298268227edf0ffce6b9725f",
+    "subject": "Fix condition for setting flag value when type is provided",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "70c673d37eb91ba42a129be9037caf3ebed62f3e",
+    "parent": "273fb90106726daa16e1033eca0d677de76345eb",
+    "subject": "Fix eagerness of help option generated by `help_option_names` (#2811)",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "50bfe239e327d0d91c460226fb87489c8a9d6e50",
+    "parent": "e26d89d96abc43cf5b8613f0a239a3131e7a6bb8",
+    "subject": "Cleanup handling files documentation.",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "c326df95e9e3da0425360e030413f6a3ee25fdee",
+    "parent": "a8c05427602d12842c53ce48b03b5d6b5c0c6693",
+    "subject": "Fix closing of callbacks on CLI exit (#2680)",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_context.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "1a4d8c1bb1e8f8e214ede7223bd2c05dc2ce006a",
+    "parent": "02046e7a19480f85fff7e4577486518abe47e401",
+    "subject": "Fix metavar for Choice options when show_choices=False (#2365)",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "afc86c748c214939e2293ec00879d85293bcd9fa",
+    "parent": "53f14d3ac4791718f259531dec3433e04a6e45ce",
+    "subject": "Fix colored output on Windows (#2607)",
+    "source_files": [
+      "src/click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "61f8101f4e0d02cb902ef17853fa35ad88185265",
+    "parent": "c021f05c838c1d0401ebc340d1de9b663c7fb578",
+    "subject": "Fix printing of default option value to handle empty strings",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "20280d4f76928db0617fbc4c0059fabb42b8d77e",
+    "parent": "56b15be8b843a26a8065c65f8a208eef7b7c05bc",
+    "subject": "fix `group` overload with `cls` arg",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [
+      "tests/typing/typing_group_kw_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "77838f86fa647ca82f53a88d6495dfc009b24c41",
+    "parent": "8473b3ced140296b9dd869957e0026eebd94634b",
+    "subject": "Docs: add references for varargs and kwargs (#2281)",
+    "source_files": [
+      "src/click/core.py",
+      "src/click/decorators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "e002dbc40ceb6a7e78dbe5e5868744690ba3120f",
+    "parent": "eb1d760fb433d08278816d7ba49477ce86b691a7",
+    "subject": "Fix return value and type signature of `shell_completion.add_completion_class` function (#2421)",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [
+      "tests/test_shell_completion.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "e0033315510510acdba14e880a361ccca091fb4b",
+    "parent": "19be092b6db4e4300e31906498e354ec0adf870c",
+    "subject": "fix ParamType.to_info_dict() with no name",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [
+      "tests/test_info_dict.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "dfae0a101190258677261f534249f6d6c862894a",
+    "parent": "445428e3ebdc44b274e4908848269f75df8718e8",
+    "subject": "refactor try/except",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "05b795c917f4146edfe83b2d08c189886b301785",
+    "parent": "01e4dac0b1f855a54eb923380d6af64171c66f22",
+    "subject": "Fix copy-paste errors in `click.style()`",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "ee56925bc4f5451a125317e183f498e8bd1aecb3",
+    "parent": "da2b658e6185b5ae69abcefe755077336024a5e6",
+    "subject": "Fix is_bool_flag being set to True even if is_flag is False",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "d48b59be391f9f9bfb41dd62db07e46519d08bfe",
+    "parent": "30e7f76a383b7ddba23f564f96871261d6f8800e",
+    "subject": "fix make_default_short_help max_length, refactor",
+    "source_files": [
+      "src/click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "0d01686fe6be5c335f50098a06b7e847a2753452",
+    "parent": "0dc6d74df5c984ff923f5d17e97bf94a21b3a3cd",
+    "subject": "fix output when using echo_stdin",
+    "source_files": [
+      "src/click/testing.py"
+    ],
+    "test_files": [
+      "tests/test_testing.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "043511294a9eec59d08e64c351621e790ae74b76",
+    "parent": "6c7624491911f0b18f869e5d0a989506e7b416f8",
+    "subject": "Fixed inconsistency in forwarding params",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "4aff02676c0d9628e095731c124b647ed256ee5a",
+    "parent": "b625b9f39082f366dd85ad13024e43c8f5e78b87",
+    "subject": "fix backspace in prompt with readline enabled",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "e74508119a1e8ba59bf96a45fa1a149cd292a79d",
+    "parent": "69a25da0c0a8a78564f0fef700e1d6e5b21c1e8a",
+    "subject": "progressbar: fix regression with hidden bars",
+    "source_files": [
+      "src/click/_termui_impl.py",
+      "src/click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "42ee8a1f6011e0f4a8a19c34a545f3eb7ae978fa",
+    "parent": "8efb348e2bc820aeba60d4cce6939708c6b2b11c",
+    "subject": "fix formatting with empty options_metavar",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [
+      "tests/test_formatting.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "11c286a37d55357b82c7e5db7237544cd79fe25a",
+    "parent": "77cb2574cb98e0afb9bf294b086425501cc051ce",
+    "subject": "fix edit() require_save check for fast editors",
+    "source_files": [
+      "src/click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a077ed70475e3f68d09e50f511268588378b7fa8",
+    "parent": "77ca5206bc420cb9660b312c7b1b960e5a8cdae1",
+    "subject": "refactor other decorators to match version_option",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "81ff0aea6c814c7fad7ed4e7c76098a97d6a0fbe",
+    "parent": "cb37854c9b43d9fd3c99a3a830f4580517c1b32e",
+    "subject": "refactor version_option",
+    "source_files": [
+      "src/click/decorators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "347b45be001ccdc16b1df0165eddebc1761fc25f",
+    "parent": "792f03f13e04d0f583c1d74104fbe1ea3e10d26c",
+    "subject": "refactor completion command splitting",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "e4bb120808d6effa31d7291da5c72f09511de564",
+    "parent": "70c449386b91261f4c5fa43b87f0a84692535525",
+    "subject": "fix newline wrapping in option help",
+    "source_files": [
+      "click/core.py",
+      "click/formatting.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "99ef35e3b4919b5dc33d1ee4b1e04b437b6307a5",
+    "parent": "14fa50aefbfe7b8b1b978d7ea8c02f5b14d60032",
+    "subject": "Fix for string cast of MissingParameter",
+    "source_files": [
+      "click/exceptions.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py",
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "36da06fe44c5cb7a14c67e5e5be1458ee5d5e521",
+    "parent": "64bbbe46f87d90648ba2b972240fe591934ef55c",
+    "subject": "Changing documentation in ParameterSource to indicate 'parameter' instead of 'option'. Removed emphasis of the word source in Context.get_parameter_source. Changed ParameterSource.VALUE to a set instead of list. Fixed bugs in ParameterSource.validate and added unit test for it. Changed Context.get_parameter_source to return a KeyError when an invalid parameter name is specified.",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_context.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "b61ec644fad6ed03b3e73f77c7c1242ebf0a3933",
+    "parent": "cd90e833779f2d566734cd8191f84ae45157b525",
+    "subject": "Fix bash completion when defaults are present and the way subcommands are handled. This makes the completion logic behave the same way the paser does. Fixes #925 Fixes #919",
+    "source_files": [
+      "click/_bashcomplete.py",
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_bashcomplete.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "2bc3b2c12c6deb68164313386a036dc7543461fa",
+    "parent": "961a441af08dd24ff539e4640b6e6261a4006d22",
+    "subject": "Fix #616: allow setting prog_name in CliRunner.invoke",
+    "source_files": [
+      "click/testing.py"
+    ],
+    "test_files": [
+      "tests/test_testing.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a17b544788256d59baae0352a90bdb9af2b8ed34",
+    "parent": "9c456ec2679418442b71b2c1a5e4e62f0b41cbda",
+    "subject": "Fix issue #926 - copy option attrs so that custom classes can be re-used.",
+    "source_files": [
+      "click/decorators.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "535559adbd7d5549d1d123e8c7f9a9e602f0cc3f",
+    "parent": "df1a8f57c3e6467ae277ba487c962239745f392e",
+    "subject": "Fix variable precedence",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "6ca05bec6b1c5ff7afa7f55ba8991385dc4c75a5",
+    "parent": "7eb990fab5783b32c7028b0aa8a752e6862d0997",
+    "subject": "Implement streaming pager. Fixes #409",
+    "source_files": [
+      "click/_termui_impl.py",
+      "click/termui.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a02cbb773670e52895c72e993c830b192cc1f10a",
+    "parent": "54fec6869037f90b35f2ecad3edf56024cb44d70",
+    "subject": "Cleanup get_choices() to leverage early returns.",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "65da5cc5c4b2e75037811c76d73f742e7ef033c5",
+    "parent": "e634d7f78b906294fd21fb8b166fa4a71746b76b",
+    "subject": "fix overzealous completion when required options are present",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [
+      "tests/test_bashcomplete.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "f15f425bc11a69a4dc856d43d25e223dcc15f0f2",
+    "parent": "2ab5f7ebe12ee7276a25605af67227e5ffa59dd5",
+    "subject": "Bug fix #793; use the first defined long name",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "29ab0b033f013ac9f603ad652e0cc813a2d0a550",
+    "parent": "5701c4000c39b5a90c45f1083c0cbf4e00731e81",
+    "subject": "Backport fixes for autocompletion on chained commands",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [
+      "tests/test_bashcomplete.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "92c8053bb9e7221efc87355c364fee256e1efc76",
+    "parent": "5f2ff4faf627dc9d0925cffb7d9b8f3162fbdaad",
+    "subject": "Fix bashautocompletion of arguments on chained commands",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [
+      "tests/test_bashcomplete.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "8780a763aab11f69258acccbcb9d0d97e92ebadb",
+    "parent": "e6f22c652fb537b11f7b51d77b1013d876176512",
+    "subject": "Update progress after iteration (fix #651)",
+    "source_files": [
+      "click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "598c6d76fbc036fb3219d9f09948a682cda66601",
+    "parent": "891a22324a9daf2a761763ad82fa5d87884a5028",
+    "subject": "Fix test runner not saving caller env correctly",
+    "source_files": [
+      "click/testing.py"
+    ],
+    "test_files": [
+      "tests/test_testing.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "8af7ec14f3d936e02c2e4ee62d3573593868e07e",
+    "parent": "7e8324fcfdbd3ae89fb2f71c1166edb6aae595f2",
+    "subject": "Fix #630: Bash completion for nested commands broken",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [
+      "tests/test_bashcomplete.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "fab5356b61c4f5d91e5f75b972c2d6cd9c4ecc69",
+    "parent": "159d0e577ca88ee14e543ff3ebeab3f21515eb59",
+    "subject": "Fix UnboundLocalError in click.Path",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "11a662df615c302e50a5d387df0803cbe2398d43",
+    "parent": "79e80fe69381ca091036e40621775d10029b93f2",
+    "subject": "introduce int_types compat to fix python3 type error in _length_hint",
+    "source_files": [
+      "click/_compat.py",
+      "click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_termui.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "262c275d8513a377fdc741695c7ab11920fc8391",
+    "parent": "2df17b6e6642ecc8fdcbd259222ce176cf65af98",
+    "subject": "Fixed broken tests and behavior on windows.",
+    "source_files": [
+      "click/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py",
+      "tests/test_imports.py",
+      "tests/test_testing.py",
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "89d3bfda52d151762e732738b828312a240bf89e",
+    "parent": "851ce7fc58d5ee57e3910a12094d3df986bb0ff8",
+    "subject": "Make it possible to define aliases for the secondary option of boolean flags.  This fixes #420",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "851ce7fc58d5ee57e3910a12094d3df986bb0ff8",
+    "parent": "7f1d70c54565ec978f49dc78a65299f9e94cd01d",
+    "subject": "Pop the context after closing and not before.  This fixes #412",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_context.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "c2933658a64464bbb518eb723c239c1ab6196aa2",
+    "parent": "d549018970080f6219d31ceb3b0b15f6722816af",
+    "subject": "Fix bug which happens while using @click.pass_obj",
+    "source_files": [
+      "click/decorators.py"
+    ],
+    "test_files": [
+      "tests/test_context.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "349875d795837a8ca1173621001bb585e1640207",
+    "parent": "dbd40696e31409a50eb4722c806b4ac1c527ca8c",
+    "subject": "Ignore broken PAGER values",
+    "source_files": [
+      "click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "0f20511f41e8d99acd074b063cadaa0b9f8aecf0",
+    "parent": "3ddc556a9f20267b2c46b5c9ceda6c3d8f26e79b",
+    "subject": "Fix bug with multiple args after star arg",
+    "source_files": [
+      "click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "3ddc556a9f20267b2c46b5c9ceda6c3d8f26e79b",
+    "parent": "42c8146ca572cfb1e5fb5a393ef4f0f62247a226",
+    "subject": "Fix type inference for multiple options",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "d495fbc154336f43ce58924b441f2fe63e771115",
+    "parent": "1de2e21788e3738dc4067030676ff04b2f48bb2b",
+    "subject": "Typo in Tuple",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "4592098a58de5425ce75f2a8768b79945c32d8bb",
+    "parent": "be2c42b570cf702cb33f2cc4e26e8e69fba5ad9e",
+    "subject": "Fix crash when writing to unicode files",
+    "source_files": [
+      "click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "807c5df0b9528d387ff48f0e593907760b2ad6ce",
+    "parent": "8056132bfe09d59eb7f4cb199a87e63ec634d052",
+    "subject": "Fixed issue #362.",
+    "source_files": [
+      "click/testing.py"
+    ],
+    "test_files": [
+      "tests/test_testing.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "4e519da58ac79fbd97eb86eb7717603d77eec379",
+    "parent": "61cf523ec891b1d34962fd000de94836cd6015e4",
+    "subject": "Fix formatting issue when last line of docstring is blank",
+    "source_files": [
+      "click/formatting.py"
+    ],
+    "test_files": [
+      "tests/test_formatting.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "64f57fea3a2d82b590e93fe29cb85c87be08a8a4",
+    "parent": "46b22d09cddf277130bdb080361aec1768de2c65",
+    "subject": "Refactor missing parameter handling.",
+    "source_files": [
+      "click/__init__.py",
+      "click/core.py",
+      "click/exceptions.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "7c138a659ecf4501c86938c482c75fe851cd570c",
+    "parent": "9da1791476fe79ce77aa7a2a2db370c91a455251",
+    "subject": "Fixed generated bash complete function name.  This fixes #221",
+    "source_files": [
+      "click/_bashcomplete.py"
+    ],
+    "test_files": [
+      "tests/test_compat.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "9da1791476fe79ce77aa7a2a2db370c91a455251",
+    "parent": "c2c2bacddc1d625e9a0f606f227f356df9d2b172",
+    "subject": "Error on nargs=-1 for options.  This fixes #222",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py",
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "e2c3b9bc6122562c015bb98d3890a6d6512fba24",
+    "parent": "ebd751cab2f1af064169575b2d24435c93d4a899",
+    "subject": "Fix corner-case where subsequent wrapped lines are one character longer than max width",
+    "source_files": [
+      "click/formatting.py"
+    ],
+    "test_files": [
+      "tests/test_formatting.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "5fc29baf75897d594fe06ba085955d8068e22554",
+    "parent": "04f795c3c726737a2fcecc8c65bd36a00a6d04ea",
+    "subject": "Fixed `invoked_subcommand`.",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_chain.py",
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "bb42d2eda44f033126538020433a3d34f09e9a32",
+    "parent": "0008933ec6540e6a2fe3f01f4b2d7e227a878d45",
+    "subject": "Handle defaults for context invoke.  This fixes #201",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "b625654063f03936c65f33d1f5025376f57f4a06",
+    "parent": "47f5663125beb7f03397959ad2d3d080fcd2bf8d",
+    "subject": "Fixed a regression for echo_via_pager on 3.x.  This fixes #185",
+    "source_files": [
+      "click/_termui_impl.py"
+    ],
+    "test_files": [
+      "tests/test_utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "bb7b2df4d67bcd02a044d21c5ee3c7acb51f5d88",
+    "parent": "dc99ea49e0b6cbf9f0f9709233bd20449d0979a3",
+    "subject": "Fixed an incorrectly formatted help text for count options.",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "579262766b1e57d8b2dcca0607e8e8f665950b00",
+    "parent": "f1a846081b241c742c9700354ebe16f56c1c28fc",
+    "subject": "Improved automatic short help detection.  This fixes #165",
+    "source_files": [
+      "click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "fd401cd761a2cf15fbb9a54404860b636a5b558d",
+    "parent": "7d776de4eb89a58058567d9992371f58c71c3ad4",
+    "subject": "Fix indentation of option help",
+    "source_files": [
+      "click/decorators.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "264fa24d40725f3278d9a783c84cf8bf2d333300",
+    "parent": "a6136b4079f52f4384fc8321672cf95b780527f8",
+    "subject": "Implemented extra info for missing choice parameters.  This fixes #120",
+    "source_files": [
+      "click/core.py",
+      "click/types.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "cb88b405aed370b8f8924be3709c5138c57f9b30",
+    "parent": "f0b559f096c000dd3f081f663272f24f9096b968",
+    "subject": "Docs: several fixes",
+    "source_files": [
+      "click/core.py",
+      "click/termui.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "a6af25df9c2e82e94c3aa15d579f9347881e5efb",
+    "parent": "c7299c431933db47c9fab6771e34a9dd46a09415",
+    "subject": "Fixed a bug in argument handling",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "9ca28175ce4829ace538048b78888f59ad303434",
+    "parent": "bf94cbb1f4040908858ff54337d9721f720c2cfa",
+    "subject": "Docs: fixed mention to default extension",
+    "source_files": [
+      "click/termui.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "bf94cbb1f4040908858ff54337d9721f720c2cfa",
+    "parent": "c7299c431933db47c9fab6771e34a9dd46a09415",
+    "subject": "Docs: fixes",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "7af94e896cd186daf56835d351bd7c2e61ebae76",
+    "parent": "7d4bbfd35237ba915f777933e13a3c068fc790e9",
+    "subject": "Docs: minor fixes",
+    "source_files": [
+      "click/utils.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "7d4bbfd35237ba915f777933e13a3c068fc790e9",
+    "parent": "c5d53f831edf3bfd6974a70e6bacd9be37425267",
+    "subject": "Docs: progressbar fixes",
+    "source_files": [
+      "click/termui.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "61db52c7114a2b3af35f63ccf81340a42beff4db",
+    "parent": "0b27ddf43fb198f3a1fae8dfb19c9e00e8cd58b7",
+    "subject": "Docs: minor fixes to atomic type support",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "50469da33c5ca387a36b5318256542ac0cb17de0",
+    "parent": "f4cfcb5788343f1f17e165eebe20b58dbf45d598",
+    "subject": "Fixed a bug that caused text files on 2.x to not accept bytestrings.",
+    "source_files": [
+      "click/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "a218f6cc0e4c8d0e8dddea2c8c3c1353cfc39181",
+    "parent": "a5a047127e1a19f8fc429e15e8fb95cc2c5c19a2",
+    "subject": "Docs: fixes",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "39b5df2b12a0e746c5020e0f4379b8e27b44f911",
+    "parent": "a2c58d5b8e7e4d8654507e13a93f185025fc7251",
+    "subject": "Fixed lack of clear reporting for paths",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [
+      "tests/test_basic.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "817ef38339a1495f8d6cab90239db1d1c45c3577",
+    "parent": "955beb8fd0657c6c3c59b27dfeebb8e6d0d17ce7",
+    "subject": "Added support for lists from envvars.  This fixes #87",
+    "source_files": [
+      "click/core.py",
+      "click/types.py"
+    ],
+    "test_files": [
+      "tests/test_options.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "9659523177b4c68df46e6b1f062587407717341b",
+    "parent": "aed87f04bde1e1c2c6dca0736ebfd7f628c64e01",
+    "subject": "Docs: docstring fixes",
+    "source_files": [
+      "click/core.py",
+      "click/decorators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "4fd19ce097576072020084a61b6172bfb9b07f26",
+    "parent": "ed9594d32060466a1c5763fb36e39e5dbec51306",
+    "subject": "Fixed argument handling for \"-\" and added test.  This fixes #77",
+    "source_files": [
+      "click/parser.py"
+    ],
+    "test_files": [
+      "tests/test_arguments.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "ea5edae20706d9f3d652658d2d01f426c96aeca0",
+    "parent": "48f3e9160f4199cb428eae1b7b7c04176dd7cd99",
+    "subject": "Docs: minor fixes",
+    "source_files": [
+      "click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "7ebd3b9482ea63b787f637c8bf52d81f5547ef52",
+    "parent": "de338becf99f56b8e24b5e2d8c7ca3465d922406",
+    "subject": "Fixed a bug with forwarding and added a test",
+    "source_files": [
+      "click/core.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "4e2a3291613f6903afa179396676d4aebb340eb1",
+    "parent": "ca1dff925e3a3d3aac0b5725ee5e8b5b022d70ff",
+    "subject": "Fixed a bug with whitespace preservation.",
+    "source_files": [
+      "click/formatting.py"
+    ],
+    "test_files": [
+      "tests/test_formatting.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "e77783dcd9b9b74f0f53c3b5857407cef07fba87",
+    "parent": "065ce06128f678e91ba0022ce565b9ee52c5adf5",
+    "subject": "Added support for default overrides.  This fixes #42",
+    "source_files": [
+      "click/core.py",
+      "docs/clickdoctools.py"
+    ],
+    "test_files": [
+      "tests/conftest.py",
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "click",
+    "sha": "2a2c4f4a9ec31c21954db8f4df01c02245fe2a49",
+    "parent": "5d85db9fb705563a42f34bb01616593c5537f0b0",
+    "subject": "Docs: fixes",
+    "source_files": [
+      "click/formatting.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "click",
+    "sha": "a25bf1300142bc30369920e3bca740efb92c4575",
+    "parent": "45be1caa7e09688fbae58e39d0846e6b19c3e6ac",
+    "subject": "Auto truncate short help instead of hiding it.  Fixes #53",
+    "source_files": [
+      "click/core.py",
+      "click/utils.py"
+    ],
+    "test_files": [
+      "tests/test_commands.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "d992be0de9383ddcaae3a24866a2d96b52132b07",
+    "parent": "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+    "subject": "Fix stability in running_min and running_max",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+    "parent": "5d946b3590bfe92f1465c1b9b9830dd434745c84",
+    "subject": "fix: handle empty interleave_evenly input",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "edb3346f835ca917efbfda5e2d6664ab952da369",
+    "parent": "247e15b3a489d5805375c95dfa79486c9bd0eb1b",
+    "subject": "Fix empty ranges in numeric_range.__reversed__",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "6d43b18491d6ae0388b5dfb7b0fad860f65fe745",
+    "parent": "63039f708e73ca46cc1dfbfa109e4ead84d1000a",
+    "subject": "Docs changes for 11.0.0",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "b290c272d9a238a2d942d83ece4d68180172db3e",
+    "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
+    "subject": "docs: add cross-references between groupby_transform, bucket, and map_reduce",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "d71c4ad9f828117e609269701f6df10419ae90c8",
+    "parent": "c0ed9d187906d202b9276a0750b3c377584cb75f",
+    "subject": "fix: prevent _marker from being passed to user predicates in replace() and locate()",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "be5793a55f58ee29521d8cbc9f14019f5833454e",
+    "parent": "fdbd43c569feb4388302ddee0551d18edd39fadc",
+    "subject": "Two fixes for repeat with iterator arguments",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "06f31819121eb0620d3165fda73a44cbf71b140d",
+    "parent": "def2d821c0a15ede86578660e7dc48e44bad9579",
+    "subject": "Simplify nth_combination_with_replacement. Fix incorrect exception.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "def2d821c0a15ede86578660e7dc48e44bad9579",
+    "parent": "6b32fbfba127d6b4aaf57d6b254b2ab5fc80ae76",
+    "subject": "Simplify nth_permutation. Fix incorrect exception.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_recipes.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "b0aa91efbb452eeb8ffa0447047519c6e84d5292",
+    "parent": "073d23421b60e05a99872e7b174902f4aa151f31",
+    "subject": "Fix random_product() as well",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_recipes.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "073d23421b60e05a99872e7b174902f4aa151f31",
+    "parent": "b110a77364ec0ed5bb06194b591f97a54591dbc9",
+    "subject": "Fix support for iterators using \"repeat\"",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "6743b2f4ad30fc93746de40b8804091be8115bd5",
+    "parent": "582e9fa013091c756e2a8d98cae1ba1af4a9a389",
+    "subject": "Fix typos",
+    "source_files": [
+      "docs/conf.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "adeda34bd11ff636f5f19238cf422a73e1455483",
+    "parent": "f75535b5ed95394a3a24c1495e1f8508a06d56ab",
+    "subject": "Fix bug for negative inputs to exactly_n(). Optimize code.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "cf186b5de4797602fef76c3391da2d110b88a954",
+    "parent": "aa8c480086052d4c2a64490d3214e67b7c6e674b",
+    "subject": "Fix product_index() with iterator input",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "946323176bbcff2da0fe4c14b155f362c370edae",
+    "parent": "a734e4c87fd077191dbb1a81a41d3b0346ed48f6",
+    "subject": "Fix deprecated typing imports. Remove unnecessary Hashable parent.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "11c8280461c0604e27a6cffc1f2cd4ab2e66b9c0",
+    "parent": "49e1dcd6b735300896fc75a2469d33dab3ecd659",
+    "subject": "Fix review comments",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "8e590cba5dbaa811071d5c3c9b1b2cd45837b4d7",
+    "parent": "53091c9d226269423a36c687287421742b7bedd3",
+    "subject": "docs: Fix invisible REPL output in HTML dark mode",
+    "source_files": [
+      "docs/conf.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "cca32949f12d473fd823e37a5530c30d2faa1332",
+    "parent": "c834d6e4a0c4280b7b7750cb0de8dd8acb3d4c2c",
+    "subject": "fix last() when __reversed__ is None",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "dbc32776a870216b65eca5168217c8765cc85af3",
+    "parent": "dc49db58b65ca714b8f47e5f540259105b888dc6",
+    "subject": "Doc updates",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f5774b65f79c4d71c38b2adb2eefcaff0867d142",
+    "parent": "54f84c9c55180b927ce2d3a156413fd50589afb5",
+    "subject": "Clean up one() and fix over-specified test",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "ae37eb38a1d3958d764ff3ec43107116dfe29135",
+    "parent": "f36c88fe03688fa442154ef14f429bcfa4c38525",
+    "subject": "Add more sample() tests and fix bug in strict option with counts",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "6197c8d5c95f8e1f2936fe1c753d18a881ecca6c",
+    "parent": "dfdb47ba9387a37d3a7bd100d68acc29cf450a8f",
+    "subject": "Fix the bad mistakes",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_recipes.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "0de415570d062395855eb145baa30e4e28b0f7da",
+    "parent": "02e4afb07149400124069a2ea3924b414a0f91ec",
+    "subject": "fix checks",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "4bd0bd876273a8ff2171352c937b91a8c053d00b",
+    "parent": "17fd95a0c34763c34853f3a89048d60733815dc4",
+    "subject": "Merge fix for issue 832 (distinct_permutations)",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "db67158d793afac4c1165cf8001b357317cf13c4",
+    "parent": "258791eb405a36b3b3ed2c180e88f4b08f865e2d",
+    "subject": "Fixed.  Indices need to be sorted.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "4486d246245d4b301c50208a7d836a8505ad6967",
+    "parent": "e90acd8505184d9143b7af7fecee9ebff5024d18",
+    "subject": "Rename seq argument to iterable for consistency",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "20c3265fcffba7b1d1ff6d266e17cabe94092113",
+    "parent": "91a38218a99e633768c5cfc3010ef0d246017f2e",
+    "subject": "Doc changes for 10.2.0",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "810634f8fb3d5d19d833ad0ed59445897b696b84",
+    "parent": "cd56e15ca5b15069034caf1c47b5554f9d8698f1",
+    "subject": "Fix typos found by codespell",
+    "source_files": [
+      "more_itertools/more.py",
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "e470f7733b88da0df15c954cf77d9473ebf727da",
+    "parent": "cc8a8ab246193428118e5653a0516a8acf25ce72",
+    "subject": "Doc updates for 10.1.0",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "46a253b36b74edead1fea1c09d762ddca4e895fd",
+    "parent": "09eb43d1b636493b9f762426794730c8c35ce83c",
+    "subject": "Rename uniques to counts",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "ab72fc8a4e120678525c3e2b67203c6cea462204",
+    "parent": "c8baa10e66de18662114b71edcfa32f5dfdd2881",
+    "subject": "Fix unique_in_window to match described behavior",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "cd0a3a87d231033db06a3c222fe893025e398a86",
+    "parent": "7c1b6482a00cb9c1f76061c12be192ed5043e5ea",
+    "subject": "Issue #707: fix ``iterate()`` to enable ``func`` to raise StopIteration",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "64ef9995bb7af6c6cb44d5648842407c31f388b6",
+    "parent": "d5ce308d139bf793d89ec3a9957f23b165040cb9",
+    "subject": "docs: rewrap docstring to 79 columns",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "9245cd04c043d0d646497934df72549943d5f868",
+    "parent": "6793bd3e4ed15318746ed2511733f12a9932eb64",
+    "subject": "Fix issue 658 for split_after",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "c2992eabcff0f4b10437b2625db59a878d01e4ee",
+    "parent": "2ff5943d76afa4591b5b4ae8cb4524578d365f67",
+    "subject": "docs: fix simple typo, versiosn -> versions",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "9f4f31faabd327407951ed9dfef8cf0ff13b90d9",
+    "parent": "395bdfc00db80a36b36662a3bddf1f453289adf6",
+    "subject": "Fix linter complaints",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "395bdfc00db80a36b36662a3bddf1f453289adf6",
+    "parent": "a89d4143883f81ff0d7299057ffae855aa303e78",
+    "subject": "Reimplement zip_broadcast() to fix #561",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "49a4b3c94b0d71cc4576df3df9ca90197b5ec9fc",
+    "parent": "c0780fbbba9655d36de09b872981ffd4a90eb120",
+    "subject": "Fix bugs in chunked_even",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "fb89af02fdb706f74a65f2390d446df6943d3f8b",
+    "parent": "727f01d070190d0a1ea1135548c40f1f39b53857",
+    "subject": "fixed repeat_each() to accept infinite iterators as input",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "2e81a562fbaccc996c19c069090a53f52ec894fe",
+    "parent": "c7e73ffbf9c7e15969f9ed301d0431770061ab90",
+    "subject": "Fix split_before for an empty collections.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "94b15e6794082216f3151d139b3f09422d446196",
+    "parent": "0155306b05b7af79ec4313950068dd806b295e94",
+    "subject": "doc changes",
+    "source_files": [
+      "more_itertools/more.py",
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "ad385b3aae0923daacc85fe2928fdbe872720e8a",
+    "parent": "894cd3540990d3a22d82e71de0c01ef9bcec4add",
+    "subject": "refactor: Simplify unique_everseen (#488)",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "254133ff846af44c99150b645bd73e4999bd06a3",
+    "parent": "8dbf8ae72386356d1618656c520fac03d1a33b21",
+    "subject": "Fix flake8 warning while keeping doctest happy.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f4c59950fa11788e3950de48dd3233ddf9fbed2c",
+    "parent": "16c626b5f92b7695284007c2db1a5f94287fad52",
+    "subject": "Doc changes for 8.6.0",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "b1042ae2e9cb6e6588806b4aebf7af5e76cb90bc",
+    "parent": "13638be1c2ad38e55731ba62a5e0c519c2fe865f",
+    "subject": "nth_product fixes",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "tests/test_recipes.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "dccb7e97e556a7a57481eeec552db20f8787546a",
+    "parent": "028184c40e449d22d7b777e960b9c1a11f669a55",
+    "subject": "rename some variables",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "35f4cc537654f23f2339d2a8706c7961079a69d3",
+    "parent": "8070f891e4afddd59efb040c5dd465ac2c7f599c",
+    "subject": "Fix flake8 issues.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "62411c1618493f94b16901746c34e72ad415061e",
+    "parent": "c0465331cbc0d882cd7dce5c0bd19aaf46dfb968",
+    "subject": "Fix spy to make returned iterable immutable",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "304ae8b4ca8f9216a6d133c91316bf2f4ebd36ef",
+    "parent": "d6e773411087fa494991d7a8ad81e6a9ad5ddd56",
+    "subject": "refactor windowed part 3",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "44528b198295c274dc2f0dcc91b8b680d7a68e42",
+    "parent": "3649b878610372b4cfb6074d21a4bb43b1c1b849",
+    "subject": "Docs update",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f77823f366ae14f72b3ad62764eb490bdbc9d3ff",
+    "parent": "50c983299aabd2e5a3f7385264415982af67c1f7",
+    "subject": "Fix PEP8 violation in test_more.py. Improve \"split_\" speed when maxsplit is positive.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "a870070b5b1333095d0d23ad92b4bc6fced1e75c",
+    "parent": "825747d54eb5dffad334eb4d0d65fc21c39a579d",
+    "subject": "refactor unique_everseen",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "683cd592af762e6b63454476ec0951f4402bd4ae",
+    "parent": "cb45fe16d7aa9a5161a531f4f7f4ce98c370f92d",
+    "subject": "Fix compatibility with old versions of Python",
+    "source_files": [
+      "more_itertools/more.py",
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "500e9bb214d13fbecb7df87ddba21c2819de796d",
+    "parent": "e0ee0c0f456b94750ca2bfca3b1f20483886494c",
+    "subject": "Fix long lines",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "49011f02cde38ae3c062cc9e3d15194579c616a0",
+    "parent": "54a6624d3c62dd7a70b7c42c8fef45142aa2b3ca",
+    "subject": "Cleanup and version history",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "27fcf25415e325552c2a600d8b2fba2ebbaefb06",
+    "parent": "79f6af0e1c44bc9ed180c7d9e4adac16c1ad0e5d",
+    "subject": "Fix typos",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_recipes.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "e768069369490e18bc92dd205eea965d30da55a9",
+    "parent": "4089a70263f0e415625bc3d545a84ac31b1ccb6d",
+    "subject": "Fix up formatting for merge",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "5ad28b426f1bb637fc57d0d3279e75264cd61dc4",
+    "parent": "04de103f5cb47a53bf8e1be261ecdeb257c59bbe",
+    "subject": "Fix missing newlines",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "93846781b9ef0bdf2d4aa783ae7efca40ddeb207",
+    "parent": "e125b64713ab5cf87603631a97a9b69fbd7ba530",
+    "subject": "Fix Flake issues",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "7f2319709b2ebc25f3691463401f886add157fed",
+    "parent": "1e87568cad9329b2f4c883d2f38144c43c429bc6",
+    "subject": "Fix long lines",
+    "source_files": [
+      "setup.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "86c2172b2c3c6bfc0463dda18419ce024ba871cf",
+    "parent": "2f49bf852aeee115d55a4411170752a1abb2c8f4",
+    "subject": "Fix some cases where peekable slicing gives the wrong answer",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "25aae7ef880451c036f52568ec3827948ff2f5e6",
+    "parent": "4761258b407b78065ce148ebb2c4eb0e24a4c4f1",
+    "subject": "Rename var `iterable` to `it`.",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "da192d722f21c2b82f66af79147ed92b6a7985a7",
+    "parent": "730841c5b131a46b79a04a0559005fcb2b4f6928",
+    "subject": "Fix spurious import and missing whitespace",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [
+      "more_itertools/tests/test_more.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f38b8a3f1625060aa4245930822c34c11c252f83",
+    "parent": "3e01de41b0efb9f51b92cc3372477be92033f4a8",
+    "subject": "docs: format notice",
+    "source_files": [
+      "src/attr/_config.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "3e01de41b0efb9f51b92cc3372477be92033f4a8",
+    "parent": "29b608137636417fbfdb6586ca42b58a540f8077",
+    "subject": "docs: fix markup",
+    "source_files": [
+      "src/attr/__init__.py",
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "29b608137636417fbfdb6586ca42b58a540f8077",
+    "parent": "21b5746de7d428efe190ad9b895f68eff5c67c20",
+    "subject": "docs: remove stale 3.9 references",
+    "source_files": [
+      "src/attr/_funcs.py",
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f616f732c6c5f87a8f7a762176422baed250a6be",
+    "parent": "4b5b295bb815bf845fa3570bf63781a88212db40",
+    "subject": "docs: be more general",
+    "source_files": [
+      "src/attr/setters.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "97f8d175656bc03c373a1c9038048a4d312c307c",
+    "parent": "6851ab593cd25f3c14393e9355d57d22bec2a074",
+    "subject": "Fix ClassVar forward reference detection (#1593)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_annotations.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "45de9beb093d2142517ab7d1ebda6522e3d3c4ac",
+    "parent": "ae37edd71a691b8ca797a0a53d0248543abfe12b",
+    "subject": "docs: move collect_by_mro to attr.s docstring",
+    "source_files": [
+      "src/attr/_make.py",
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "af9c510912ce604a94896cc35c27368d5baf6ae6",
+    "parent": "ab7f8b2f4c0f747d5b1575247ce35e5adaad182e",
+    "subject": "Fix validators.disabled() to save/restore state on nesting (#1513)",
+    "source_files": [
+      "src/attr/validators.py"
+    ],
+    "test_files": [
+      "tests/test_validators.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "ce89f5d11feb0805da9ed10bb165238cc959f1bb",
+    "parent": "eccd966d80aff5196efc959316961cfa780439f9",
+    "subject": "Fix message passing in frozen errors",
+    "source_files": [
+      "src/attr/exceptions.py"
+    ],
+    "test_files": [
+      "tests/test_functional.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "000c563473400aa086f6486a9c38ace0e77ea219",
+    "parent": "cbaef3f8f5ec3d6049b42c8c27f542c1571bb4c8",
+    "subject": "Fix slotted reference cycles on 3.14 (#1446)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "937b1e232803cc4ec9b9375ef525fc57c24ec498",
+    "parent": "94caa57142c057ce52504cdf239ae0ed3168f9b5",
+    "subject": "Fixes issue #1427 (#1428)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "3d42a6978ac60b487135db39218cfb742b100899",
+    "parent": "55c688a5f8bc5c5f3a7cfc0af2d0ef7b2d439f26",
+    "subject": "doc: fix typo in attrs.validators.gt's docstring: ge -> gt (#1423)",
+    "source_files": [
+      "src/attr/validators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "55c688a5f8bc5c5f3a7cfc0af2d0ef7b2d439f26",
+    "parent": "e906fd01d5873e3d35eb9bfeb2b61c6e45b22eae",
+    "subject": "docs: stop checking anchors on GitHub.com",
+    "source_files": [
+      "docs/conf.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "5820ce717ed3f6047409845004a3ec004ec1574d",
+    "parent": "06daa1d0bc05f23cf130f9455b4ca833b8e42718",
+    "subject": "docs: stress that make_class doesn't validate names",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "119e043b9fccd995cefb800b00ae4a7645ddb807",
+    "parent": "e82cde4c252f2fa24e575105d6a8489657e6a1f2",
+    "subject": "docs: fix markup",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "e82cde4c252f2fa24e575105d6a8489657e6a1f2",
+    "parent": "d3f320e0cb3b4c74c29a2af8c1bd8d37ca724ed5",
+    "subject": "docs: add note to make_class about non-NG-ness",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "6fda0a4e086b56d7058855e4c15112c8f58de74c",
+    "parent": "53e632c5218b729da6ac37a35b4b68379dc18999",
+    "subject": "Make Converter a kind of adapter, fix converters.pipe (#1328)",
+    "source_files": [
+      "src/attr/_make.py",
+      "src/attr/setters.py"
+    ],
+    "test_files": [
+      "tests/test_converters.py",
+      "tests/test_setattr.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "09161fc9181bf94aa3bbc5509c663d736a9553dc",
+    "parent": "689a0e64012d1e576ebd99e786a254bc537582c6",
+    "subject": "Fix crash when __pre_init__, kw_only, and defaults come together (#1319)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f7e4e910737e864627ddae4a7b10d8e507dd21f6",
+    "parent": "42c954869d2b5ac526d25ba3d57412ce1f81f92f",
+    "subject": "docs: fix typo",
+    "source_files": [
+      "src/attr/filters.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "b78abadbbff85fdf16d31f6a98abaddc1e73627c",
+    "parent": "a365cdc5fe17cb8147042e3c554f4b920f4bbd9c",
+    "subject": "docs: add glossary entries for field & attribute",
+    "source_files": [
+      "src/attr/_funcs.py",
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "829c2ff15abfce6daa8f7a8dad39323dc0183816",
+    "parent": "7c9b31ea7b5565f2ef4a582999dfa6afd7e0f16b",
+    "subject": "docs: improve RTD",
+    "source_files": [
+      "docs/conf.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "e1b2c9491bd7d73e6049d8ad54828cc785577103",
+    "parent": "b393d79aafbf4ee58740f19dd4ad28ed29f3205c",
+    "subject": "refactor: Only loop once on \"cached_properties\" when building slotted classes (#1290)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "deb97638a7d01b58319c9c2279a201830cd45671",
+    "parent": "9b9a69140dbeac2f6f032f5912198d9111bd44a3",
+    "subject": "Refactor setters determination into function",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f9ff9135b472c78a7333d6272c62b92217897464",
+    "parent": "b9084fab02c009a593b604562a69f36a5915c8e5",
+    "subject": "Fix test_ne in test_cmp.py for Python 3.13 (#1255)",
+    "source_files": [
+      "src/attr/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_cmp.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "5f1d588a66535dacb2c03a9ddc1f4f0ee3b1c2ee",
+    "parent": "67e4ff273aeae7c322e58c07e41523cf177f475a",
+    "subject": "doc: invert sentence on setattr logic in NG",
+    "source_files": [
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "0bf0678a224dc89f150eb55861700864bec85cf6",
+    "parent": "a37b556f7d762b7a6229b1fbf985965539571cd2",
+    "subject": "Fix TypeError for `asdict(<class with namedtuple>, retain_collection_types=True)` (#1165)",
+    "source_files": [
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/test_funcs.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "c9150d278ced32056d73c239ff64034e5056bcb6",
+    "parent": "882805e173ba970f381ed8f162b650eb7fbc1160",
+    "subject": "Fix backward compatibility with pickles before v22.2.0 (#1085)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "a71fbbad8950e127ebe4509b4ff0d730fb02a8b2",
+    "parent": "c6668fa419d096d4ba52047f8d10d510da4d1712",
+    "subject": "Fix @frozen exceptions to allow __traceback__ to be set. (#1081)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_next_gen.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "a8191556c0aad84125d2c3435c5a2352b2f8a9ba",
+    "parent": "983c2c42935ccfc2fce77d6f20dac7821bc720e8",
+    "subject": "Speedup `_setattr` usage and fix slight performance regressions (#991)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_functional.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "fe9432ddf733c736f200b39a8b009bfef4795334",
+    "parent": "8f9558d93dc3904f77b27b6d5d5b2a5345f9f128",
+    "subject": "docs: Add missing on_setattr type to attr.s",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "947bfb542104209a587280701d8cb389c813459d",
+    "parent": "976b8287703d781590d457dffc8b581a244b09d5",
+    "subject": "Fix hashing for custom `eq` objects (#909)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "7cfa3b68c581c6a0f924933eacf7781d61bbf3b2",
+    "parent": "19dd02314e85bc707e47e0a71777514d69e00104",
+    "subject": "Fix typos (#899)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py",
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f31bb2850a520993396ebdae598056fb3e3af6f8",
+    "parent": "7c99a4953085186790a28dd441a93dc665f61269",
+    "subject": "Fix bug in resolve_types with subclasses (#843)",
+    "source_files": [
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/test_annotations.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "d0cff8face92478c950ba05a7d9403b1e342407a",
+    "parent": "685f865d50eca222b4c0326e5aabe3b54cb2c0b3",
+    "subject": "docs: more explicit about Factory caveats (#791)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "3147e8460384fd14b1cabc41c26db4ab8849a515",
+    "parent": "ce8bb4ffa9d4b4c3cc034e497be6809840c2a53a",
+    "subject": "docs: fix double negative (#776)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "ce8bb4ffa9d4b4c3cc034e497be6809840c2a53a",
+    "parent": "ad59a62cae7f1f5355fb121d77eda5d5d1aa0cbd",
+    "subject": "Add attribs to resolve_types and fix test_hooks (#774)",
+    "source_files": [
+      "conftest.py",
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/test_hooks.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "fc26dcace17b62f741550fc57c50e54b129ce8fa",
+    "parent": "58d2adce57f2c4e447eb12b892ebbb09cccbdcc3",
+    "subject": "Fix make_class for dynamic generic classes (#770)",
+    "source_files": [
+      "src/attr/_compat.py",
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "1499c77e79315ef8c5c98c088dc3ef99bdba72b4",
+    "parent": "78335e9b49eff2eaf2dc31d0bcc3caa0169cfc60",
+    "subject": "Fix issue with get_type_hints(cls.__init__) and refactor (#760)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_annotations.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "78335e9b49eff2eaf2dc31d0bcc3caa0169cfc60",
+    "parent": "c2712fd102ddfb7df6df333f421c3b21c18e4b37",
+    "subject": "doc: fix typo in default_if_none doc (#762)",
+    "source_files": [
+      "src/attr/converters.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "9de675f4b4289b218913bd642c1c59ac376df34f",
+    "parent": "72f94a3b03d5c2f8211f499c1c3fc72413d3fd4e",
+    "subject": "Fix: TypeError when using properties, super(), and slots=True (#652) (#747)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "1f627dd3d53e04be96a2f26d7f9f1cdde34953c4",
+    "parent": "e09b1d642339d7d94ba58d7855da40e65ed1a88f",
+    "subject": "Fixed slots inheritance (#718)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "f2dabeae82c75abe174aafc7a726481ded929872",
+    "parent": "6b4a1f1ce65162afe54e7101b263859bf8b2177e",
+    "subject": "Fix exception chaining on PyPy (#712)",
+    "source_files": [
+      "src/attr/_compat.py",
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_next_gen.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "4cfd52db5141cb82b218ab9d881bbb631fa10b4e",
+    "parent": "d02b76de16fbb011004e16106e63ac1896018e6c",
+    "subject": "Fix auto_attrib=None behavior when maybe_cls=None (#675)",
+    "source_files": [
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [
+      "tests/test_next_gen.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "358c85e74c5e9c73a222268cb34c914c52135497",
+    "parent": "1a29941d5cf74ca585780495cb6c17fd013ec861",
+    "subject": "Fix auto-detection of eq/ne in NG APIs (#671)",
+    "source_files": [
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [
+      "tests/test_next_gen.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "07810aec7b98198944a98d26fe7e809dbcfb0068",
+    "parent": "4bd682709134155ec79c5077a748a8bd3ade39d9",
+    "subject": "Fix issue 589 (#590)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "609b10e84f5fb87d1f20300fb0368961da8f70d0",
+    "parent": "9e14962988654df62cae9f991b4efd6271a4f8f0",
+    "subject": "Refactor docs and switch to RTD theme",
+    "source_files": [
+      "docs/conf.py",
+      "setup.py",
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "9b5e988ccc36d906b5c1ef6681ba7242f758fe2f",
+    "parent": "ac541fbe556eb8c085a9cea26616f0ebad6ef632",
+    "subject": "Fixed frozen and cache_hash incompatibility (#612)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "e2b02ec39e9bbbdfca3b1282aba3b3c4f5df1b5e",
+    "parent": "3432df571117386cd7f58db3222ed1dd7fa35d7b",
+    "subject": "Fix default values that are not comparable with '==' (#586)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_annotations.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "957b1982d0d635e6e367bced0088ecc25fa4bc14",
+    "parent": "4fe28966e88b9b85c9c2df77ffb34f70175c4492",
+    "subject": "Fix validators __all__ (#517)",
+    "source_files": [
+      "src/attr/validators.py"
+    ],
+    "test_files": [
+      "tests/test_validators.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "9e1f1360a8c16a84911200e09289b08fa300fe6e",
+    "parent": "bc0b437e58cf5a9c60143909c93cb0d727b15300",
+    "subject": "Add __module__ and __qualname__ to methods, fix __name__ (#316)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "5ed8c4a0155173aa494a0755861dd94a57196a33",
+    "parent": "2c20c0f199bc3d4b52bf478e00417ea41111f30a",
+    "subject": "Fix MRO traversal with multiple inheritance (#304)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "9d441d70abff79d8ecb7d608581acca15032141c",
+    "parent": "cd8890c744c8d78b6e75fbd1d492237d2a6a7e73",
+    "subject": "Fix __repr__ crashing when a member is uninitialized or deleted (#308)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dunders.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "c1adf5cfc666a89084594b82942fd67e4ae24c3e",
+    "parent": "1bb8fbd5ef0ba82265cb993444fe2838477cba4f",
+    "subject": "Fix pickling for instances of classes created using make_class() (#282)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dark_magic.py",
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "a6cf2d5637b60f0c6d6cb0f907a785575515e5ba",
+    "parent": "f8dab9b7ac9306169aee2b740c2e42c96b51c228",
+    "subject": "Fix unbound __str__ on Python 2 when slots=True (#199)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dunders.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "82ea73cb475ba548d44f413c9e14617fc4dd77c5",
+    "parent": "616f24491d89074e048381103aef7d2ef3904050",
+    "subject": "Compatibility fixes. (#193)",
+    "source_files": [
+      "src/attr/_make.py",
+      "src/attr/validators.py"
+    ],
+    "test_files": [
+      "tests/test_dark_magic.py",
+      "tests/test_validators.py",
+      "tests/utils.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "b79a49e9a4d619f33b9025ee93d27d3d0141263e",
+    "parent": "beca34403413ded4879362e08fa96f69902df283",
+    "subject": "Fix evolve (cont) (#182)",
+    "source_files": [
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/test_funcs.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "97a02470e8486fc043e4deab2f5bb5e4f4d056c5",
+    "parent": "37d38c4dc3f6235992698ac5caaf0565517a3125",
+    "subject": "Fix inheritence of frozen-ness",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dark_magic.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "1481227583f2cf1566dc2836d3861ffe092b8e33",
+    "parent": "cfb7a319a95a9e0bbdb0865a0bf5f507dbfbd4b1",
+    "subject": "Fix post init hook not being called if validators are disabled (#129) (#130)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "e59c360ee292f583cec77516a61d151d3d4cb182",
+    "parent": "dd36808a5a90b3c1d65c4c3c76cb065192d77019",
+    "subject": "Fix pickle support for __slots__ classes",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dark_magic.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "a624035cec86a85a925ee4738b05748f2598035e",
+    "parent": "60017ee06f145130cab3e3df65588f028d16a1f1",
+    "subject": "Fix converters on frozen classes",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "c6fbec9637032114a7c9223b6d676eb3ac7add5d",
+    "parent": "dd4140ebcdb3944a8f7237b88ac845beb3b84d09",
+    "subject": "Optionally retain collection types (fixes #69)",
+    "source_files": [
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/test_funcs.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "17a48c3bc300aaae6e2191e39c130147f74eb85b",
+    "parent": "cd80208187226caea58aafe6c8fbc5f43827f23c",
+    "subject": "Fix comments.",
+    "source_files": [
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [
+      "tests/__init__.py",
+      "tests/test_funcs.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "4b94e0314cd9a0d53dd2ad1cf664d83c5cba8e7f",
+    "parent": "2da44740ce5304f48940c9787d0d4338bec5b21b",
+    "subject": "Fix _Nothing class' __eq__",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_dunders.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "7decc0cdf60e2e0b6a79717f20a1f6d8cdfa05f5",
+    "parent": "dbaba50e68b238fbb3eec267f615fdf5551923fd",
+    "subject": "DOC: add a note on why we don't use inspect.",
+    "source_files": [
+      "src/attr/_compat.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  },
+  {
+    "repo": "attrs",
+    "sha": "1d21609c1444edfe8f6365190c3f7ba7cb2dfb37",
+    "parent": "bef877320db8868ec6c005224badd5c4aa2b2f6f",
+    "subject": "Fix reprs.",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py",
+      "tests/test_slots.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "2e7b7506966fa7fd1ca5b5ec71feb14b28a9be83",
+    "parent": "20357d4368dfe471010e8aa9a0ab7ff6781c53ef",
+    "subject": "convert before validate, also fix two-space thing",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "e245f3d3df7113a4e35d238475d371bed8e22c53",
+    "parent": "82de57793276a229916f820178f0498e92fcbad0",
+    "subject": "Fix multi-level inheritance",
+    "source_files": [
+      "attr/_make.py"
+    ],
+    "test_files": [
+      "tests/test_make.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "3051fbfcd377ee2e2f02d6ecdc61963fb4f84252",
+    "parent": "708533239d211a94a3f1dd86cc181af6263a67b7",
+    "subject": "Minor fixes",
+    "source_files": [
+      "attr/validators.py"
+    ],
+    "test_files": [
+      "tests/test_validators.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "788ade3bcfeb64c486d6c49722b941b34d90eeb2",
+    "parent": "0149b538ab2915a59db371b68de50e051e20c55f",
+    "subject": "Fix flake8",
+    "source_files": [
+      "attr/_compat.py"
+    ],
+    "test_files": [
+      "tests/test_dunders.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "0149b538ab2915a59db371b68de50e051e20c55f",
+    "parent": "abb9c95232e613297ceb26558b3d691132fca08c",
+    "subject": "Fix tests on Python 2.6",
+    "source_files": [
+      "setup.py"
+    ],
+    "test_files": [
+      "tests/test_dunders.py"
+    ],
+    "kind": "bug"
+  },
+  {
+    "repo": "attrs",
+    "sha": "4a9eb1859890d44fab416ac5d1d9ac2b0676dd71",
+    "parent": "27e2f4e5c049231045f71732363b7ada90b87f62",
+    "subject": "Rename type_ to type in instance_of validator",
+    "source_files": [
+      "attr/validators.py"
+    ],
+    "test_files": [],
+    "kind": "clean"
+  }
+]
