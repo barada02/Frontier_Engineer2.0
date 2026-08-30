@@ -1,0 +1,103 @@
+solver=agent-exec  model=gemini-3.7-flash  cases=21
+
+[ 1/21] click-07c909f2                 bug   VERIFIED  verified  fails buggy, passes fixed runs=3
+  [llm] APIConnectionError — retry in 1.3s
+  [llm] APITimeoutError — retry in 1.8s
+[ 2/21] more-itertools-d992be0d        bug   miss      none      missed the bug runs=6
+[ 3/21] attrs-97f8d175                 bug   miss      none      missed the bug runs=12
+  [llm] APITimeoutError — retry in 1.2s
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 711, in create
+    return _speakeasy_parse_response(http_res)
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 489, in _speakeasy_parse_response
+    raise errors.CreateInteractionClientError(
+        response_data, http_res, http_res_text
+    )
+google.genai._gaos.errors.createinteraction.CreateInteractionClientError: Request contains an invalid argument.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\run_eval.py", line 65, in main
+    verdict, stats = solver.solve(case, wt, diff)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\agent_solver.py", line 137, in solve
+    result = agent.run(TASK.format(diff=diff, contract=OUTPUT_CONTRACT),
+                       run_id=f"{self.name}_{case['case_id']}")
+google.genai._gaos.lib.compat_errors.BadRequestError: Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}
+[ 4/21] click-bec59289                 bug   miss      none      harness error: BadRequestError: Er
+[ 5/21] more-itertools-f51a53bf        bug   VERIFIED  verified  fails buggy, passes fixed runs=2
+[ 6/21] attrs-af9c5109                 bug   VERIFIED  verified  fails buggy, passes fixed runs=1
+  [llm] APITimeoutError — retry in 1.1s
+  [llm] APIConnectionError — retry in 2.0s
+[ 7/21] click-762c97ee                 bug   VERIFIED  verified  fails buggy, passes fixed runs=4
+[ 8/21] more-itertools-edb3346f        bug   VERIFIED  verified  fails buggy, passes fixed runs=1
+[ 9/21] attrs-ce89f5d1                 bug   VERIFIED  verified  fails buggy, passes fixed runs=3
+  [llm] APITimeoutError — retry in 1.9s
+  [llm] APIConnectionError — retry in 1.4s
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 711, in create
+    return _speakeasy_parse_response(http_res)
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 489, in _speakeasy_parse_response
+    raise errors.CreateInteractionClientError(
+        response_data, http_res, http_res_text
+    )
+google.genai._gaos.errors.createinteraction.CreateInteractionClientError: Request contains an invalid argument.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\run_eval.py", line 65, in main
+    verdict, stats = solver.solve(case, wt, diff)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\agent_solver.py", line 137, in solve
+    result = agent.run(TASK.format(diff=diff, contract=OUTPUT_CONTRACT),
+                       run_id=f"{self.name}_{case['case_id']}")
+google.genai._gaos.lib.compat_errors.BadRequestError: Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}
+[10/21] attrs-000c5634                 bug   miss      none      harness error: BadRequestError: Er
+  [llm] APITimeoutError — retry in 1.6s
+[11/21] click-82f377c5                 bug   VERIFIED  verified  fails buggy, passes fixed runs=4
+  [llm] APIConnectionError — retry in 1.6s
+[12/21] more-itertools-be5793a5        bug   VERIFIED  verified  fails buggy, passes fixed runs=4
+[13/21] attrs-937b1e23                 bug   VERIFIED  verified  fails buggy, passes fixed runs=2
+[14/21] click-b7e5fd4c                 bug   VERIFIED  verified  fails buggy, passes fixed runs=11
+[15/21] more-itertools-06f31819        bug   VERIFIED  verified  fails buggy, passes fixed runs=2
+  [llm] APIConnectionError — retry in 1.3s
+[16/21] click-8f300853-clean           clean quiet
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 711, in create
+    return _speakeasy_parse_response(http_res)
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\.venv\Lib\site-packages\google\genai\_gaos\interactions.py", line 489, in _speakeasy_parse_response
+    raise errors.CreateInteractionClientError(
+        response_data, http_res, http_res_text
+    )
+google.genai._gaos.errors.createinteraction.CreateInteractionClientError: Request contains an invalid argument.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\run_eval.py", line 65, in main
+    verdict, stats = solver.solve(case, wt, diff)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\agent_solver.py", line 137, in solve
+    result = agent.run(TASK.format(diff=diff, contract=OUTPUT_CONTRACT),
+                       run_id=f"{self.name}_{case['case_id']}")
+google.genai._gaos.lib.compat_errors.BadRequestError: Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}
+[17/21] more-itertools-6294fa61-clean  clean quiet
+[18/21] attrs-b1dc8f67-clean           clean quiet
+  [llm] APIConnectionError — retry in 1.2s
+[19/21] click-d5da6358-clean           clean quiet
+  [llm] APITimeoutError — retry in 1.6s
+  [llm] APIConnectionError — retry in 1.2s
+[20/21] more-itertools-3f43b98e-clean  clean quiet
+[21/21] attrs-c5baf90d-clean           clean quiet
+
+=== agent-exec ===
+  verified detection    73.3%   (15 bug cases)   <- primary
+  claimed detection     73.3%   (unproven claims included)
+  localization          73.3%
+  false alarm            0.0%   (6 clean controls)
+  cost / case          $0.1045
+  seconds / case       72.2
+
+saved -> C:\Users\barad\Desktop\projects\Frontier_Engineer2.0\eval\results\agent-exec.json

@@ -41,6 +41,8 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--limit", type=int, default=0, help="0 = all cases")
     ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--max-steps", type=int, default=0,
+                    help="override the agent step ceiling (0 = config default)")
     args = ap.parse_args()
 
     cases = json.loads(args.cases.read_text())
@@ -51,6 +53,8 @@ def main() -> None:
         cases = bugs + cleans
 
     cfg = Config(cache_enabled=not args.no_cache)
+    if args.max_steps:
+        cfg.max_steps = args.max_steps
     solver = SOLVERS[args.solver](cfg)
     out = args.out or ROOT / f"eval/results/{args.solver}.json"
 
@@ -73,6 +77,10 @@ def main() -> None:
         score.cost_usd = stats["cost_usd"]
         score.seconds = stats["seconds"]
         score.steps = stats["steps"]
+        if stats.get("stopped_because") == "max_steps_exceeded":
+            # Ran out of budget mid-investigation. Recorded distinctly so it is
+            # never read as the agent having concluded the code was clean.
+            score.note = "EXHAUSTED: " + score.note
         scores.append(score)
 
         if case["kind"] == "bug":

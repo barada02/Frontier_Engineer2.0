@@ -149,5 +149,6 @@ class AgentSolver:
             "cost_usd": result.stats.cost_usd,
             "steps": result.stats.steps,
             "proof_runs": holder.get("runs", 0),
+            "stopped_because": result.stopped_because,
             "trajectory": str(result.trajectory.path),
         }
