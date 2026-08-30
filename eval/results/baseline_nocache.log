@@ -19,3 +19,7 @@ solver=baseline  model=gemini-3.7-flash  cases=21
 [14/21] click-b7e5fd4c                 bug   VERIFIED  verified  fails buggy, passes fixed
 [15/21] more-itertools-06f31819        bug   VERIFIED  verified  fails buggy, passes fixed
   [llm] APIConnectionError — retry in 1.2s
+[16/21] click-8f300853-clean           clean quiet
+[17/21] more-itertools-6294fa61-clean  clean quiet
+[18/21] attrs-b1dc8f67-clean           clean quiet
+[19/21] click-d5da6358-clean           clean quiet
