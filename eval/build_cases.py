@@ -202,6 +202,8 @@ def main() -> None:
     ap.add_argument("--want-clean", type=int, default=5)
     ap.add_argument("--attempts", type=int, default=60)
     ap.add_argument("--timeout", type=int, default=180)
+    ap.add_argument("--reuse-bugs", action="store_true",
+                    help="keep already-verified bug cases from --out and only redo controls")
     args = ap.parse_args()
 
     cands = json.loads(args.candidates.read_text())
@@ -210,6 +212,10 @@ def main() -> None:
 
     verified: list[Case] = []
     tried = 0
+    if args.reuse_bugs and args.out.exists():
+        prior = json.loads(args.out.read_text())
+        verified = [Case(**c) for c in prior if c["kind"] == "bug"]
+        print(f"reusing {len(verified)} previously verified bug cases\n")
     for c in bugs:
         if len(verified) >= args.want or tried >= args.attempts:
             break

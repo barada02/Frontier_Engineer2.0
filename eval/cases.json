@@ -241,54 +241,70 @@
     "fixed_summary": "564 passed in 5.11s"
   },
   {
-    "case_id": "click-2fdde683-clean",
+    "case_id": "click-8f300853-clean",
     "repo": "click",
     "kind": "clean",
-    "sha": "2fdde68324c386bd967b00ce422daa357432f7cd",
-    "parent": "cf1d891909fa19d40e7c60642b07a0f973a86320",
-    "subject": "Cleanup #3126",
-    "source_files": [
-      "src/click/shell_completion.py"
-    ],
-    "test_files": [],
-    "buggy_summary": "",
-    "fixed_summary": "0 pre-existing failures, 0 introduced"
-  },
-  {
-    "case_id": "more-itertools-6d43b184-clean",
-    "repo": "more-itertools",
-    "kind": "clean",
-    "sha": "6d43b18491d6ae0388b5dfb7b0fad860f65fe745",
-    "parent": "63039f708e73ca46cc1dfbfa109e4ead84d1000a",
-    "subject": "Docs changes for 11.0.0",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "buggy_summary": "",
-    "fixed_summary": "0 pre-existing failures, 0 introduced"
-  },
-  {
-    "case_id": "click-8386598a-clean",
-    "repo": "click",
-    "kind": "clean",
-    "sha": "8386598a77d5aa05c5239e8525b7b34eb75b4d57",
-    "parent": "2fbc8b1ea993c4d5549bcebe94a437d7a6a56b6f",
-    "subject": "Typo",
+    "sha": "8f300853dc5f33120d9872ea0e4c9e00318446b1",
+    "parent": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+    "subject": "Streamline option flag management",
     "source_files": [
       "src/click/core.py"
     ],
     "test_files": [],
     "buggy_summary": "",
-    "fixed_summary": "1 pre-existing failures, 0 introduced"
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
   },
   {
-    "case_id": "more-itertools-b290c272-clean",
+    "case_id": "more-itertools-6294fa61-clean",
     "repo": "more-itertools",
     "kind": "clean",
-    "sha": "b290c272d9a238a2d942d83ece4d68180172db3e",
-    "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
-    "subject": "docs: add cross-references between groupby_transform, bucket, and map_reduce",
+    "sha": "6294fa6186399adfb8fcc5d7f597dfad0f78e814",
+    "parent": "1bf1273ad54d41a2d1cc4524058ef81e6fcdd7ed",
+    "subject": "Move running statistics to recipes",
+    "source_files": [
+      "more_itertools/more.py",
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "attrs-b1dc8f67-clean",
+    "repo": "attrs",
+    "kind": "clean",
+    "sha": "b1dc8f673579137e14e44afdf0e40e4b4f1b9e3c",
+    "parent": "c53a61190cefa92960ec15e79124b6c7eb3fe742",
+    "subject": "Split out Mypy-dependent typing examples, add more type checkers (#1474)",
+    "source_files": [
+      "typing-examples/baseline_examples.py",
+      "typing-examples/mypy_examples.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "4 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "click-d5da6358-clean",
+    "repo": "click",
+    "kind": "clean",
+    "sha": "d5da63588cdef9bf16596d40ea39d1e69954e4f5",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Add type annotations for instance attributes in `click.core`",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "buggy_summary": "",
+    "fixed_summary": "0 pre-existing failures, 0 introduced"
+  },
+  {
+    "case_id": "more-itertools-3f43b98e-clean",
+    "repo": "more-itertools",
+    "kind": "clean",
+    "sha": "3f43b98e8704e09206ed791e934a2e6f850e0803",
+    "parent": "303725224c750d10f35ba63b09f0301822af731b",
+    "subject": "Simpler faster `ichunked`",
     "source_files": [
       "more_itertools/more.py"
     ],
@@ -297,31 +313,17 @@
     "fixed_summary": "0 pre-existing failures, 0 introduced"
   },
   {
-    "case_id": "click-50bfe239-clean",
-    "repo": "click",
+    "case_id": "attrs-c5baf90d-clean",
+    "repo": "attrs",
     "kind": "clean",
-    "sha": "50bfe239e327d0d91c460226fb87489c8a9d6e50",
-    "parent": "e26d89d96abc43cf5b8613f0a239a3131e7a6bb8",
-    "subject": "Cleanup handling files documentation.",
+    "sha": "c5baf90dbc3fdb23628ad59e92986c01bae57f4f",
+    "parent": "97f8d175656bc03c373a1c9038048a4d312c307c",
+    "subject": "Add typing examples for Pyrefly's new attrs support (#1588)",
     "source_files": [
-      "src/click/types.py"
+      "typing-examples/pyrefly.py"
     ],
     "test_files": [],
     "buggy_summary": "",
-    "fixed_summary": "2 pre-existing failures, 0 introduced"
-  },
-  {
-    "case_id": "more-itertools-8e590cba-clean",
-    "repo": "more-itertools",
-    "kind": "clean",
-    "sha": "8e590cba5dbaa811071d5c3c9b1b2cd45837b4d7",
-    "parent": "53091c9d226269423a36c687287421742b7bedd3",
-    "subject": "docs: Fix invisible REPL output in HTML dark mode",
-    "source_files": [
-      "docs/conf.py"
-    ],
-    "test_files": [],
-    "buggy_summary": "",
-    "fixed_summary": "0 pre-existing failures, 0 introduced"
+    "fixed_summary": "4 pre-existing failures, 0 introduced"
   }
 ]

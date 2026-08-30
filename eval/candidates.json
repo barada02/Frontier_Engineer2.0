@@ -10,7 +10,8 @@
     "test_files": [
       "tests/test_utils/test_style.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -23,7 +24,8 @@
     "test_files": [
       "tests/test_basic.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -36,7 +38,8 @@
     "test_files": [
       "tests/test_basic.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -50,7 +53,8 @@
       "tests/test_stream_lifecycle.py",
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -64,7 +68,8 @@
       "tests/test_commands.py",
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -77,7 +82,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -90,7 +96,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -104,7 +111,8 @@
       "tests/test_defaults.py",
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -117,7 +125,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -130,18 +139,8 @@
     "test_files": [
       "tests/test_formatting.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "2fdde68324c386bd967b00ce422daa357432f7cd",
-    "parent": "cf1d891909fa19d40e7c60642b07a0f973a86320",
-    "subject": "Cleanup #3126",
-    "source_files": [
-      "src/click/shell_completion.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -154,7 +153,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -167,7 +167,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -180,7 +181,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -193,7 +195,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -206,7 +209,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -219,7 +223,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -233,7 +238,8 @@
       "tests/test_defaults.py",
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -246,7 +252,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -259,7 +266,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -272,18 +280,8 @@
     "test_files": [
       "tests/test_defaults.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "8386598a77d5aa05c5239e8525b7b34eb75b4d57",
-    "parent": "2fbc8b1ea993c4d5549bcebe94a437d7a6a56b6f",
-    "subject": "Typo",
-    "source_files": [
-      "src/click/core.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -296,7 +294,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -309,7 +308,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -322,7 +322,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -335,7 +336,8 @@
     "test_files": [
       "tests/test_chain.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -348,7 +350,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -361,7 +364,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -374,18 +378,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "50bfe239e327d0d91c460226fb87489c8a9d6e50",
-    "parent": "e26d89d96abc43cf5b8613f0a239a3131e7a6bb8",
-    "subject": "Cleanup handling files documentation.",
-    "source_files": [
-      "src/click/types.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -398,7 +392,8 @@
     "test_files": [
       "tests/test_context.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -411,7 +406,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -424,7 +420,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -437,7 +434,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -450,19 +448,8 @@
     "test_files": [
       "tests/typing/typing_group_kw_options.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "77838f86fa647ca82f53a88d6495dfc009b24c41",
-    "parent": "8473b3ced140296b9dd869957e0026eebd94634b",
-    "subject": "Docs: add references for varargs and kwargs (#2281)",
-    "source_files": [
-      "src/click/core.py",
-      "src/click/decorators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -475,7 +462,8 @@
     "test_files": [
       "tests/test_shell_completion.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -488,18 +476,8 @@
     "test_files": [
       "tests/test_info_dict.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "dfae0a101190258677261f534249f6d6c862894a",
-    "parent": "445428e3ebdc44b274e4908848269f75df8718e8",
-    "subject": "refactor try/except",
-    "source_files": [
-      "src/click/decorators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -512,7 +490,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -525,7 +504,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -538,7 +518,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -551,7 +532,8 @@
     "test_files": [
       "tests/test_testing.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -564,7 +546,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -577,7 +560,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -591,7 +575,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -604,7 +589,8 @@
     "test_files": [
       "tests/test_formatting.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -617,40 +603,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "a077ed70475e3f68d09e50f511268588378b7fa8",
-    "parent": "77ca5206bc420cb9660b312c7b1b960e5a8cdae1",
-    "subject": "refactor other decorators to match version_option",
-    "source_files": [
-      "src/click/decorators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "81ff0aea6c814c7fad7ed4e7c76098a97d6a0fbe",
-    "parent": "cb37854c9b43d9fd3c99a3a830f4580517c1b32e",
-    "subject": "refactor version_option",
-    "source_files": [
-      "src/click/decorators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "347b45be001ccdc16b1df0165eddebc1761fc25f",
-    "parent": "792f03f13e04d0f583c1d74104fbe1ea3e10d26c",
-    "subject": "refactor completion command splitting",
-    "source_files": [
-      "click/_bashcomplete.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -664,7 +618,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -678,7 +633,8 @@
       "tests/test_arguments.py",
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -691,7 +647,8 @@
     "test_files": [
       "tests/test_context.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -705,7 +662,8 @@
     "test_files": [
       "tests/test_bashcomplete.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -718,7 +676,8 @@
     "test_files": [
       "tests/test_testing.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -731,7 +690,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -744,7 +704,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -758,18 +719,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "a02cbb773670e52895c72e993c830b192cc1f10a",
-    "parent": "54fec6869037f90b35f2ecad3edf56024cb44d70",
-    "subject": "Cleanup get_choices() to leverage early returns.",
-    "source_files": [
-      "click/_bashcomplete.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -782,7 +733,8 @@
     "test_files": [
       "tests/test_bashcomplete.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -795,7 +747,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -808,7 +761,8 @@
     "test_files": [
       "tests/test_bashcomplete.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -821,7 +775,8 @@
     "test_files": [
       "tests/test_bashcomplete.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -834,7 +789,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -847,7 +803,8 @@
     "test_files": [
       "tests/test_testing.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -860,7 +817,8 @@
     "test_files": [
       "tests/test_bashcomplete.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -873,7 +831,8 @@
     "test_files": [
       "tests/test_arguments.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -887,7 +846,8 @@
     "test_files": [
       "tests/test_termui.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -903,7 +863,8 @@
       "tests/test_testing.py",
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -916,7 +877,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -929,7 +891,8 @@
     "test_files": [
       "tests/test_context.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -942,7 +905,8 @@
     "test_files": [
       "tests/test_context.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -955,7 +919,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -968,7 +933,8 @@
     "test_files": [
       "tests/test_arguments.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -981,18 +947,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "d495fbc154336f43ce58924b441f2fe63e771115",
-    "parent": "1de2e21788e3738dc4067030676ff04b2f48bb2b",
-    "subject": "Typo in Tuple",
-    "source_files": [
-      "click/types.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1005,7 +961,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1018,7 +975,8 @@
     "test_files": [
       "tests/test_testing.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1031,20 +989,8 @@
     "test_files": [
       "tests/test_formatting.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "64f57fea3a2d82b590e93fe29cb85c87be08a8a4",
-    "parent": "46b22d09cddf277130bdb080361aec1768de2c65",
-    "subject": "Refactor missing parameter handling.",
-    "source_files": [
-      "click/__init__.py",
-      "click/core.py",
-      "click/exceptions.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1057,7 +1003,8 @@
     "test_files": [
       "tests/test_compat.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1071,7 +1018,8 @@
       "tests/test_arguments.py",
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1084,7 +1032,8 @@
     "test_files": [
       "tests/test_formatting.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1098,7 +1047,8 @@
       "tests/test_chain.py",
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1111,7 +1061,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1124,7 +1075,8 @@
     "test_files": [
       "tests/test_utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1137,7 +1089,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1150,7 +1103,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1163,7 +1117,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1177,19 +1132,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "cb88b405aed370b8f8924be3709c5138c57f9b30",
-    "parent": "f0b559f096c000dd3f081f663272f24f9096b968",
-    "subject": "Docs: several fixes",
-    "source_files": [
-      "click/core.py",
-      "click/termui.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1202,62 +1146,8 @@
     "test_files": [
       "tests/test_arguments.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "9ca28175ce4829ace538048b78888f59ad303434",
-    "parent": "bf94cbb1f4040908858ff54337d9721f720c2cfa",
-    "subject": "Docs: fixed mention to default extension",
-    "source_files": [
-      "click/termui.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "bf94cbb1f4040908858ff54337d9721f720c2cfa",
-    "parent": "c7299c431933db47c9fab6771e34a9dd46a09415",
-    "subject": "Docs: fixes",
-    "source_files": [
-      "click/core.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "7af94e896cd186daf56835d351bd7c2e61ebae76",
-    "parent": "7d4bbfd35237ba915f777933e13a3c068fc790e9",
-    "subject": "Docs: minor fixes",
-    "source_files": [
-      "click/utils.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "7d4bbfd35237ba915f777933e13a3c068fc790e9",
-    "parent": "c5d53f831edf3bfd6974a70e6bacd9be37425267",
-    "subject": "Docs: progressbar fixes",
-    "source_files": [
-      "click/termui.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "click",
-    "sha": "61db52c7114a2b3af35f63ccf81340a42beff4db",
-    "parent": "0b27ddf43fb198f3a1fae8dfb19c9e00e8cd58b7",
-    "subject": "Docs: minor fixes to atomic type support",
-    "source_files": [
-      "click/types.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1270,18 +1160,8 @@
     "test_files": [
       "tests/test_arguments.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "a218f6cc0e4c8d0e8dddea2c8c3c1353cfc39181",
-    "parent": "a5a047127e1a19f8fc429e15e8fb95cc2c5c19a2",
-    "subject": "Docs: fixes",
-    "source_files": [
-      "click/types.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1294,7 +1174,8 @@
     "test_files": [
       "tests/test_basic.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1308,19 +1189,8 @@
     "test_files": [
       "tests/test_options.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "9659523177b4c68df46e6b1f062587407717341b",
-    "parent": "aed87f04bde1e1c2c6dca0736ebfd7f628c64e01",
-    "subject": "Docs: docstring fixes",
-    "source_files": [
-      "click/core.py",
-      "click/decorators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1333,18 +1203,8 @@
     "test_files": [
       "tests/test_arguments.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "ea5edae20706d9f3d652658d2d01f426c96aeca0",
-    "parent": "48f3e9160f4199cb428eae1b7b7c04176dd7cd99",
-    "subject": "Docs: minor fixes",
-    "source_files": [
-      "click/types.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1357,7 +1217,8 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1370,7 +1231,8 @@
     "test_files": [
       "tests/test_formatting.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1385,18 +1247,8 @@
       "tests/conftest.py",
       "tests/test_commands.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "click",
-    "sha": "2a2c4f4a9ec31c21954db8f4df01c02245fe2a49",
-    "parent": "5d85db9fb705563a42f34bb01616593c5537f0b0",
-    "subject": "Docs: fixes",
-    "source_files": [
-      "click/formatting.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "click",
@@ -1410,7 +1262,327 @@
     "test_files": [
       "tests/test_commands.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
+  },
+  {
+    "repo": "click",
+    "sha": "8f300853dc5f33120d9872ea0e4c9e00318446b1",
+    "parent": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+    "subject": "Streamline option flag management",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 248
+  },
+  {
+    "repo": "click",
+    "sha": "d5da63588cdef9bf16596d40ea39d1e69954e4f5",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Add type annotations for instance attributes in `click.core`",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 154
+  },
+  {
+    "repo": "click",
+    "sha": "9835b0f7612d1b1ea180a975fd6d24cf16791ba8",
+    "parent": "f36d58bbd7f188178de2d4fe1d0292c510375ca7",
+    "subject": "Resolve the pager command once, in `_pager_contextmanager`",
+    "source_files": [
+      "src/click/_termui_impl.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 93
+  },
+  {
+    "repo": "click",
+    "sha": "ddede2147c9370ab8275f81db4826b6895d2e7dc",
+    "parent": "d2e4a42ff410d92e88293f3552422a4a284c749b",
+    "subject": "`Parameter` typing improvements (#2805)",
+    "source_files": [
+      "src/click/core.py",
+      "src/click/exceptions.py",
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 77
+  },
+  {
+    "repo": "click",
+    "sha": "d2e4a42ff410d92e88293f3552422a4a284c749b",
+    "parent": "25edc1e31360efba4f64c8c3c540bbbcfb7876da",
+    "subject": "Extract `_guess_type` from `convert_type` and add overloads (#3372)",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 71
+  },
+  {
+    "repo": "click",
+    "sha": "e39679ab8d0cf0a8ce203a881c5ae7f44fadaebc",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Add type annotations for instance attributes in `testing`",
+    "source_files": [
+      "src/click/testing.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 56
+  },
+  {
+    "repo": "click",
+    "sha": "c040135a74180d65c97c66614f234ea89c337ceb",
+    "parent": "0039359443e73ab1034c63a1f6d58aba22c0ebc8",
+    "subject": "Deduplicate deprecated label translation",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 51
+  },
+  {
+    "repo": "click",
+    "sha": "bb0cd175d574a06fb4a5a7276ebe9570bb5c083d",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Static typing improvements in `click.shell_completion`",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 47
+  },
+  {
+    "repo": "click",
+    "sha": "9207bdc073181b0699938a7d7b4d0b7dde23fe4f",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Add type annotations for instance attributes in `exceptions`",
+    "source_files": [
+      "src/click/exceptions.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 41
+  },
+  {
+    "repo": "click",
+    "sha": "634549fc180a4c7655eafedce5b84a9b140b0a35",
+    "parent": "c442c05c315e61b38932e6d25a4e12dfc533882e",
+    "subject": "Don't refactor variable names unnecessarily",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 38
+  },
+  {
+    "repo": "click",
+    "sha": "ac5cec5fe54e5a691e7bac17f441ce9498e0744c",
+    "parent": "60cad4ad6583bf885c62d6f4597f3555d1ee1a0f",
+    "subject": "Reorder ParameterSource from most to least explicit",
+    "source_files": [
+      "src/click/__init__.py",
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 27
+  },
+  {
+    "repo": "click",
+    "sha": "bb59ba0fd279ca085d1113f0499b6a602ca31081",
+    "parent": "4a352253c9ff013e36d11e4a6820d36d00ff2cd4",
+    "subject": "Apply format guidelines to commits since latest 8.3.2 release",
+    "source_files": [
+      "src/click/_termui_impl.py",
+      "src/click/core.py",
+      "src/click/testing.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 25
+  },
+  {
+    "repo": "click",
+    "sha": "9c079247f9b9655077b4ceff52b3fb0a44a9473f",
+    "parent": "b0ffa61c1b2d7245e25c3cd315a911192aa81b2a",
+    "subject": "Regroup sentinels",
+    "source_files": [
+      "src/click/_utils.py",
+      "src/click/core.py",
+      "src/click/parser.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 23
+  },
+  {
+    "repo": "click",
+    "sha": "bb7be1f6a91f3fd1267d1a6d68771273d593f9c7",
+    "parent": "6c4a77ba24854dab793a8ff72110a0a24c403c9f",
+    "subject": "Revert \"Use `default=True` as a sentinel for non-boolean flags\"",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 21
+  },
+  {
+    "repo": "click",
+    "sha": "6c4a77ba24854dab793a8ff72110a0a24c403c9f",
+    "parent": "5850ef97230f84c74d0234ab0f30f23b398a6eee",
+    "subject": "Use `default=True` as a sentinel for non-boolean flags",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 21
+  },
+  {
+    "repo": "click",
+    "sha": "555fa9bb37770a6845a98be60b0c84876775552e",
+    "parent": "16fe802a3f96c4c8fa3cd382f1a7577fda0c5321",
+    "subject": "#2447 Forward exception data to exit stack when calling `__exit__`",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 19
+  },
+  {
+    "repo": "click",
+    "sha": "6e981edefaeafa6c16b478dc131fba4d936024f1",
+    "parent": "5989375dc3953a5709c411e11f658c242319858e",
+    "subject": "Narrow down type ignore",
+    "source_files": [
+      "src/click/types.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 18
+  },
+  {
+    "repo": "click",
+    "sha": "ea76281c3f5ad062e9f24eb5deaa961ac6a5c0e7",
+    "parent": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "subject": "Add type annotations for instance attributes in `shell_completion`",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 16
+  },
+  {
+    "repo": "click",
+    "sha": "0acca45214a66eefe50716ecb0bcfcefa8fcc6eb",
+    "parent": "9f7d99100aa8b1b81d8f011de679557e19e0c3d7",
+    "subject": "Mark recently documented methods as private",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 16
+  },
+  {
+    "repo": "click",
+    "sha": "279ce7b01666a57e61e94514b39312c02a3184d2",
+    "parent": "fc6c7c47edd6110b6bd5a1a5297b2035214b0cd1",
+    "subject": "Add type annotations for instance attributes in `utils`",
+    "source_files": [
+      "src/click/utils.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 14
+  },
+  {
+    "repo": "click",
+    "sha": "9be1039f9c6ee98e3333746173f23dc949afe761",
+    "parent": "8645e70266479a4c3abd9b821eca608971a8c051",
+    "subject": "Keep original inconsistent ticks to reduce noise",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 14
+  },
+  {
+    "repo": "click",
+    "sha": "27de74af68bfd967c639ad4beb330fa4ed0d470f",
+    "parent": "20df0b3882abe69454560e085fcdfd25f7aaf453",
+    "subject": "Shorten the docstring annotations for confirm and prompt",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 12
+  },
+  {
+    "repo": "click",
+    "sha": "1c9fc6df7cf37407b65fecc9c7a65b29b7727cff",
+    "parent": "1bfdb914050c27b19903d46c29fb19ecccf19f82",
+    "subject": "Add details to `prompt` and `confirm` docstrings regarding 8.3.1 change",
+    "source_files": [
+      "src/click/termui.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 12
+  },
+  {
+    "repo": "click",
+    "sha": "f561f1880e6bbc8f2d199d50f08dfa2002090596",
+    "parent": "b39590fd8560e3ee6bec411ddd575761bdb1a113",
+    "subject": "Do not mention UNSET and keep the change entry small",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 11
+  },
+  {
+    "repo": "click",
+    "sha": "44c2bea54ef1f4d153138be2db9537a7f442d461",
+    "parent": "634549fc180a4c7655eafedce5b84a9b140b0a35",
+    "subject": "Do not change the original structure of the code",
+    "source_files": [
+      "src/click/core.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 10
+  },
+  {
+    "repo": "click",
+    "sha": "2fdde68324c386bd967b00ce422daa357432f7cd",
+    "parent": "cf1d891909fa19d40e7c60642b07a0f973a86320",
+    "subject": "Cleanup #3126",
+    "source_files": [
+      "src/click/shell_completion.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
   },
   {
     "repo": "more-itertools",
@@ -1423,7 +1595,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1436,7 +1609,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1449,29 +1623,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "6d43b18491d6ae0388b5dfb7b0fad860f65fe745",
-    "parent": "63039f708e73ca46cc1dfbfa109e4ead84d1000a",
-    "subject": "Docs changes for 11.0.0",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "b290c272d9a238a2d942d83ece4d68180172db3e",
-    "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
-    "subject": "docs: add cross-references between groupby_transform, bucket, and map_reduce",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1484,7 +1637,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1497,7 +1651,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1510,7 +1665,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1523,7 +1679,8 @@
     "test_files": [
       "tests/test_recipes.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1536,7 +1693,8 @@
     "test_files": [
       "tests/test_recipes.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1549,7 +1707,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1562,7 +1721,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1575,7 +1735,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1588,7 +1749,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1601,7 +1763,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1614,18 +1777,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "8e590cba5dbaa811071d5c3c9b1b2cd45837b4d7",
-    "parent": "53091c9d226269423a36c687287421742b7bedd3",
-    "subject": "docs: Fix invisible REPL output in HTML dark mode",
-    "source_files": [
-      "docs/conf.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1638,18 +1791,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "dbc32776a870216b65eca5168217c8765cc85af3",
-    "parent": "dc49db58b65ca714b8f47e5f540259105b888dc6",
-    "subject": "Doc updates",
-    "source_files": [
-      "more_itertools/recipes.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1662,7 +1805,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1675,7 +1819,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1688,7 +1833,8 @@
     "test_files": [
       "tests/test_recipes.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1701,7 +1847,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1714,7 +1861,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1727,29 +1875,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "4486d246245d4b301c50208a7d836a8505ad6967",
-    "parent": "e90acd8505184d9143b7af7fecee9ebff5024d18",
-    "subject": "Rename seq argument to iterable for consistency",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "20c3265fcffba7b1d1ff6d266e17cabe94092113",
-    "parent": "91a38218a99e633768c5cfc3010ef0d246017f2e",
-    "subject": "Doc changes for 10.2.0",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1763,29 +1890,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "e470f7733b88da0df15c954cf77d9473ebf727da",
-    "parent": "cc8a8ab246193428118e5653a0516a8acf25ce72",
-    "subject": "Doc updates for 10.1.0",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "46a253b36b74edead1fea1c09d762ddca4e895fd",
-    "parent": "09eb43d1b636493b9f762426794730c8c35ce83c",
-    "subject": "Rename uniques to counts",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1798,7 +1904,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1811,18 +1918,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "64ef9995bb7af6c6cb44d5648842407c31f388b6",
-    "parent": "d5ce308d139bf793d89ec3a9957f23b165040cb9",
-    "subject": "docs: rewrap docstring to 79 columns",
-    "source_files": [
-      "more_itertools/recipes.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1835,18 +1932,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "c2992eabcff0f4b10437b2625db59a878d01e4ee",
-    "parent": "2ff5943d76afa4591b5b4ae8cb4524578d365f67",
-    "subject": "docs: fix simple typo, versiosn -> versions",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1859,7 +1946,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1872,7 +1960,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1885,7 +1974,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1898,7 +1988,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1911,30 +2002,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "94b15e6794082216f3151d139b3f09422d446196",
-    "parent": "0155306b05b7af79ec4313950068dd806b295e94",
-    "subject": "doc changes",
-    "source_files": [
-      "more_itertools/more.py",
-      "more_itertools/recipes.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "ad385b3aae0923daacc85fe2928fdbe872720e8a",
-    "parent": "894cd3540990d3a22d82e71de0c01ef9bcec4add",
-    "subject": "refactor: Simplify unique_everseen (#488)",
-    "source_files": [
-      "more_itertools/recipes.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1947,18 +2016,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "f4c59950fa11788e3950de48dd3233ddf9fbed2c",
-    "parent": "16c626b5f92b7695284007c2db1a5f94287fad52",
-    "subject": "Doc changes for 8.6.0",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1971,18 +2030,8 @@
     "test_files": [
       "tests/test_recipes.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "dccb7e97e556a7a57481eeec552db20f8787546a",
-    "parent": "028184c40e449d22d7b777e960b9c1a11f669a55",
-    "subject": "rename some variables",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -1995,7 +2044,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2008,29 +2058,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "304ae8b4ca8f9216a6d133c91316bf2f4ebd36ef",
-    "parent": "d6e773411087fa494991d7a8ad81e6a9ad5ddd56",
-    "subject": "refactor windowed part 3",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "44528b198295c274dc2f0dcc91b8b680d7a68e42",
-    "parent": "3649b878610372b4cfb6074d21a4bb43b1c1b849",
-    "subject": "Docs update",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2043,18 +2072,8 @@
     "test_files": [
       "tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "a870070b5b1333095d0d23ad92b4bc6fced1e75c",
-    "parent": "825747d54eb5dffad334eb4d0d65fc21c39a579d",
-    "subject": "refactor unique_everseen",
-    "source_files": [
-      "more_itertools/recipes.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2068,7 +2087,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2081,18 +2101,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "49011f02cde38ae3c062cc9e3d15194579c616a0",
-    "parent": "54a6624d3c62dd7a70b7c42c8fef45142aa2b3ca",
-    "subject": "Cleanup and version history",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2105,7 +2115,8 @@
     "test_files": [
       "more_itertools/tests/test_recipes.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2118,7 +2129,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2131,7 +2143,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2144,7 +2157,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2157,7 +2171,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2170,18 +2185,8 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "more-itertools",
-    "sha": "25aae7ef880451c036f52568ec3827948ff2f5e6",
-    "parent": "4761258b407b78065ce148ebb2c4eb0e24a4c4f1",
-    "subject": "Rename var `iterable` to `it`.",
-    "source_files": [
-      "more_itertools/more.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "more-itertools",
@@ -2194,53 +2199,190 @@
     "test_files": [
       "more_itertools/tests/test_more.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
-    "repo": "attrs",
-    "sha": "f38b8a3f1625060aa4245930822c34c11c252f83",
-    "parent": "3e01de41b0efb9f51b92cc3372477be92033f4a8",
-    "subject": "docs: format notice",
+    "repo": "more-itertools",
+    "sha": "6294fa6186399adfb8fcc5d7f597dfad0f78e814",
+    "parent": "1bf1273ad54d41a2d1cc4524058ef81e6fcdd7ed",
+    "subject": "Move running statistics to recipes",
     "source_files": [
-      "src/attr/_config.py"
+      "more_itertools/more.py",
+      "more_itertools/recipes.py"
     ],
     "test_files": [],
-    "kind": "clean"
+    "kind": "clean",
+    "code_delta": 161
   },
   {
-    "repo": "attrs",
-    "sha": "3e01de41b0efb9f51b92cc3372477be92033f4a8",
-    "parent": "29b608137636417fbfdb6586ca42b58a540f8077",
-    "subject": "docs: fix markup",
+    "repo": "more-itertools",
+    "sha": "3f43b98e8704e09206ed791e934a2e6f850e0803",
+    "parent": "303725224c750d10f35ba63b09f0301822af731b",
+    "subject": "Simpler faster `ichunked`",
     "source_files": [
-      "src/attr/__init__.py",
-      "src/attr/_funcs.py"
+      "more_itertools/more.py"
     ],
     "test_files": [],
-    "kind": "clean"
+    "kind": "clean",
+    "code_delta": 30
   },
   {
-    "repo": "attrs",
-    "sha": "29b608137636417fbfdb6586ca42b58a540f8077",
-    "parent": "21b5746de7d428efe190ad9b895f68eff5c67c20",
-    "subject": "docs: remove stale 3.9 references",
+    "repo": "more-itertools",
+    "sha": "f7b44bba5c4a73ed42bab52cb8ede9d742d95e16",
+    "parent": "64be96ceb2a6e836f76f069f4a96d2394d59fd0c",
+    "subject": "Apply variable renaming to avoid cost of a swap",
     "source_files": [
-      "src/attr/_funcs.py",
-      "src/attr/_next_gen.py"
+      "more_itertools/more.py"
     ],
     "test_files": [],
-    "kind": "clean"
+    "kind": "clean",
+    "code_delta": 28
   },
   {
-    "repo": "attrs",
-    "sha": "f616f732c6c5f87a8f7a762176422baed250a6be",
-    "parent": "4b5b295bb815bf845fa3570bf63781a88212db40",
-    "subject": "docs: be more general",
+    "repo": "more-itertools",
+    "sha": "1c85ece40f9549bcc542eb9af9893597ab58f888",
+    "parent": "bd8475cc1e9b2efdbc055ab4af4d4693a9c5cb7a",
+    "subject": "Make attributes private. Support all generator methods.",
     "source_files": [
-      "src/attr/setters.py"
+      "more_itertools/more.py"
     ],
     "test_files": [],
-    "kind": "clean"
+    "kind": "clean",
+    "code_delta": 22
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "fdbd43c569feb4388302ddee0551d18edd39fadc",
+    "parent": "6a6d1364d8dc6d2d3c727e4ccd36353b731ab105",
+    "subject": "Update sized_iter for merging",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 22
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f5e92de40c3f2fcaedd00033e3f86c9168f10088",
+    "parent": "06f31819121eb0620d3165fda73a44cbf71b140d",
+    "subject": "Use math.prod() in nth_product()",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 20
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "dfeb321bba6b838c931975edf1f1b45c66b1aed0",
+    "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
+    "subject": "#1130:  Improve partition() memory efficiency",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 18
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "18ebe6f04ee2450dd4615f10a68e921cc16f10e5",
+    "parent": "f5e92de40c3f2fcaedd00033e3f86c9168f10088",
+    "subject": "Beautification",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 16
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "b5ebe5364125b166606ae34d278ed6756bdae45e",
+    "parent": "45a9b5148598ad493e7ed53ee257f2208dbefbaf",
+    "subject": "Switch from itemgetter() to compress()",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 14
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "f0f662ea0739a74b8830b13487165828ae8dd790",
+    "parent": "2deea20eadd94f3655fe3340a654c950da9959c6",
+    "subject": "Faster instantiation",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 11
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "237388cc3220bdc7cfacc6f766304a49b42fb8e7",
+    "parent": "3a259350f28cd17f09b4f0af21c6ebc03cf725cf",
+    "subject": "Simplify and speed up nth_permutation",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 9
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "63243787b0a49482ba4a17f83a0aa4d6f2fb5741",
+    "parent": "9ddc55c57390707d97d96302eea1992919c8d930",
+    "subject": "Update the convolve docstring",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 9
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "2fcf9ef942066124126e9101846f47afab2d302c",
+    "parent": "52cfcfedc31060138c1a9f691bc6aa20b457ec12",
+    "subject": "Changes for version 11.0.1",
+    "source_files": [
+      "more_itertools/__init__.py",
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 9
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "07eb790b4aa1aee88d78963fc4f740b03a9fb4a1",
+    "parent": "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+    "subject": "Add threading to lazy_modules.  Revert c6b640",
+    "source_files": [
+      "more_itertools/more.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
+  },
+  {
+    "repo": "more-itertools",
+    "sha": "26a54030be86bb93885de63630b1732787c31891",
+    "parent": "e4d2a4a2a97246a73856754b2c4866d7f41d4875",
+    "subject": "prepend:  iterator -> iterable",
+    "source_files": [
+      "more_itertools/recipes.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
   },
   {
     "repo": "attrs",
@@ -2253,19 +2395,8 @@
     "test_files": [
       "tests/test_annotations.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "45de9beb093d2142517ab7d1ebda6522e3d3c4ac",
-    "parent": "ae37edd71a691b8ca797a0a53d0248543abfe12b",
-    "subject": "docs: move collect_by_mro to attr.s docstring",
-    "source_files": [
-      "src/attr/_make.py",
-      "src/attr/_next_gen.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2278,7 +2409,8 @@
     "test_files": [
       "tests/test_validators.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2291,7 +2423,8 @@
     "test_files": [
       "tests/test_functional.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2304,7 +2437,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2317,62 +2451,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "3d42a6978ac60b487135db39218cfb742b100899",
-    "parent": "55c688a5f8bc5c5f3a7cfc0af2d0ef7b2d439f26",
-    "subject": "doc: fix typo in attrs.validators.gt's docstring: ge -> gt (#1423)",
-    "source_files": [
-      "src/attr/validators.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "55c688a5f8bc5c5f3a7cfc0af2d0ef7b2d439f26",
-    "parent": "e906fd01d5873e3d35eb9bfeb2b61c6e45b22eae",
-    "subject": "docs: stop checking anchors on GitHub.com",
-    "source_files": [
-      "docs/conf.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "5820ce717ed3f6047409845004a3ec004ec1574d",
-    "parent": "06daa1d0bc05f23cf130f9455b4ca833b8e42718",
-    "subject": "docs: stress that make_class doesn't validate names",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "119e043b9fccd995cefb800b00ae4a7645ddb807",
-    "parent": "e82cde4c252f2fa24e575105d6a8489657e6a1f2",
-    "subject": "docs: fix markup",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "e82cde4c252f2fa24e575105d6a8489657e6a1f2",
-    "parent": "d3f320e0cb3b4c74c29a2af8c1bd8d37ca724ed5",
-    "subject": "docs: add note to make_class about non-NG-ness",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2387,7 +2467,8 @@
       "tests/test_converters.py",
       "tests/test_setattr.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2400,63 +2481,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "f7e4e910737e864627ddae4a7b10d8e507dd21f6",
-    "parent": "42c954869d2b5ac526d25ba3d57412ce1f81f92f",
-    "subject": "docs: fix typo",
-    "source_files": [
-      "src/attr/filters.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "b78abadbbff85fdf16d31f6a98abaddc1e73627c",
-    "parent": "a365cdc5fe17cb8147042e3c554f4b920f4bbd9c",
-    "subject": "docs: add glossary entries for field & attribute",
-    "source_files": [
-      "src/attr/_funcs.py",
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "829c2ff15abfce6daa8f7a8dad39323dc0183816",
-    "parent": "7c9b31ea7b5565f2ef4a582999dfa6afd7e0f16b",
-    "subject": "docs: improve RTD",
-    "source_files": [
-      "docs/conf.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "e1b2c9491bd7d73e6049d8ad54828cc785577103",
-    "parent": "b393d79aafbf4ee58740f19dd4ad28ed29f3205c",
-    "subject": "refactor: Only loop once on \"cached_properties\" when building slotted classes (#1290)",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "deb97638a7d01b58319c9c2279a201830cd45671",
-    "parent": "9b9a69140dbeac2f6f032f5912198d9111bd44a3",
-    "subject": "Refactor setters determination into function",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2469,18 +2495,8 @@
     "test_files": [
       "tests/test_cmp.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "5f1d588a66535dacb2c03a9ddc1f4f0ee3b1c2ee",
-    "parent": "67e4ff273aeae7c322e58c07e41523cf177f475a",
-    "subject": "doc: invert sentence on setattr logic in NG",
-    "source_files": [
-      "src/attr/_next_gen.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2493,7 +2509,8 @@
     "test_files": [
       "tests/test_funcs.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2506,7 +2523,8 @@
     "test_files": [
       "tests/test_slots.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2519,7 +2537,8 @@
     "test_files": [
       "tests/test_next_gen.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2532,18 +2551,8 @@
     "test_files": [
       "tests/test_functional.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "fe9432ddf733c736f200b39a8b009bfef4795334",
-    "parent": "8f9558d93dc3904f77b27b6d5d5b2a5345f9f128",
-    "subject": "docs: Add missing on_setattr type to attr.s",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2556,7 +2565,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2570,7 +2580,8 @@
       "tests/test_make.py",
       "tests/test_slots.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2583,29 +2594,8 @@
     "test_files": [
       "tests/test_annotations.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "d0cff8face92478c950ba05a7d9403b1e342407a",
-    "parent": "685f865d50eca222b4c0326e5aabe3b54cb2c0b3",
-    "subject": "docs: more explicit about Factory caveats (#791)",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
-  },
-  {
-    "repo": "attrs",
-    "sha": "3147e8460384fd14b1cabc41c26db4ab8849a515",
-    "parent": "ce8bb4ffa9d4b4c3cc034e497be6809840c2a53a",
-    "subject": "docs: fix double negative (#776)",
-    "source_files": [
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2619,7 +2609,8 @@
     "test_files": [
       "tests/test_hooks.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2633,7 +2624,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2646,18 +2638,8 @@
     "test_files": [
       "tests/test_annotations.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "78335e9b49eff2eaf2dc31d0bcc3caa0169cfc60",
-    "parent": "c2712fd102ddfb7df6df333f421c3b21c18e4b37",
-    "subject": "doc: fix typo in default_if_none doc (#762)",
-    "source_files": [
-      "src/attr/converters.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2670,7 +2652,8 @@
     "test_files": [
       "tests/test_slots.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2683,7 +2666,8 @@
     "test_files": [
       "tests/test_slots.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2697,7 +2681,8 @@
     "test_files": [
       "tests/test_next_gen.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2710,7 +2695,8 @@
     "test_files": [
       "tests/test_next_gen.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2723,7 +2709,8 @@
     "test_files": [
       "tests/test_next_gen.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2736,20 +2723,8 @@
     "test_files": [
       "tests/test_slots.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "609b10e84f5fb87d1f20300fb0368961da8f70d0",
-    "parent": "9e14962988654df62cae9f991b4efd6271a4f8f0",
-    "subject": "Refactor docs and switch to RTD theme",
-    "source_files": [
-      "docs/conf.py",
-      "setup.py",
-      "src/attr/_make.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2762,7 +2737,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2775,7 +2751,8 @@
     "test_files": [
       "tests/test_annotations.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2788,7 +2765,8 @@
     "test_files": [
       "tests/test_validators.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2801,7 +2779,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2814,7 +2793,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2827,7 +2807,8 @@
     "test_files": [
       "tests/test_dunders.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2841,7 +2822,8 @@
       "tests/test_dark_magic.py",
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2854,7 +2836,8 @@
     "test_files": [
       "tests/test_dunders.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2870,7 +2853,8 @@
       "tests/test_validators.py",
       "tests/utils.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2883,7 +2867,8 @@
     "test_files": [
       "tests/test_funcs.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2896,7 +2881,8 @@
     "test_files": [
       "tests/test_dark_magic.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2909,7 +2895,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2922,7 +2909,8 @@
     "test_files": [
       "tests/test_dark_magic.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2935,7 +2923,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2948,7 +2937,8 @@
     "test_files": [
       "tests/test_funcs.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2962,7 +2952,8 @@
       "tests/__init__.py",
       "tests/test_funcs.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -2975,18 +2966,8 @@
     "test_files": [
       "tests/test_dunders.py"
     ],
-    "kind": "bug"
-  },
-  {
-    "repo": "attrs",
-    "sha": "7decc0cdf60e2e0b6a79717f20a1f6d8cdfa05f5",
-    "parent": "dbaba50e68b238fbb3eec267f615fdf5551923fd",
-    "subject": "DOC: add a note on why we don't use inspect.",
-    "source_files": [
-      "src/attr/_compat.py"
-    ],
-    "test_files": [],
-    "kind": "clean"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3000,7 +2981,8 @@
       "tests/test_make.py",
       "tests/test_slots.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3013,7 +2995,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3026,7 +3009,8 @@
     "test_files": [
       "tests/test_make.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3039,7 +3023,8 @@
     "test_files": [
       "tests/test_validators.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3052,7 +3037,8 @@
     "test_files": [
       "tests/test_dunders.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
@@ -3065,17 +3051,241 @@
     "test_files": [
       "tests/test_dunders.py"
     ],
-    "kind": "bug"
+    "kind": "bug",
+    "code_delta": 0
   },
   {
     "repo": "attrs",
-    "sha": "4a9eb1859890d44fab416ac5d1d9ac2b0676dd71",
-    "parent": "27e2f4e5c049231045f71732363b7ada90b87f62",
-    "subject": "Rename type_ to type in instance_of validator",
+    "sha": "b1dc8f673579137e14e44afdf0e40e4b4f1b9e3c",
+    "parent": "c53a61190cefa92960ec15e79124b6c7eb3fe742",
+    "subject": "Split out Mypy-dependent typing examples, add more type checkers (#1474)",
     "source_files": [
-      "attr/validators.py"
+      "typing-examples/baseline_examples.py",
+      "typing-examples/mypy_examples.py"
     ],
     "test_files": [],
-    "kind": "clean"
+    "kind": "clean",
+    "code_delta": 377
+  },
+  {
+    "repo": "attrs",
+    "sha": "c5baf90dbc3fdb23628ad59e92986c01bae57f4f",
+    "parent": "97f8d175656bc03c373a1c9038048a4d312c307c",
+    "subject": "Add typing examples for Pyrefly's new attrs support (#1588)",
+    "source_files": [
+      "typing-examples/pyrefly.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 267
+  },
+  {
+    "repo": "attrs",
+    "sha": "c849440ac93d5f33578e9e0d1b1d8f26fbd590ae",
+    "parent": "669b78a3fe817faf695f5f0af715292e7d481317",
+    "subject": "Add more cross-references",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 225
+  },
+  {
+    "repo": "attrs",
+    "sha": "9b9a69140dbeac2f6f032f5912198d9111bd44a3",
+    "parent": "8460190b29de93621012599ef65605a83baf591b",
+    "subject": "Upper-case private constants for better readability",
+    "source_files": [
+      "src/attr/_funcs.py",
+      "src/attr/_make.py",
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 90
+  },
+  {
+    "repo": "attrs",
+    "sha": "deb97638a7d01b58319c9c2279a201830cd45671",
+    "parent": "9b9a69140dbeac2f6f032f5912198d9111bd44a3",
+    "subject": "Refactor setters determination into function",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 65
+  },
+  {
+    "repo": "attrs",
+    "sha": "19175d91df292e9d0722ecb6575043f1d124a123",
+    "parent": "616adf5af936b9e690e72d740440dcfc9df25c87",
+    "subject": "Use sys._clear_type_descriptors() on 3.14 to break slot reference cycle (#1459)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 17
+  },
+  {
+    "repo": "attrs",
+    "sha": "b950cb8d83789de9824f39808ddac64a06cc3031",
+    "parent": "bf522367c0100893915c795673cbc775bd2d8408",
+    "subject": "compat: move check for closure cellvar update wrapper function (#1092)",
+    "source_files": [
+      "src/attr/_compat.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 16
+  },
+  {
+    "repo": "attrs",
+    "sha": "689a0e64012d1e576ebd99e786a254bc537582c6",
+    "parent": "f7e4e910737e864627ddae4a7b10d8e507dd21f6",
+    "subject": "Simplify & optimize own attribute detection (#1322)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 13
+  },
+  {
+    "repo": "attrs",
+    "sha": "a365cdc5fe17cb8147042e3c554f4b920f4bbd9c",
+    "parent": "c24b8ad6f77e1cc2ff9dda20800fef3d2e9a7773",
+    "subject": "More f-strings (#1317)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 12
+  },
+  {
+    "repo": "attrs",
+    "sha": "189ab7f806afbf7d916aca480c8ff454938d3018",
+    "parent": "d812e920ccf8d1ec6307c8c48cb394d22d65d683",
+    "subject": "Improve docstring",
+    "source_files": [
+      "src/attr/validators.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 12
+  },
+  {
+    "repo": "attrs",
+    "sha": "4737f0e6c77f2bd4501322b1b5d1e265181849b9",
+    "parent": "f8f7a2e9aa8f0a8c7da01290622b0969facea86c",
+    "subject": "Run Pyright in strict mode",
+    "source_files": [
+      "typing-examples/baseline_examples.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 11
+  },
+  {
+    "repo": "attrs",
+    "sha": "028797bd240005936dbd6337b7c1e84f059178fd",
+    "parent": "1967be0eb6a4ff59b2216c2bb4fe02e3d4e16b95",
+    "subject": "Switching to tuples removed this case",
+    "source_files": [
+      "src/attr/converters.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 11
+  },
+  {
+    "repo": "attrs",
+    "sha": "fbcae2a8b0e4a6d9227639d4a4293e4241976219",
+    "parent": "61516832448ea9ba9cf47281caec840a09e32a40",
+    "subject": "Switch to 1% static packaging configuration (#998)",
+    "source_files": [
+      "setup.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 11
+  },
+  {
+    "repo": "attrs",
+    "sha": "3bb6382a7ca4ebe681386e3c6b8106993a4d194f",
+    "parent": "1ea13ff576c14907280d080c33fa5d25f968f30e",
+    "subject": "Document/test copy.replace",
+    "source_files": [
+      "typing_tests/baseline.py",
+      "typing_tests/pyrefly.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 10
+  },
+  {
+    "repo": "attrs",
+    "sha": "d4e98b1b8a9962e1c3ef01d5550e040ea98333c7",
+    "parent": "d129b1f7563a5b9bcacbcaebfcf397d69aec6024",
+    "subject": "Simplify name",
+    "source_files": [
+      "src/attr/_make.py",
+      "src/attr/_next_gen.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 10
+  },
+  {
+    "repo": "attrs",
+    "sha": "e1b2c9491bd7d73e6049d8ad54828cc785577103",
+    "parent": "b393d79aafbf4ee58740f19dd4ad28ed29f3205c",
+    "subject": "refactor: Only loop once on \"cached_properties\" when building slotted classes (#1290)",
+    "source_files": [
+      "src/attr/_make.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 9
+  },
+  {
+    "repo": "attrs",
+    "sha": "f8f7a2e9aa8f0a8c7da01290622b0969facea86c",
+    "parent": "b1dc8f673579137e14e44afdf0e40e4b4f1b9e3c",
+    "subject": "Improve type hinting of or_ (#1471)",
+    "source_files": [
+      "typing-examples/baseline_examples.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
+  },
+  {
+    "repo": "attrs",
+    "sha": "00f6ac482137456033f624c2ef099c50af5626ad",
+    "parent": "901bfaaa40fef28d4e5e7c4abd845db85a0da4d5",
+    "subject": "Use a fully locked test environment (#1349)",
+    "source_files": [
+      "src/attr/_compat.py",
+      "src/attr/_funcs.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
+  },
+  {
+    "repo": "attrs",
+    "sha": "9e803dd683e61cd17f7a161482765e4dbfcdcc49",
+    "parent": "9cf3d338f4d2b85d177c39e09a7d9627eef76935",
+    "subject": "to_bool: avoid creating sets on each call",
+    "source_files": [
+      "src/attr/converters.py"
+    ],
+    "test_files": [],
+    "kind": "clean",
+    "code_delta": 8
   }
 ]
