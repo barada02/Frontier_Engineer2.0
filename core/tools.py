@@ -109,8 +109,10 @@ def make_fs_tools(workspace: Path, cmd_timeout: int = 60) -> list[Callable]:
     root = workspace.resolve()
 
     def _safe(p: str) -> Path:
+        # is_relative_to compares path components. A string prefix check would
+        # let a sibling directory through: "/repo-secret".startswith("/repo").
         target = (root / p).resolve()
-        if not str(target).startswith(str(root)):
+        if not target.is_relative_to(root):
             raise ValueError(f"path escapes workspace: {p}")
         return target
 

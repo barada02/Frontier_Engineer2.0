@@ -115,4 +115,5 @@ class Agent:
             return
         s.input_tokens += resp.usage.input_tokens
         s.output_tokens += resp.usage.output_tokens
+        s.thought_tokens += resp.usage.thought_tokens
         s.cost_usd += resp.usage.cost(self.cfg)

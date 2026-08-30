@@ -21,6 +21,7 @@ class RunStats:
     steps: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
+    thought_tokens: int = 0
     cost_usd: float = 0.0
     cache_hits: int = 0
     llm_calls: int = 0
@@ -70,6 +71,7 @@ class Trajectory:
             elif k == "run_end":
                 s = e["stats"]
                 out.append(f"\n== {e['outcome']} | {s['steps']} steps | "
-                           f"{s['input_tokens']}in/{s['output_tokens']}out | "
+                           f"{s['input_tokens']}in/{s['output_tokens']}out"
+                           f"+{s['thought_tokens']}think | "
                            f"${s['cost_usd']:.4f} | {s['wall_seconds']}s")
         return "\n".join(out)

@@ -27,11 +27,18 @@ class ToolCall:
 class Usage:
     input_tokens: int = 0
     output_tokens: int = 0
+    thought_tokens: int = 0      # billed at the output rate, and usually dominates
+    cached_tokens: int = 0
+    tool_tokens: int = 0
     raw: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def billed_output(self) -> int:
+        return self.output_tokens + self.thought_tokens
 
     def cost(self, cfg: Config) -> float:
         pin, pout = cfg.price()
-        return (self.input_tokens * pin + self.output_tokens * pout) / 1_000_000
+        return (self.input_tokens * pin + self.billed_output * pout) / 1_000_000
 
 
 @dataclass
@@ -49,34 +56,42 @@ class LLM(Protocol):
 
 # --------------------------------------------------------------------------- #
 
-_USAGE_INPUT_KEYS = ("input_tokens", "prompt_token_count", "input_token_count")
-_USAGE_OUTPUT_KEYS = ("output_tokens", "candidates_token_count", "output_token_count")
+# Field names confirmed against google-genai 2.20.0 by inspecting a live
+# Interaction. The Interactions API reports totals, not the prompt/candidates
+# names used by generate_content.
+_USAGE_FIELDS = {
+    "input_tokens": ("total_input_tokens", "prompt_token_count", "input_tokens"),
+    "output_tokens": ("total_output_tokens", "response_token_count", "output_tokens"),
+    "thought_tokens": ("total_thought_tokens", "thoughts_token_count"),
+    "cached_tokens": ("total_cached_tokens", "cached_content_token_count"),
+    "tool_tokens": ("total_tool_use_tokens", "tool_use_prompt_token_count"),
+}
 
 
 def _extract_usage(interaction: Any) -> Usage:
-    """Usage field names have moved around across SDK versions, so probe rather
-    than assume. The raw blob is kept so a wrong guess is visible in the logs
-    instead of silently reporting $0.00."""
-    blob = None
-    for attr in ("usage", "usage_metadata"):
-        blob = getattr(interaction, attr, None)
-        if blob is not None:
-            break
+    """Map provider usage onto our own shape.
+
+    Thought tokens are tracked separately and billed as output: on a thinking
+    model they routinely outnumber visible output tokens by ~50x, so folding
+    them in silently would make every cost figure meaningless.
+    """
+    blob = getattr(interaction, "usage", None) or getattr(interaction, "usage_metadata", None)
     if blob is None:
         return Usage()
 
-    d = blob if isinstance(blob, dict) else getattr(blob, "__dict__", {}) or {}
-    if hasattr(blob, "model_dump"):
-        d = blob.model_dump()
+    d = blob.model_dump() if hasattr(blob, "model_dump") else dict(
+        blob if isinstance(blob, dict) else getattr(blob, "__dict__", {}) or {})
 
-    def pick(keys: tuple[str, ...]) -> int:
-        for k in keys:
-            v = d.get(k)
-            if isinstance(v, int):
-                return v
-        return 0
+    vals = {}
+    for field_name, candidates in _USAGE_FIELDS.items():
+        vals[field_name] = next(
+            (d[k] for k in candidates if isinstance(d.get(k), int)), 0)
 
-    return Usage(pick(_USAGE_INPUT_KEYS), pick(_USAGE_OUTPUT_KEYS), raw=d)
+    if vals["input_tokens"] == 0 and vals["output_tokens"] == 0:
+        # Loud rather than a silent $0.00 — the shape changed under us.
+        print(f"  [llm] WARNING: could not read usage from {sorted(d)}")
+
+    return Usage(**vals, raw=d)
 
 
 def _as_dict(step: Any) -> dict:

@@ -109,6 +109,26 @@ def test_workspace_escape_blocked(tmp: Path) -> None:
     print("  workspace confinement      OK")
 
 
+def test_sibling_prefix_not_treated_as_inside(tmp: Path) -> None:
+    """Regression: a string-prefix check let /repo-secret pass a /repo root."""
+    root = tmp / "repo"
+    root.mkdir()
+    sibling = tmp / "repo-secret"
+    sibling.mkdir()
+    (sibling / "creds.txt").write_text("SECRET")
+
+    cfg = Config(workspace=root, cache_enabled=False)
+    reg = Registry(make_fs_tools(root), [allow("*")])
+    llm = ScriptedLLM([_call("read_file", {"path": "../repo-secret/creds.txt"}),
+                       _final("blocked")])
+    Agent(llm, reg, cfg).run("read the sibling")
+
+    result = [h for h in llm.seen_histories[-1]
+              if h.get("type") == "function_result"][-1]
+    assert "escapes workspace" in result["result"][0]["text"], result
+    print("  sibling-prefix escape      OK")
+
+
 def test_tool_error_recovers(tmp: Path) -> None:
     agent, _ = build(tmp, [
         _call("read_file", {"path": "missing.py"}),
@@ -147,6 +167,7 @@ if __name__ == "__main__":
 
     tests = [test_multi_step_loop, test_denied_tool_is_reported_to_model,
              test_ask_user_declined, test_workspace_escape_blocked,
+             test_sibling_prefix_not_treated_as_inside,
              test_tool_error_recovers, test_max_steps_guard]
     for t in tests:
         d = Path(tempfile.mkdtemp())

@@ -66,7 +66,8 @@ def main() -> None:
 
     s = result.stats
     print(f"\nsteps: {s.steps} · llm calls: {s.llm_calls} (cache hits {s.cache_hits})")
-    print(f"tokens: {s.input_tokens} in / {s.output_tokens} out · cost: ${s.cost_usd:.4f}")
+    print(f"tokens: {s.input_tokens} in / {s.output_tokens} out "
+          f"+ {s.thought_tokens} thinking · cost: ${s.cost_usd:.4f}")
     print(f"wall: {s.wall_seconds}s · stopped: {result.stopped_because}")
     print(f"trajectory: {result.trajectory.path}")
 
