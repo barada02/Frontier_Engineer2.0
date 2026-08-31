@@ -36,7 +36,7 @@ drop that flag.
 
 Check the render fits before you record anything:
 
-```bash
+```powershell
 python -m core.replay runs/agent-exec_more-itertools-f51a53bf.jsonl --width 78
 ```
 
@@ -52,7 +52,7 @@ Do not attempt one continuous take. Record each, then cut in the editor.
 
 ### Take 1 — baseline, live · ~25s
 
-```bash
+```powershell
 clear
 python eval/run_eval.py --solver baseline --out eval/results/_video_baseline.json
 ```
@@ -62,24 +62,37 @@ this is your cheapest credibility. Let it run to the summary table.
 
 ### Take 2 — the gap · static
 
-```bash
+The baseline's own run output already contains the evidence, so just filter the
+committed log rather than querying the JSON:
+
+```powershell
 clear
-python -c "import json;[print(f\"{s['case_id']:26} {s['note']}\") for s in json.load(open('eval/results/baseline.json'))['scores'] if s['kind']=='bug' and s['verdict_correct'] and not s['verified']]"
+(Get-Content eval/results/baseline_rerun.log) -match "loc-only"
 ```
 
-Prints the three baseline claims whose tests prove nothing:
+Prints the three baseline claims whose tests prove nothing — in the run's own
+words, with case numbers:
 
 ```
-click-762c97ee             still failed after the real fix
-click-82f377c5             still failed after the real fix
-more-itertools-be5793a5    still failed after the real fix
+[ 7/21] click-762c97ee                 bug   loc-only  no_pass   still failed after the real fix
+[11/21] click-82f377c5                 bug   loc-only  no_pass   still failed after the real fix
+[12/21] more-itertools-be5793a5        bug   loc-only  no_pass   still failed after the real fix
 ```
+
+`loc-only` means it named the right file. `no_pass` means the test it wrote
+still failed after the real fix was applied — so it proves nothing.
 
 Hold on screen for the whole of §3.
 
+> Alternative, if you would rather show it inside Take 1: don't run this at all.
+> Scroll back through Take 1's output and highlight the same three lines live.
+> **Do not pipe Take 1** to `Tee-Object` or `Select-String` to make that easier —
+> Python block-buffers when its output is not a terminal, so the cases would
+> appear in one burst at the end instead of scrolling.
+
 ### Take 3 — ground truth · static
 
-```bash
+```powershell
 clear
 git -C corpus/more-itertools show --stat f51a53bf
 ```
@@ -87,7 +100,7 @@ git -C corpus/more-itertools show --stat f51a53bf
 Shows `fix: handle empty interleave_evenly input` — 3 lines of source, 4 lines
 of test, in one commit. Then reveal the oracle:
 
-```bash
+```powershell
 git -C corpus/more-itertools show f51a53bf -- tests/test_more.py
 ```
 
@@ -95,10 +108,9 @@ Say out loud: this test is deleted before the agent sees anything.
 
 ### Take 4 — the execution · ~80s · **the centrepiece**
 
-```bash
+```powershell
 clear
-python -m core.replay runs/agent-exec_more-itertools-f51a53bf.jsonl \
-    --width 78 --play --speed 1.3
+python -m core.replay runs/agent-exec_more-itertools-f51a53bf.jsonl --width 78 --play --speed 1.3
 ```
 
 A real recorded run, not a re-enactment — which is exactly what deliverable #4
@@ -106,41 +118,77 @@ is. Steps 1–3 print `(served from cache)`; leave them in, don't hide them.
 
 ### Take 5 — live cutaway · ~10s · optional, ~$0.20
 
-```bash
+```powershell
 clear
-python eval/run_eval.py --solver agent-exec --limit 1 --no-cache \
-    --out eval/results/_video.json
+python eval/run_eval.py --solver agent-exec --limit 1 --no-cache --out eval/results/_video.json
 ```
 
 Cut to this for ~8 seconds during Take 4 to prove nothing is staged.
 
-### Cards — make two, no more
+### Cards — make three
 
 1. **Title card**: project name + one line.
-2. **Comparison card**: copy the results table from `README.md` (the
+2. **Convergence card** — see below. Worth the ten seconds.
+3. **Comparison card**: copy the results table from `README.md` (the
    baseline / run 1 / run 2 table).
+
+#### The convergence card
+
+Put these side by side. Left is the human maintainer's regression test, deleted
+from the repository before the agent started and never shown to it. Right is
+what the agent wrote at step 6, from reasoning alone.
+
+```python
+# the human, in commit f51a53bf        |  # the agent, step 6
+def test_no_iterables(self):           |  def test_interleave_evenly_empty():
+    self.assertEqual(                  |      assert list(
+        list(mi.interleave_evenly([])),|          interleave_evenly([])) == []
+        [])                            |      assert list(
+    self.assertEqual(                  |          interleave_evenly(
+        list(mi.interleave_evenly(     |              [], lengths=[])) == []
+            [], lengths=[])), [])      |
+```
+
+Same two assertions, in the same order, including the non-obvious `lengths=[]`
+variant. Pull the left side live with the Take 3 command if you want it on
+screen as a terminal rather than a card.
+
+This is the strongest single image in the project: it is the difference between
+"the agent found a bug" and "the agent independently reconstructed the check a
+human maintainer thought was worth committing." Budget ten seconds for it and
+take them from §7.
 
 ---
 
 ## 3. Script
 
-~700 words, ~150 wpm. Bracketed text is a screen cue, not narration.
+**723 words, ~4:50 at 150 wpm.** Bracketed text is a screen cue, not narration.
+Read it with a stopwatch before recording. §7 is the cut line if you run long.
 
-### §1 Problem — 0:00–0:30 · *title card*
+| § | Words | Runs |
+|---|---|---|
+| 1 Problem | 72 | 0:00–0:28 |
+| 2 Baseline | 60 | 0:28–1:00 |
+| 3 The gap | 65 | 1:00–1:26 |
+| 4 Ground truth | 62 | 1:26–1:52 |
+| **5 One execution** | **244** | **1:52–3:25** |
+| 6 Comparison | 70 | 3:25–3:52 |
+| 7 Changelog | 78 | 3:52–4:26 |
+| 8 Hot take | 72 | 4:26–5:00 |
+
+### §1 Problem — 0:00–0:28 · *title card*
 
 > Most teams have switched on an AI code reviewer. Most have quietly stopped
 > reading it.
 >
 > The reason isn't that it misses bugs. It's that it reports things that turn
-> out to be nothing. Every false finding costs a human the full price of
-> investigating it — and after three or four of those, the tool becomes noise
-> you click past.
+> out to be nothing — and every false finding costs a human the full price of
+> investigating it.
 >
-> Trust gets spent faster than it gets earned. So this project asks one
-> question: what if a reviewer had to *prove* a bug before it was allowed to
-> report one?
+> Trust gets spent faster than it's earned. So: what if a reviewer had to
+> *prove* a bug before it was allowed to report one?
 
-### §2 Baseline — 0:30–1:05 · *Take 1*
+### §2 Baseline — 0:28–1:00 · *Take 1*
 
 > Here's the simple baseline. One prompt, containing the diff. No tools, no
 > repository, no ability to run anything — what you reach for first.
@@ -151,32 +199,28 @@ Cut to this for ~8 seconds during Take 4 to prove nothing is staged.
 > [*let it finish*] Eighty percent. It named the right file in twelve of
 > fifteen cases. By the usual standard, that's a good reviewer.
 
-### §3 The gap — 1:05–1:30 · *Take 2*
+### §3 The gap — 1:00–1:26 · *Take 2*
 
-> Except we didn't ask it to name a file. We asked it to write a test that
+> But we didn't ask it to name a file. We asked it to write a test that
 > demonstrates the bug. So we ran those tests.
 >
 > Three of its twelve findings came with a test that proves nothing. One was a
-> bug it invented in code that was correct.
+> bug it invented in correct code.
 >
-> Scored on whether its findings hold up, this is a sixty percent reviewer, and
-> a quarter of what it says is wrong. That gap — eighty claimed, sixty proven —
-> is the whole problem.
+> Scored on whether its findings hold up, this is a sixty percent reviewer —
+> and a quarter of what it says is wrong.
 
-### §4 Ground truth — 1:30–1:55 · *Take 3*
+### §4 Ground truth — 1:26–1:52 · *Take 3*
 
-> To measure that you need to know the real answer, and synthetic bugs are too
-> easy.
+> To measure that, you need the real answer, and synthetic bugs are too easy.
 >
 > So every case is a real commit from `click`, `more-itertools` or `attrs` that
-> fixed a bug *and* added a regression test. We revert it. That puts the bug
-> back and deletes the test that catches it.
+> fixed a bug *and* added a regression test. We revert it — putting the bug
+> back, and deleting the test that catches it.
 >
-> That deleted test becomes our scoring oracle. The agent never sees it.
-> Seventeen candidates, fifteen survived — the rejects had tests that passed
-> either way.
+> That deleted test becomes our oracle. The agent never sees it.
 
-### §5 One execution — 1:55–3:15 · *Take 4* · **let the screen breathe**
+### §5 One execution — 1:52–3:25 · *Take 4* + convergence card · **let it breathe**
 
 > Here's the shipped agent on one case. It reads the repository, and it can run
 > its own test.
@@ -203,48 +247,51 @@ Cut to this for ~8 seconds during Take 4 to prove nothing is staged.
 > Then our harness — which never trusts the agent — runs that test on the buggy
 > code, applies the real human fix, and runs it again. Fails, then passes.
 > Verified.
+>
+> [*convergence card*] And this is the test the human maintainer wrote, the one
+> we deleted before the agent ever started. Same two assertions. Same order.
+> Including the second one, with an explicit empty `lengths` argument, which is
+> not the obvious thing to check.
+>
+> It didn't just find the bug. It reconstructed the check a maintainer thought
+> was worth committing.
 
-### §6 Comparison — 3:15–3:45 · *comparison card*
+### §6 Comparison — 3:25–3:52 · *comparison card*
 
 > Same cases, same scoring. Verified detection goes from sixty percent to
 > sixty-seven or seventy-three.
 >
 > Two numbers, because we ran it twice and got both. One case of variance, no
-> seed available. We're reporting both runs rather than the better one — in a
-> project about not taking an agent's word for things, we don't get to headline
-> our luckiest result.
+> seed available. We report both rather than the better one — in a project
+> about not taking an agent's word for things, we don't get to headline our
+> luckiest run.
 >
-> False alarms go from one in six to zero. That's the number that decides
-> whether anyone keeps the tool switched on.
+> And false alarms go from one in six, to zero.
 
-### §7 Changelog — 3:45–4:30 · *CHANGELOG.md on screen* · **cut here if long**
+### §7 Changelog — 3:52–4:26 · *CHANGELOG.md on screen* · **cut here if long**
 
 > Four iterations. The one that mattered most was the first: giving the agent
-> the repository. Two more bugs, and every false alarm gone.
+> the repository. Two more bugs, every false alarm gone.
 >
-> But look at what *didn't* move — it made the same claims about the same
-> files. They just became correct. Context didn't make it more perceptive. It
-> made it more credible.
+> But notice what didn't move — it made the same claims about the same files.
+> They just became correct. Context didn't make it more perceptive. It made it
+> more credible.
 >
-> The experiment we removed was requiring proof. Forcing it to demonstrate
-> every bug made things worse. Three runs hit the step ceiling
-> mid-investigation, after eleven, fifteen and sixteen attempts. They never
-> concluded anything — and the harness logged that silence as "no bug found."
+> The experiment we removed was requiring proof. Three runs hit the step
+> ceiling mid-investigation and never concluded anything — and the harness
+> logged that silence as "no bug found."
 
-### §8 Hot take — 4:30–5:00 · *the `<` → `<=` diff*
+### §8 Hot take — 4:26–5:00 · *the `<` → `<=` diff*
 
 > Which is the lesson. A verification requirement isn't free — it spends the
-> same budget the agent needs to investigate. The step limit had quietly been
-> doing two jobs: bounding cost, and bounding the agent's room to rationalise.
+> same budget the agent needs to investigate.
 >
-> And one bug survived every configuration. One operator, inside a fifty-line
-> cosmetic rename. Nothing looks wrong. Catching it means suspecting that
-> tie-breaking order is observable — before any tool can help.
+> And one bug survived every configuration: a single operator, buried in a
+> fifty-line cosmetic rename. Catching it means suspecting that tie-breaking
+> order is observable, before any tool can help.
 >
 > This makes an agent better at confirming what it already suspects. It does
 > nothing for what it never thinks to look for.
-
----
 
 ## 4. Editing
 
@@ -258,10 +305,10 @@ Cut to this for ~8 seconds during Take 4 to prove nothing is staged.
 
 ## 5. Cleanup before submitting
 
-```bash
-rm -f eval/results/_video*.json
-git status          # discard stray runs/ files from Take 5
-rm -f VIDEO_PLAN.md # this file
+```powershell
+Remove-Item eval/results/_video*.json -Force
+git status                          # discard stray runs/ files from Take 5
+Remove-Item VIDEO_PLAN.md -Force    # this file
 ```
 
 ---
