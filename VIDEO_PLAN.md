@@ -179,8 +179,8 @@ that is why the slide-backed sections below are the short ones.
 
 ### §1 Problem — 0:00–0:26 · *Slide 1, then Slide 2*
 
-> Most teams have switched on an AI code reviewer. Most have quietly stopped
-> reading it.
+> Your team turns on an AI code reviewer. Everybody reads it for about a week.
+> Then they stop.
 >
 > [*slide 2*] Not because it misses bugs. Because it is wrong.
 >
