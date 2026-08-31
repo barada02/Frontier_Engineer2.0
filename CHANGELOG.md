@@ -31,7 +31,7 @@ Reported alongside it:
 |---|---|---|---|
 | **Baseline** | One direct prompt with the diff. No tools, no repo access, no ability to run anything. The obvious first approach, and what any improvement must beat. | verified **60.0%**, claimed **80.0%**, localization **80.0%**, false alarm **16.7%**, $0.0067/case | Established the starting point. The 20-point gap between claimed and verified detection set the direction for everything after. |
 | **Iteration 1 — repo access**<br>`agent-read` | The baseline sees only the diff, so it cannot check how a changed function is actually called. Gave the agent `read_file` and `list_dir` against the checkout. | verified **73.3%** (+13.3), claimed 80.0% (unchanged), localization 80.0% (unchanged), false alarm **0.0%** (−16.7), $0.1133/case | **Kept.** The largest single gain. Note what did *not* move: claimed detection and localization were identical. The agent made the same claims about the same files — they simply became correct. Context improved whether findings hold up, not what the agent noticed. |
-| **Iteration 2 — execution**<br>`agent-exec` | Reading is not proof. Added `run_proof_test`, which writes the agent's candidate test into the checkout and returns raw pytest output so the agent can tell a real defect from its own broken test. | verified **73.3%** (flat), claimed **73.3%** (−6.7), precision 11/11 vs 11/12, $0.1045/case | **Kept, despite no gain on the primary metric.** Execution found nothing new. What it did was stop the agent making the one claim it could not back: it tried, failed to produce a discriminating test, and stayed quiet. Precision went 91.7% → 100%. Kept because unproven claims are the failure mode this project exists to remove — but reported as flat, because it was. |
+| **Iteration 2 — execution**<br>`agent-exec` | Reading is not proof. Added `run_proof_test`, which writes the agent's candidate test into the checkout and returns raw pytest output so the agent can tell a real defect from its own broken test. | run 1: verified **73.3%**, precision 11/11, $0.1045/case. run 2: verified **66.7%**, precision 10/11, $0.1107/case. claimed **73.3%** (−6.7) in **both** | **Kept, despite no gain on the primary metric.** Execution found nothing new. What it did was stop the agent making claims it could not back: it tried, failed to produce a discriminating test, and stayed quiet. Claimed detection fell 80.0% → 73.3% and did so in both runs, which is the effect that reproduces. Verified detection and precision did not separate from iteration 1 across two runs — see "Two runs of the shipped configuration" below. Kept because unproven claims are the failure mode this project exists to remove, and reported as flat, because it was. |
 | **Iteration 3 — proof required**<br>`agent-proof` | Required the agent to demonstrate a defect before reporting it, and to answer "clean" when it cannot. Expected to convert the remaining unproven claim. | verified **66.7%** (−6.6), claimed 73.3%, $0.1095/case | **Regressed — see below.** The hypothesis was wrong, and the reason is more useful than the result. |
 
 | **Iteration 4 — raised ceiling**<br>`agent-proof --max-steps 40` | Iteration 3's misses stopped at exactly the step limit. Re-ran the identical configuration with the ceiling at 40 to separate budget exhaustion from judgement. | verified **73.3%** (84.6% excluding two runs killed by HTTP 400), false alarm **16.7%** (+16.7), $0.0960/case | **Diagnosis confirmed, change not shipped.** `attrs-97f8d175` recovered, taking 13 proof runs. But the two longest runs overflowed the request and died with `invalid_request`, and the agent used the extra room to talk itself into a false positive on a correct refactor. Net worse than iteration 2. |
@@ -39,17 +39,50 @@ Reported alongside it:
 ## Shipped configuration
 
 `agent-exec` — repo access plus the ability to run its own test, without the
-mandatory-proof rule. It matches the best detection rate at 73.3%, is the only
-configuration with 100% precision and 0% false alarms, produces no harness
-errors, and is the cheapest of the agent variants.
+mandatory-proof rule. It reaches the best detection rate observed in any
+configuration, it is the only one that both keeps false alarms at 0% and never
+asserts a bug it has not tried to demonstrate, and it makes the fewest
+unproven claims of any variant.
 
-Against the baseline: **verified detection 60.0% → 73.3%**, **false alarms
+Against the baseline: **verified detection 60.0% → 66.7–73.3%**, **false alarms
 16.7% → 0.0%**, at 16x the cost per case.
+
+## Two runs of the shipped configuration
+
+`agent-exec` was run twice on identical inputs, once before and once after the
+trajectory-logging fix. It scored 73.3% and 66.7%.
+
+| | run 1 | run 2 |
+|---|---|---|
+| verified detection | 73.3% (11/15) | 66.7% (10/15) |
+| claimed detection | 73.3% (11/15) | 73.3% (11/15) |
+| precision | 11/11 | 10/11 |
+| false alarm | 0.0% | 0.0% |
+| cases lost to HTTP 400 | 2 | 1 |
+| evidence | [`agent-exec-run1.json`](eval/results/agent-exec-run1.json) | [`agent-exec-run2.json`](eval/results/agent-exec-run2.json) |
+
+Nothing about the agent changed between them. The API offers no seed, and one
+case either way is ±6.7 points on a 15-case metric — the variance
+[`REPRODUCE.md`](REPRODUCE.md) predicts. The two runs disagree on exactly one
+case, `click-b7e5fd4c`: claimed in both, proven in run 1, and in run 2 the
+agent's test still failed after the real fix was applied, so the harness
+refused it.
+
+Both runs are reported. Headlining 73.3% would mean asking a reader to accept
+the better of two measurements on the strength of our say-so, in a project
+whose entire argument is that findings are worth what their evidence is worth.
+
+The floors are also softer than they look in the agent's favour: each run lost
+cases to an `invalid_request` HTTP 400 rather than to judgement — two in run 1,
+one in run 2 — and the harness scores those as misses. That is the correct
+default, but it means neither figure is an estimate of the agent's ceiling.
 
 ## Why iteration 3 regressed
 
-Requiring proof dropped verified detection from 73.3% to 66.7%. The per-case
-data says why, and it is not that the agent became more cautious.
+Requiring proof scored 66.7%, against 73.3% for iteration 1. Taken as an
+aggregate that is one case, and one case is inside the run-to-run noise
+measured above — it would not support a conclusion on its own. The per-case
+data does, and it says the cause is not that the agent became more cautious.
 
 Three of the four misses stopped at **exactly 20 steps** — the configured
 ceiling — after 11, 15 and 16 proof attempts respectively:
@@ -141,9 +174,12 @@ new.
 needs to investigate.**
 
 Requiring proof looked like a pure win: make the agent demonstrate a defect and
-noise disappears. It did remove noise. It also dropped verified detection from
-73.3% to 66.7%, because three runs hit the step ceiling mid-investigation after
-11, 15 and 16 proof attempts. Those runs never concluded anything. The harness
+noise disappears. It did remove noise. It also scored 66.7% against iteration
+1's 73.3%, and the reason is visible per case rather than in the aggregate:
+three runs hit the step ceiling mid-investigation after 11, 15 and 16 proof
+attempts, one of them on a bug every earlier configuration had found. Raising
+the ceiling recovered exactly that bug, which is the part that closes the
+argument. Those runs never concluded anything. The harness
 recorded their silence as "no bug found", which downstream is indistinguishable
 from a considered verdict — the most dangerous kind of failure, because it
 looks like an answer.

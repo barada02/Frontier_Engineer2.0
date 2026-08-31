@@ -8,14 +8,32 @@ from the git history of `click`, `more-itertools` and `attrs`.
 
 Same 21 cases, same task, same scoring, for both configurations.
 
-| Metric | Simple baseline | Agent solution | Change |
+| Metric | Simple baseline | Agent — run 1 | Agent — run 2 |
 |---|---|---|---|
-| **Verified detection rate** | **60.0%** (9/15) | **73.3%** (11/15) | **+13.3 pts** |
-| Precision (proven / claimed) | 75.0% | **100%** | +25.0 pts |
-| False alarm rate | 16.7% (1/6) | **0.0%** (0/6) | −16.7 pts |
-| Localization | 80.0% | 73.3% | −6.7 pts |
-| Cost per case | $0.0067 | $0.1045 | 16× |
-| Seconds per case | 7.0 | 72.2 | 10× |
+| **Verified detection rate** | **60.0%** (9/15) | **73.3%** (11/15) | **66.7%** (10/15) |
+| Precision (proven / claimed) | 75.0% (9/12) | **100%** (11/11) | 90.9% (10/11) |
+| False alarm rate | 16.7% (1/6) | **0.0%** (0/6) | **0.0%** (0/6) |
+| Localization | 80.0% (12/15) | 73.3% (11/15) | 73.3% (11/15) |
+| Cost per case | $0.0067 | $0.1045 | $0.1107 |
+| Seconds per case | 0.9 † | 72.2 | 46.1 |
+
+**Verified detection 60.0% → 66.7–73.3%. False alarms 16.7% → 0.0%.**
+
+† The baseline row is a cache-served run, so its latency is not comparable; the
+uncached timing was not captured. Its cost is, because cached responses carry
+the token counts of the original call.
+
+**Both runs of the shipped configuration are reported, rather than the better
+one.** Same cases, same code, same prompts. The API offers no seed and the
+spread is a single case — the ±6.7 points on a 15-case metric that
+[`REPRODUCE.md`](REPRODUCE.md) predicts in advance. A project that refuses to
+take an agent's word for a finding does not get to headline its luckiest run.
+Both runs also lost cases to an HTTP 400 rather than to judgement — two in run
+1, one in run 2 — and those are scored as misses, so both numbers are floors.
+
+Evidence: [`agent-exec-run1.json`](eval/results/agent-exec-run1.json) ·
+[`agent-exec-run2.json`](eval/results/agent-exec-run2.json) ·
+[`baseline.json`](eval/results/baseline.json)
 
 The baseline is one direct prompt containing the diff, with no tools and no
 ability to run anything. The shipped agent (`agent-exec`) can read the
@@ -74,8 +92,14 @@ The design choice that matters is that `run_proof_test` returns **raw pytest
 output**. The agent has to see *why* its test failed to tell a genuine defect
 from its own broken test — an `ImportError` means the test is wrong, an
 assertion failure means the code is. That distinction is the entire difference
-between a finding and noise, and it is why execution took precision from 91.7%
-to 100%.
+between a finding and noise.
+
+It shows up as precision: the read-only agent proved 11 of the 12 findings it
+claimed, and the executing agent proved 11 of 11 in run 1 and 10 of 11 in run 2.
+That is a real effect in the right direction, and it is also one case wide. Two
+runs do not separate 91.7% from 100%, and this README will not pretend they do.
+What is not noise is the 6-point drop in *claimed* detection: execution is the
+only change that made the agent say less.
 
 ## Ground truth
 
@@ -113,7 +137,9 @@ became correct. Every gain in this project came from converting weak claims
 into strong ones or into silence. Not one came from noticing something new.
 
 **Requiring proof made things worse, and the reason is the useful part.**
-Mandating a demonstration dropped detection from 73.3% to 66.7%. Three runs hit
+Mandating a demonstration scored 66.7%, against 73.3% for the read-only agent.
+On the aggregate alone that gap is one case and proves nothing. The evidence is
+per-case and it is unambiguous: three runs hit
 the step ceiling mid-investigation after 11, 15 and 16 proof attempts. They
 never concluded anything — the harness recorded their silence as "no bug
 found", which downstream is indistinguishable from a considered verdict.
@@ -164,9 +190,12 @@ its proof-verification mechanism; the baseline and all four agent variants.
 | Claude Code (Opus) | Wrote this project | Development tool; not part of the submitted system |
 | `gemini-3.7-flash` | The reviewing agent under evaluation | The submitted system |
 
-Trajectories for every evaluated run are in [`runs/`](runs/), emitted
-automatically by [`core/trajectory.py`](core/trajectory.py) as the agent
-executes. Curated examples are in [`submission/trajectories/`](submission/trajectories/).
+Trajectories for all 21 evaluated cases of the shipped configuration are in
+[`runs/`](runs/), emitted automatically by
+[`core/trajectory.py`](core/trajectory.py) as the agent executes. Each file
+opens with a `run_start` record carrying the system instructions, the tool
+list, the policy set and the step ceiling, so a run can be followed from the
+agent's instructions through to its final answer without reading the code.
 
 ## Safety
 

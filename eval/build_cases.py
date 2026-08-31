@@ -17,6 +17,7 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -197,7 +198,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--candidates", type=Path, default=ROOT / "eval/candidates.json")
     ap.add_argument("--out", type=Path, default=ROOT / "eval/cases.json")
-    ap.add_argument("--python", default=str(ROOT / ".venv/Scripts/python.exe"))
+    ap.add_argument("--python", default=sys.executable,
+                    help="interpreter used to run corpus test suites")
     ap.add_argument("--want", type=int, default=15, help="verified bug cases to collect")
     ap.add_argument("--want-clean", type=int, default=5)
     ap.add_argument("--attempts", type=int, default=60)

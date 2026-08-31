@@ -18,6 +18,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -26,6 +27,16 @@ from typing import Iterator
 ROOT = Path(__file__).resolve().parent.parent
 CORPUS = ROOT / "corpus"
 MAX_DIFF_LINES = 400
+
+# corpus/ is not committed -- these are other people's repositories and they run
+# to ~2GB. Cloning on first use is what makes the mining step in REPRODUCE.md
+# genuinely optional: cases.json pins exact SHAs, so the checkout is identical
+# whether the clone happened during mining or here.
+REPO_URLS = {
+    "click": "https://github.com/pallets/click.git",
+    "more-itertools": "https://github.com/more-itertools/more-itertools.git",
+    "attrs": "https://github.com/python-attrs/attrs.git",
+}
 
 
 @dataclass
@@ -58,14 +69,39 @@ def _git(repo: Path, *args: str) -> subprocess.CompletedProcess:
                           capture_output=True, text=True)
 
 
+def ensure_repo(name: str) -> Path:
+    """The corpus repository for a case, cloned on first use."""
+    dest = CORPUS / name
+    if (dest / ".git").exists():
+        return dest
+    url = REPO_URLS.get(name)
+    if url is None:
+        raise RuntimeError(
+            f"corpus repo {name!r} is missing and no clone URL is known for it")
+    print(f"  [corpus] cloning {url} -> {dest} (first use, a few minutes)")
+    CORPUS.mkdir(exist_ok=True)
+    # blob:none keeps full history metadata but skips file contents until needed.
+    subprocess.run(["git", "clone", "--filter=blob:none", url, str(dest)],
+                   check=True)
+    return dest
+
+
 @contextlib.contextmanager
 def case_workspace(case: dict) -> Iterator[Path]:
     """A throwaway worktree at the buggy state."""
-    repo = CORPUS / case["repo"]
+    repo = ensure_repo(case["repo"])
     tmp = Path(tempfile.mkdtemp(prefix="eval_"))
     wt = tmp / "wt"
     base = case["parent"] if case["kind"] == "bug" else case["sha"]
-    _git(repo, "worktree", "add", "--detach", str(wt), base)
+    r = _git(repo, "worktree", "add", "--detach", str(wt), base)
+    if r.returncode != 0 or not wt.exists():
+        # A failed checkout used to be silent: review_diff would return an empty
+        # string and every case would score as a considered miss on a diff that
+        # was never shown. A broken environment is not a result.
+        shutil.rmtree(tmp, ignore_errors=True)
+        raise RuntimeError(
+            f"could not check out {case['case_id']} at {base[:8]}: "
+            f"{r.stderr.strip() or 'git worktree add failed'}")
     try:
         yield wt
     finally:
@@ -80,12 +116,18 @@ def review_diff(case: dict) -> str:
     defect. Test files are excluded: the deleted regression test would name the
     answer outright.
     """
-    repo = CORPUS / case["repo"]
+    repo = ensure_repo(case["repo"])
     if case["kind"] == "bug":
         a, b = case["sha"], case["parent"]
     else:
         a, b = case["parent"], case["sha"]
     r = _git(repo, "diff", a, b, "--", *case["source_files"])
+    if not (r.stdout or "").strip():
+        # Every case changes its source files by construction, so an empty diff
+        # means the repository is wrong -- not that there is nothing to review.
+        raise RuntimeError(
+            f"empty review diff for {case['case_id']} ({a[:8]}..{b[:8]}): "
+            f"{r.stderr.strip() or 'corpus repo may be at the wrong revision'}")
     lines = (r.stdout or "").splitlines()
     if len(lines) > MAX_DIFF_LINES:
         lines = lines[:MAX_DIFF_LINES] + ["... [diff truncated]"]
@@ -103,7 +145,7 @@ def _pytest(wt: Path, target: str, timeout: int = 120) -> str:
     env["PYTHONPATH"] = os.pathsep.join([str(wt), str(wt / "src")])
     try:
         r = subprocess.run(
-            [str(ROOT / ".venv/Scripts/python.exe"), "-m", "pytest", target,
+            [sys.executable, "-m", "pytest", target,
              "-q", "--tb=short", "-p", "no:cacheprovider", "--no-header",
              "--timeout=60"],
             cwd=wt, capture_output=True, text=True, env=env, timeout=timeout)

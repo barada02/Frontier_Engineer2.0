@@ -10,8 +10,10 @@ Written for someone starting from an empty directory and a fresh shell.
 - ~2 GB disk for the three corpus repositories
 - Network access to `github.com` and `generativelanguage.googleapis.com`
 
-Developed on Windows 11. Paths below use `.venv/Scripts/python`; on macOS or
-Linux substitute `.venv/bin/python`.
+Developed on Windows 11, and run on Linux and macOS by substituting
+`.venv/bin/python` for `.venv/Scripts/python` in every command below. There is
+nothing else to change: the harness runs each proof test with `sys.executable`,
+so the interpreter you invoke it with is the interpreter the tests run under.
 
 ## 1. Install
 
@@ -61,6 +63,7 @@ against a scripted LLM. **No API key and no network required.** Expected:
   sibling-prefix escape      OK
   tool error recovery        OK
   max-steps guard            OK
+  one file per run           OK
   schema generation          OK
 
 all spine tests passed
@@ -71,8 +74,11 @@ Runtime: under 2 seconds.
 ## 4. Build the corpus
 
 `eval/cases.json` is committed, so **this step is optional** — skip to step 5
-to reproduce the headline result. Run it only to rebuild the case set from
-scratch.
+to reproduce the headline result. Step 5 clones the three corpus repositories
+itself on first use (`corpus/` is not committed: the repositories belong to
+their authors and run to ~2 GB), and `cases.json` pins exact commit SHAs, so
+the checkout is identical either way. Expect ~5 minutes of cloning on the first
+case of the first run. Run this step only to rebuild the case set from scratch.
 
 ```bash
 .venv/Scripts/python eval/mine_commits.py \
@@ -96,9 +102,8 @@ Corpus commits used during development:
 | `attrs` | `764bf92` |
 
 Mining from newer HEADs will produce a different case set and therefore
-different numbers. To reproduce the exact figures in the README, use the
-committed `eval/cases.json`; the corpus repos are cloned automatically on first
-run of step 5.
+different numbers. To reproduce the figures in the README, use the committed
+`eval/cases.json`.
 
 ## 5. Reproduce the headline comparison
 
@@ -122,14 +127,23 @@ Expected output — the last block of each run:
   false alarm           16.7%   (6 clean controls)
 
 === agent-exec ===
-  verified detection    73.3%   (15 bug cases)   <- primary
+  verified detection    66.7%   (15 bug cases)   <- primary
   claimed detection     73.3%   (unproven claims included)
   localization          73.3%
   false alarm            0.0%   (6 clean controls)
 ```
 
+The `agent-exec` block above is run 2. This configuration was run twice on
+identical inputs and scored 73.3% and 66.7% — one case apart, which is the
+expected variance described below. Both runs are kept as evidence, in
+`eval/results/agent-exec-run1.json` and `agent-exec-run2.json`, and both are
+reported in the README. **Expect your own run to land at either figure.** A
+result of 66.7% or 73.3% reproduces this work; 40% does not.
+
 Results are written to `eval/results/<solver>.json` — aggregate plus per-case
-detail. Agent trajectories land in `runs/` as JSONL, one file per case.
+detail — so re-running `agent-exec` overwrites `agent-exec.json` (currently a
+copy of run 2) and leaves the two archived runs untouched. Agent trajectories
+land in `runs/` as JSONL, one file per case.
 
 ## 6. Reproduce the other iterations (optional)
 
