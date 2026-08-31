@@ -181,6 +181,39 @@ def test_repeat_runs_get_separate_trajectories() -> None:
             t.path.unlink(missing_ok=True)
 
 
+def test_proof_output_is_classified_by_fault() -> None:
+    """The replay's whole job is showing whose fault a failed proof run is.
+
+    pytest's summary line is sometimes clipped out of a trajectory record, and
+    the runs where that happens are the long interesting ones -- so the header
+    fallbacks matter more than the happy path."""
+    from core.replay import classify_proof
+
+    code_at_fault = ("v", "assertion failure -- the CODE under review is at fault")
+    test_at_fault = ("x", "import or collection error -- the agent's TEST is at fault")
+
+    cases = [
+        ("1 failed, 2 passed in 0.4s", code_at_fault),
+        ("3 passed in 0.2s", ("-", None)),
+        ("1 error in 0.1s\nImportError: no module named foo", test_at_fault),
+        ("no tests ran in 0.27s", ("-", None)),
+        ("TIMEOUT", ("!", None)),
+        # summary clipped by the 2000-char record limit
+        ("F  [100%]\n=== FAILURES ===\nE  assert False", code_at_fault),
+        ("=== ERRORS ===\nModuleNotFoundError: more_itertools", test_at_fault),
+    ]
+    for output, (marker, meaning) in cases:
+        got_marker, _, got_meaning = classify_proof(output)
+        assert got_marker == marker, f"{output!r} -> {got_marker!r}"
+        if meaning:
+            assert got_meaning == meaning, f"{output!r} -> {got_meaning!r}"
+
+    # A mixed run must read as a failure: one failing assertion is the signal,
+    # however many unrelated tests passed alongside it.
+    assert classify_proof("1 failed, 9 passed")[0] == "v"
+    print("  proof-output triage        OK")
+
+
 def test_schema_generation() -> None:
     reg = Registry(make_fs_tools(Path.cwd()))
     d = {t["name"]: t for t in reg.declarations()}
@@ -205,5 +238,6 @@ if __name__ == "__main__":
         finally:
             shutil.rmtree(d, ignore_errors=True)
     test_repeat_runs_get_separate_trajectories()
+    test_proof_output_is_classified_by_fault()
     test_schema_generation()
     print("\nall spine tests passed")

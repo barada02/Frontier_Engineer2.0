@@ -61,25 +61,13 @@ class Trajectory:
                                 "stats": asdict(self.stats)})
         return self.stats
 
-    def render(self) -> str:
-        """Human-readable replay — what goes in the submission, not raw JSONL."""
-        out = []
-        for line in self.path.read_text(encoding="utf-8").splitlines():
-            e = json.loads(line)
-            k = e["kind"]
-            if k == "llm_response":
-                if e.get("text"):
-                    out.append(f"[{e['elapsed']}s] MODEL: {e['text'][:400]}")
-            elif k == "tool_call":
-                out.append(f"[{e['elapsed']}s] TOOL  {e['name']}({e['arguments']})")
-            elif k == "tool_result":
-                out.append(f"           -> {str(e['result'])[:300]}")
-            elif k == "approval":
-                out.append(f"[{e['elapsed']}s] GATE  {e['name']}: {e['decision']}")
-            elif k == "run_end":
-                s = e["stats"]
-                out.append(f"\n== {e['outcome']} | {s['steps']} steps | "
-                           f"{s['input_tokens']}in/{s['output_tokens']}out"
-                           f"+{s['thought_tokens']}think | "
-                           f"${s['cost_usd']:.4f} | {s['wall_seconds']}s")
-        return "\n".join(out)
+    def render(self, *, full: bool = False) -> str:
+        """Human-readable replay — what goes in the submission, not raw JSONL.
+
+        The renderer lives in core.replay so that the same code serves both
+        this method and `python -m core.replay <file>`; a trajectory written by
+        one run is usually read back long after that run's object is gone.
+        """
+        from .replay import render
+
+        return "\n".join(render(self.path, full=full, color=False))
