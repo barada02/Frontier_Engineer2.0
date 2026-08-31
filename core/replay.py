@@ -66,26 +66,33 @@ def classify_proof(output: str) -> tuple[str, str, str]:
     that read as "no result".
     """
     if "TIMEOUT" in output:
-        return "!", "timed out", "the test hangs -- no signal either way"
+        return "!", "timed out", "the test hangs"
     if "no tests ran" in output:
-        return ("-", "no tests ran",
-                "nothing was collected -- the module defines no test")
+        return "-", "no tests ran", "nothing was collected"
     if m := _FAILED_RE.search(output):
-        return ("v", f"{m.group(1)} failed",
-                "assertion failure -- the CODE under review is at fault")
+        return "v", f"{m.group(1)} failed", "assertion failure, not an import error"
     if m := _ERROR_RE.search(output):
-        return ("x", f"{m.group(1)} error",
-                "import or collection error -- the agent's TEST is at fault")
+        return "x", f"{m.group(1)} error", "import or collection error"
     if m := _PASSED_RE.search(output):
-        return ("-", f"{m.group(1)} passed",
-                "the test passes, so it demonstrates nothing")
+        return "-", f"{m.group(1)} passed", "it demonstrates nothing"
     if "= ERRORS =" in output or _IMPORT_ERR_RE.search(output):
-        return ("x", "errored (summary clipped)",
-                "import or collection error -- the agent's TEST is at fault")
+        return "x", "errored (clipped)", "import or collection error"
     if "= FAILURES =" in output:
-        return ("v", "failed (summary clipped)",
-                "assertion failure -- the CODE under review is at fault")
-    return "?", "no result", "pytest produced no recognisable outcome"
+        return "v", "failed (clipped)", "assertion failure, not an import error"
+    return "?", "no result", "no recognisable outcome"
+
+
+def _columns(items: list[str], width: int) -> list[str]:
+    """Pack items two spaces apart, breaking before the terminal would."""
+    rows, cur = [], ""
+    for it in items:
+        candidate = f"{cur}  {it}" if cur else it
+        if cur and len(candidate) > width:
+            rows.append(cur)
+            cur = it
+        else:
+            cur = candidate
+    return rows + [cur] if cur else ["-"]
 
 
 def _wrap(text: str, width: int, indent: str) -> list[str]:
@@ -96,9 +103,22 @@ def _wrap(text: str, width: int, indent: str) -> list[str]:
     return out
 
 
-def _clip(text: str, limit: int, indent: str, label: str) -> list[str]:
+def _clip(text: str, limit: int, indent: str, label: str,
+          cap: int | None = None) -> list[str]:
+    """Clip by line count, and optionally by line length.
+
+    Recorded tool output is foreign text: pytest pads its progress line to
+    whatever terminal width the evaluation ran under, which is wider than the
+    one replaying it. Without a cap those lines wrap and the transcript stops
+    lining up.
+    """
     lines = (text or "").splitlines()
-    shown = [indent + ln for ln in lines[:limit]]
+    shown = []
+    for ln in lines[:limit]:
+        ln = ln.rstrip()
+        if cap and len(ln) > cap:
+            ln = ln[:cap - 3] + "..."
+        shown.append(indent + ln)
     if len(lines) > limit:
         shown.append(f"{indent}... {len(lines) - limit} more {label} (--full)")
     return shown
@@ -126,14 +146,18 @@ def render(path: Path | str, *, width: int = 96, full: bool = False,
         yield f" {s('model', 'dim')}          {start.get('model', '?')}"
         yield f" {s('step ceiling', 'dim')}   {start.get('max_steps', '?')}"
         yield f" {s('tools', 'dim')}          {', '.join(start.get('tools') or []) or '-'}"
-        yield f" {s('policy', 'dim')}         {'  '.join(start.get('policies') or []) or '-'}"
+        pol = start.get("policies") or []
+        for i, chunk in enumerate(_columns(pol, width - 17)):
+            label = "policy" if i == 0 else ""
+            yield f" {s(label.ljust(6), 'dim')}         {chunk}"
         yield ""
         yield s(" INSTRUCTIONS GIVEN TO THE AGENT", "bold")
         # Prompts are already hand-wrapped; re-wrapping them strands single
         # words on their own lines and makes the agent's brief look sloppier
         # than it is.
         instr = start.get("system_instructions") or "(none recorded)"
-        for ln in _clip(instr, 10_000 if full else 22, "   | ", "lines"):
+        for ln in _clip(instr, 10_000 if full else 22, "   | ", "lines",
+                        cap=width - 5):
             yield s(ln, "dim")
         yield ""
         yield s(" TASK", "bold")
@@ -174,7 +198,8 @@ def render(path: Path | str, *, width: int = 96, full: bool = False,
                 code = args["test_code"] or ""
                 yield (f"   {s('CALL', 'yellow', 'bold')}  {name}"
                        f"({s(f'test_code, {len(code.splitlines())} lines', 'dim')})")
-                for ln in _clip(code, 10_000 if full else 10, "         ", "lines"):
+                for ln in _clip(code, 10_000 if full else 10, "         ",
+                                "lines", cap=width - 9):
                     yield s(ln, "yellow")
             else:
                 rendered = ", ".join(f"{k}={v!r}" for k, v in args.items())
@@ -185,14 +210,16 @@ def render(path: Path | str, *, width: int = 96, full: bool = False,
             if e.get("name") == "run_proof_test":
                 marker, headline, meaning = classify_proof(result)
                 tone = {"v": "green", "x": "red", "-": "yellow"}.get(marker, "dim")
-                glyph = {"v": "PASS-FAIL", "x": "BROKEN", "-": "NO SIGNAL"}.get(
-                    marker, "UNCLEAR")
+                label = {"v": "CODE AT FAULT", "x": "TEST AT FAULT",
+                         "-": "NO SIGNAL", "!": "NO SIGNAL"}.get(marker, "UNCLEAR")
                 yield f"   {s('->', 'dim')}    pytest: {s(headline, tone, 'bold')}"
-                yield f"         {s('[' + glyph + ']', tone)} {s(meaning, tone)}"
-                for ln in _clip(result, 10_000 if full else 8, "         ", "lines"):
+                yield "         " + s(f"[{label}]".ljust(16) + meaning, tone)
+                for ln in _clip(result, 10_000 if full else 8, "         ",
+                                "lines", cap=width - 9):
                     yield s(ln, "dim")
             else:
-                for ln in _clip(result, 10_000 if full else 6, "   ->    ", "lines"):
+                for ln in _clip(result, 10_000 if full else 6, "   ->    ",
+                                "lines", cap=width - 9):
                     yield s(ln, "dim")
 
         elif kind == "run_end":

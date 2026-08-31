@@ -189,8 +189,8 @@ def test_proof_output_is_classified_by_fault() -> None:
     fallbacks matter more than the happy path."""
     from core.replay import classify_proof
 
-    code_at_fault = ("v", "assertion failure -- the CODE under review is at fault")
-    test_at_fault = ("x", "import or collection error -- the agent's TEST is at fault")
+    code_at_fault = ("v", "assertion failure, not an import error")
+    test_at_fault = ("x", "import or collection error")
 
     cases = [
         ("1 failed, 2 passed in 0.4s", code_at_fault),
