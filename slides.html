@@ -328,7 +328,7 @@
     <div class="eyebrow">Code review, verified</div>
     <h1>Prove&nbsp;It</h1>
     <div class="title-rule"></div>
-    <p class="lead">A review agent that has to demonstrate a defect with a failing test before it is allowed to report one.</p>
+    <p class="lead">A review agent that has to prove a bug with a failing test before it is allowed to report it.</p>
     <div class="title-foot">
       <span>21 cases</span><span>15 bugs</span><span>6 controls</span><span>3 real repositories</span>
     </div>
@@ -339,18 +339,18 @@
 <section class="slide">
   <div class="inner stack">
     <div class="eyebrow">The problem</div>
-    <h2>Nobody stops reading an AI reviewer because it misses bugs.<br>They stop because it is wrong.</h2>
+    <h2>A missed bug costs you one bug.<br>A wrong finding costs you the tool.</h2>
     <div class="bars">
       <div class="bar-row">
-        <div class="bar-label"><span>Trust earned by a correct finding</span><span>a little</span></div>
+        <div class="bar-label"><span>Trust a correct finding earns</span><span>a little</span></div>
         <div class="bar-track"><div class="bar-fill earn"></div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-label"><span>Trust lost to a false finding</span><span>all of it</span></div>
+        <div class="bar-label"><span>Trust a wrong finding burns</span><span>most of it</span></div>
         <div class="bar-track"><div class="bar-fill spend"></div></div>
       </div>
     </div>
-    <p class="note">Every false finding costs a human the full price of investigating it. Precision, not recall, decides whether the tool stays switched on.</p>
+    <p class="note">Checking a false alarm takes a developer just as long as checking a real bug. After a few of those, people stop reading. So what matters here is <strong>precision</strong> — the share of findings that hold up — not <strong>recall</strong>, the share of bugs found.</p>
   </div>
 </section>
 
@@ -371,7 +371,7 @@
         <div class="fig"><span class="fig-n dim">3</span><span class="fig-k">Proved nothing</span></div>
       </div>
     </div>
-    <p class="note">Scored the usual way — did it name the right file? — the baseline reads <strong>80%</strong>. Scored on whether its findings hold up, it is a <strong>60%</strong> reviewer, and one more was a bug it invented in code that was correct.</p>
+    <p class="note">The usual way to score a reviewer is to ask whether it named the right file. That gives <strong>80%</strong>. Ask instead whether its findings hold up, and it drops to <strong>60%</strong>. It also reported a bug in one refactor that was perfectly correct.</p>
   </div>
 </section>
 
@@ -412,7 +412,7 @@
         </div>
       </div>
     </div>
-    <p class="note">The choice that matters is the <strong>raw pytest output</strong>. An import error means the agent's own test is wrong; an assertion failure means the code is. It has to tell those apart itself — and that distinction is the entire difference between a finding and noise.</p>
+    <p class="note">The important choice is that <strong>run_proof_test returns raw pytest output</strong>. An import error means the agent's own test is broken. An assertion failure means the code is. The agent has to tell those two apart by itself, and that is the whole difference between a real finding and noise.</p>
   </div>
 </section>
 
@@ -437,7 +437,7 @@
         <span class="n-v">becomes the oracle<br>never shown to the agent</span>
       </div>
     </div>
-    <p class="note">A candidate only becomes a case if its oracle discriminates — fails on the bug, passes on the fix. <strong>15 of 17 survived.</strong> The rejects are the point: plenty of commits labelled “fix” carry tests that pass either way.</p>
+    <p class="note">A commit only becomes a case if its deleted test can tell the two versions apart: it must fail on the bug and pass on the fix. <strong>15 of 17 survived.</strong> The rejects matter — plenty of commits say “fix” but ship a test that passes either way.</p>
   </div>
 </section>
 
@@ -466,7 +466,7 @@
             [], lengths=[])) == []</pre>
       </div>
     </div>
-    <p class="note">Same two assertions, in the same order — including the second one, with an explicit empty <strong>lengths</strong> argument, which is not the obvious thing to check.</p>
+    <p class="note">The same two checks, in the same order. Including the second one, with an empty <strong>lengths</strong> argument — which is not the obvious case to think of.</p>
   </div>
 </section>
 
@@ -497,7 +497,7 @@
         </tbody>
       </table>
     </div>
-    <p class="note">Two runs of the shipped configuration, on identical inputs, reported as measured. The spread is one case. <strong>A project that refuses to take an agent's word for a finding does not get to headline its luckiest run.</strong></p>
+    <p class="note">We ran the shipped agent twice on the same cases and got two different numbers. The gap is one case. We report both. <strong>A project about not taking an agent's word for a finding does not get to show only its best run.</strong></p>
   </div>
 </section>
 
@@ -538,7 +538,7 @@
         <span class="step-d">Diagnosis only</span>
       </div>
     </div>
-    <p class="note">Context made the agent <strong>credible, not perceptive</strong> — it made the same claims about the same files, and they simply became correct.</p>
+    <p class="note">Reading the repository did not make the agent smarter. It named the same files and made the same claims as before. <strong>Those claims just started holding up.</strong></p>
   </div>
 </section>
 
@@ -547,7 +547,7 @@
   <div class="inner stack">
     <div class="eyebrow">Hot take</div>
     <p class="quote">A verification requirement is not free. It spends the same budget the agent needs to investigate.</p>
-    <p class="note">Three runs hit the step ceiling mid-investigation after 11, 15 and 16 proof attempts. They never concluded anything — and the harness logged that silence as “no bug found”, which downstream is indistinguishable from a considered verdict.</p>
+    <p class="note">Three runs hit the step limit while they were still investigating, after 11, 15 and 16 proof attempts. They never reached a conclusion. The harness recorded that silence as “no bug found” — which looks exactly like the agent deciding the code was fine.</p>
     <div class="stack-tight">
       <div class="eyebrow">And one bug survived every configuration</div>
       <div class="diffline">

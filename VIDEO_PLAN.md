@@ -158,35 +158,39 @@ Cut to this for ~8 seconds during Take 4 to prove nothing is staged.
 
 ## 4. Script
 
-**752 words — 5:01 at 150 wpm, so read it at 155–160.** Bracketed text is a
-screen cue, not narration. **§8 is the cut line**: drop its middle paragraph and
-you are at 4:45 with room to breathe.
+**728 words — 4:51 at 150 wpm.** Bracketed text is a screen cue, not narration.
+
+Sentences are kept short on purpose: mean 8.5 words, none over 21, so it reads
+aloud without tripping. **Do not narrate what the slide already says.** Where a
+slide is on screen, it carries the detail and the voice carries the argument —
+that is why the slide-backed sections below are the short ones.
 
 | § | Screen | Words | Runs |
 |---|---|---|---|
-| 1 Problem | Slide 1 → Slide 2 | 71 | 0:00–0:28 |
-| 2 Baseline | Take 1 | 60 | 0:28–0:52 |
-| 3 The gap | Take 2 → Slide 3 | 59 | 0:52–1:16 |
-| 4 What we built | Slide 4 | 72 | 1:16–1:45 |
-| 5 Ground truth | Take 3 → Slide 5 | 57 | 1:45–2:08 |
-| **6 One execution** | **Take 4 → Slide 6** | **208** | **2:08–3:31** |
-| 7 Results | Slide 7 | 69 | 3:31–3:59 |
-| 8 Changelog | Slide 8 | 81 | 3:59–4:31 |
-| 9 Hot take | Slide 9 | 75 | 4:31–5:00 |
+| 1 Problem | Slide 1 → Slide 2 | 66 | 0:00–0:26 |
+| 2 Baseline | Take 1 | 60 | 0:26–0:52 |
+| 3 The gap | Take 2 → Slide 3 | 64 | 0:52–1:18 |
+| 4 What we built | Slide 4 | 78 | 1:18–1:50 |
+| 5 Ground truth | Take 3 → Slide 5 | 63 | 1:50–2:16 |
+| **6 One execution** | **Take 4 → Slide 6** | **193** | **2:16–3:35** |
+| 7 Results | Slide 7 | 56 | 3:35–3:58 |
+| 8 Changelog | Slide 8 | 60 | 3:58–4:23 |
+| 9 Hot take | Slide 9 | 88 | 4:23–5:00 |
 
-### §1 Problem — 0:00–0:28 · *Slide 1, then Slide 2*
+### §1 Problem — 0:00–0:26 · *Slide 1, then Slide 2*
 
 > Most teams have switched on an AI code reviewer. Most have quietly stopped
 > reading it.
 >
-> [*slide 2*] The reason isn't that it misses bugs. It's that it reports things
-> that turn out to be nothing — and every false finding costs a human the full
-> price of investigating it.
+> [*slide 2*] Not because it misses bugs. Because it is wrong.
 >
-> Trust gets spent faster than it's earned. So: what if a reviewer had to
-> *prove* a bug before it was allowed to report one?
+> Checking a false alarm takes just as long as checking a real one. After a few
+> of those, people stop reading.
+>
+> So we asked one question. What if a reviewer had to prove a bug before it was
+> allowed to report it?
 
-### §2 Baseline — 0:28–0:58 · *Take 1*
+### §2 Baseline — 0:26–0:52 · *Take 1*
 
 > Here's the simple baseline. One prompt, containing the diff. No tools, no
 > repository, no ability to run anything — what you reach for first.
@@ -197,39 +201,40 @@ you are at 4:45 with room to breathe.
 > [*let it finish*] Eighty percent. It named the right file in twelve of
 > fifteen cases. By the usual standard, that's a good reviewer.
 
-### §3 The gap — 0:58–1:22 · *Take 2, then Slide 3*
+### §3 The gap — 0:52–1:18 · *Take 2, then Slide 3*
 
-> But we didn't ask it to name a file. We asked it to write a test that
-> demonstrates the bug. So we ran those tests.
+> But we didn't ask it to name a file. We asked it to write a test that proves
+> the bug. So we ran those tests.
 >
 > [*slide 3*] Three of its twelve findings came with a test that proves
-> nothing. One was a bug it invented in correct code.
+> nothing. It also reported a bug in one refactor that was perfectly correct.
 >
-> Scored on whether its findings hold up, this is a sixty percent reviewer.
+> Judge it on whether the findings hold up, and it is a sixty percent
+> reviewer.
 
-### §4 What we built — 1:22–1:47 · *Slide 4*
+### §4 What we built — 1:18–1:50 · *Slide 4*
 
-> So here's the agent. It reads the repository — how the changed function is
-> actually called, not just the diff. And it can run its own test, behind an
-> approval gate.
+> So here is the agent. It can read the repository, so it sees how the changed
+> function is actually used, not just the diff. And it can run its own test.
 >
-> That last tool returns raw pytest output, deliberately. An import error means
-> the agent's own test is broken. An assertion failure means the code is. It
-> has to tell those apart itself.
+> That last tool returns raw pytest output. That is deliberate. An import error
+> means the agent's own test is broken. An assertion failure means the code is
+> broken. The agent has to tell those two apart by itself.
 >
 > And it never scores itself. The harness does that.
 
-### §5 Ground truth — 1:47–2:10 · *Take 3, then Slide 5*
+### §5 Ground truth — 1:50–2:16 · *Take 3, then Slide 5*
 
-> Which means the harness needs an answer key, and synthetic bugs are too easy.
+> So the harness needs an answer key. Made-up bugs are too easy, so we use real
+> ones.
 >
-> So every case is a real commit that fixed a bug *and* added a regression
-> test. We revert it — the defect comes back, the test disappears.
+> Every case is a real commit that fixed a bug and added a test for it. We undo
+> that commit. The bug comes back, and the test disappears.
 >
-> [*slide 5*] That deleted test becomes the oracle. The agent never sees it.
+> [*slide 5*] That deleted test is now our answer key. The agent never sees it.
 > Fifteen of seventeen candidates survived.
 
-### §6 One execution — 2:10–3:32 · *Take 4, then Slide 6* · **let it breathe**
+### §6 One execution — 2:16–3:35 · *Take 4, then Slide 6* · **let it breathe**
 
 > Here it is on one case.
 >
@@ -253,44 +258,37 @@ you are at 4:45 with room to breathe.
 > then runs that test on the buggy code, applies the real fix, and runs it
 > again. Fails, then passes. Verified.
 >
-> [*slide 6*] And this is the test the human maintainer wrote — deleted before
-> the agent ever started. Same two assertions, same order, including the one
-> with an explicit empty `lengths` argument, which is not the obvious thing to
-> check.
+> [*slide 6*] And this is the test the human maintainer wrote. We deleted it
+> before the agent started. Same two checks, in the same order.
 >
-> It didn't just find the bug. It reconstructed the check a maintainer thought
-> was worth committing.
+> It didn't just find the bug. It rebuilt the check a maintainer thought was
+> worth committing.
 
-### §7 Results — 3:32–3:58 · *Slide 7*
+### §7 Results — 3:35–3:58 · *Slide 7*
 
-> Same cases, same scoring. Verified detection goes from sixty percent to
-> sixty-seven or seventy-three.
+> Same cases, same scoring. Sixty percent becomes sixty-seven, or seventy-three.
 >
-> Two numbers, because we ran it twice and got both. One case of variance, no
-> seed available. We report both rather than the better one — in a project
-> about not taking an agent's word for things, we don't get to headline our
-> luckiest run.
+> Two numbers, because we ran it twice and got both. The gap is one case. This
+> project is about not taking an agent's word for anything, so we don't get to
+> show only our best run.
 >
 > And false alarms go from one in six, to zero.
 
-### §8 Changelog — 3:58–4:26 · *Slide 8* · **cut here if long**
+### §8 Changelog — 3:58–4:23 · *Slide 8* · **cut here if long**
 
 > Four iterations. The one that mattered most was the first: giving the agent
-> the repository. Two more bugs, every false alarm gone.
+> the repository. Two more bugs, and every false alarm gone.
 >
-> But notice what didn't move — it made the same claims about the same files.
-> They just became correct. Context didn't make it more perceptive. It made it
-> more credible.
+> But it named the same files as before. The claims just started holding up.
 >
-> The experiment we removed was requiring proof. Three runs hit the step
-> ceiling mid-investigation and never concluded anything — and the harness
-> logged that silence as "no bug found".
+> The experiment we removed was requiring proof. Three runs hit the step limit
+> while they were still investigating. They never reached a conclusion.
 
-### §9 Hot take — 4:26–5:00 · *Slide 9*
+### §9 Hot take — 4:23–5:00 · *Slide 9*
 
-> Which is indistinguishable from a considered verdict. And that's the lesson:
-> a verification requirement isn't free — it spends the same budget the agent
-> needs to investigate.
+> That looks exactly like the agent deciding the code was fine. It is not the
+> same thing. And that is the lesson. Asking for proof is not free. It spends
+> the same budget the agent needs in order to investigate.
 >
 > One bug survived every configuration: one operator, buried in a fifty-line
 > cosmetic rename. Catching it means suspecting tie-breaking order is
