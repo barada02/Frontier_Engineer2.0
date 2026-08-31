@@ -64,6 +64,7 @@ against a scripted LLM. **No API key and no network required.** Expected:
   tool error recovery        OK
   max-steps guard            OK
   one file per run           OK
+  proof-output triage        OK
   schema generation          OK
 
 all spine tests passed
@@ -115,7 +116,7 @@ different numbers. To reproduce the figures in the README, use the committed
 | Run | Runtime | Cost |
 |---|---|---|
 | `baseline` | ~2 min | ~$0.15 |
-| `agent-exec` | ~25 min | ~$2.20 |
+| `agent-exec` | ~25 min | ~$3 |
 
 Expected output — the last block of each run:
 
@@ -154,17 +155,26 @@ land in `runs/` as JSONL, one file per case.
     --out eval/results/agent-proof-40.json
 ```
 
-~25 min and ~$2.20 each. These correspond to iterations 1, 3 and 4 in
+~25 min and ~$3 each. These correspond to iterations 1, 3 and 4 in
 [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Caching
 
 Every model response is cached to `.cache/`, keyed by a SHA-256 of the request
-(model + full history + tool declarations). A repeat run costs **$0.00** and
-completes in seconds.
+(model + full history + tool declarations). A repeat run is billed **$0.00 by
+the provider** and completes in seconds.
 
-If `.cache/` is shipped with the repository, the headline table can be
-reproduced at zero cost. Force fresh calls with `--no-cache`.
+The cost the harness *reports* is not $0.00, and that is deliberate: a cached
+response carries the token counts of the call that produced it, so the figure
+answers "what does this configuration cost to run" rather than "what was this
+replay charged". Both solvers now count it that way. Force fresh calls with
+`--no-cache`.
+
+Cache hits are not all-or-nothing. The first steps of a run are a pure
+function of the system prompt and the diff, so they hit even when the run as a
+whole is fresh; histories diverge later because pytest output carries elapsed
+times. In the recorded `agent-exec` run 2, 84 of 259 model calls were served
+from cache.
 
 ## Expected variation
 
@@ -179,10 +189,15 @@ Two failure modes seen during development, both handled but worth recognising:
 - **`APIConnectionError` / `APITimeoutError`** — retried with exponential
   backoff. Occasional retry lines in the output are normal.
 - **`BadRequestError: invalid_request`** — the request outgrew the limit as
-  tool output accumulated. Only observed with `--max-steps 40`; the shipped
-  configuration does not hit it.
+  tool output accumulated. The shipped configuration hits this on long runs:
+  two cases in `agent-exec` run 1 and one in run 2 died this way, and the
+  harness scores them as misses. Expect one or two per full run.
 
 ## Total cost of a full reproduction
 
-Baseline plus all four agent variants: **≈ $9** and ≈ 100 minutes.
-The headline two-run comparison alone: **≈ $2.35** and ≈ 27 minutes.
+Baseline plus all four agent variants: **≈ $12** and ≈ 100 minutes.
+The headline two-run comparison alone: **≈ $3.2** and ≈ 27 minutes.
+
+Budget above what the recorded runs cost. A clean environment starts with an
+empty `.cache/`, so every model call is live; the runs in `eval/results/` had
+part of their traffic served from cache and were correspondingly cheaper.

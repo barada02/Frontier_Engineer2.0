@@ -14,14 +14,26 @@ Same 21 cases, same task, same scoring, for both configurations.
 | Precision (proven / claimed) | 75.0% (9/12) | **100%** (11/11) | 90.9% (10/11) |
 | False alarm rate | 16.7% (1/6) | **0.0%** (0/6) | **0.0%** (0/6) |
 | Localization | 80.0% (12/15) | 73.3% (11/15) | 73.3% (11/15) |
-| Cost per case | $0.0067 | $0.1045 | $0.1107 |
-| Seconds per case | 0.9 † | 72.2 | 46.1 |
+| Cost per case | $0.0067 | ~$0.10 ‡ | ~$0.11 ‡ |
+| Seconds per case | 0.9 † | ~72 ‡ | ~46 ‡ |
 
 **Verified detection 60.0% → 66.7–73.3%. False alarms 16.7% → 0.0%.**
+Roughly 15–20x the cost per case.
 
 † The baseline row is a cache-served run, so its latency is not comparable; the
 uncached timing was not captured. Its cost is, because cached responses carry
 the token counts of the original call.
+
+‡ The agent's cost and latency are **floors**, and the two runs are not
+comparable to each other on those two rows. 32% of run 2's model calls were
+served from the response cache — free and instant — which is most of why it
+reads as faster than run 1. Detection, precision and false alarms are
+unaffected: those are scored by executing the agent's test against two
+revisions of the repository, never by reading the agent's own meter. The
+accounting that let cached calls go unbilled is fixed in
+[`core/agent.py`](core/agent.py); both recorded runs predate the fix, so the
+figures are reported to the precision they can carry rather than to four
+decimal places.
 
 **Both runs of the shipped configuration are reported, rather than the better
 one.** Same cases, same code, same prompts. The API offers no seed and the
@@ -167,7 +179,7 @@ The short version:
 python -m venv .venv && .venv/Scripts/python -m pip install -r requirements.txt
 echo "GEMINI_API_KEY=..." > .env
 python eval/run_eval.py --solver baseline      # ~2 min,  ~$0.15
-python eval/run_eval.py --solver agent-exec    # ~25 min, ~$2.20
+python eval/run_eval.py --solver agent-exec    # ~25 min, ~$3
 ```
 
 Responses are cached to `.cache/` keyed by request hash, so a repeat run costs

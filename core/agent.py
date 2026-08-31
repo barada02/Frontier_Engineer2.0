@@ -113,11 +113,17 @@ class Agent:
         }
 
     def _account(self, traj: Trajectory, resp: LLMResponse) -> None:
+        # A cached response carries the token counts of the call that produced
+        # it, and those are billed here as though the call had been made. The
+        # question this metric answers is what a configuration costs to run,
+        # not what one replay of it happened to be charged. Returning early on
+        # a cache hit made agent runs look cheaper and faster than they are --
+        # and the baseline never did it, so the two sides of the headline
+        # comparison were being measured differently.
         s = traj.stats
         s.llm_calls += 1
         if resp.cached:
             s.cache_hits += 1
-            return
         s.input_tokens += resp.usage.input_tokens
         s.output_tokens += resp.usage.output_tokens
         s.thought_tokens += resp.usage.thought_tokens
