@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-runs/
+# runs/ is tracked: agent trajectories are a submission deliverable.
+# .cache/ stays ignored -- 6MB of response blobs, and agent runs miss it
+# anyway because pytest output carries elapsed times.
 .cache/
 corpus/

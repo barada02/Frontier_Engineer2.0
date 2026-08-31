@@ -44,8 +44,13 @@ class Agent:
 
     def run(self, task: str, run_id: str | None = None) -> AgentResult:
         traj = Trajectory(run_id, meta={
-            "model": self.cfg.model, "task": task,
+            "model": self.cfg.model,
+            "max_steps": self.cfg.max_steps,
             "tools": list(self.registry.tools),
+            "policies": [f"{p.decision.value}:{p.pattern}"
+                         for p in self.registry.policies],
+            "system_instructions": self.system,
+            "task": task,
         })
 
         # System text rides as the opening turn rather than a provider-specific

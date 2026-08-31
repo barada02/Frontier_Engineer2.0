@@ -102,7 +102,9 @@ class AgentSolver:
     name = "agent"
 
     def __init__(self, cfg: Config, allow_execution: bool = True,
-                 require_proof: bool = True, interactive: bool = False):
+                 require_proof: bool = True, interactive: bool = False,
+                 variant: str = "agent"):
+        self.name = variant
         self.cfg = cfg
         self.llm = GeminiLLM(cfg)
         self.allow_execution = allow_execution

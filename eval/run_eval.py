@@ -28,9 +28,12 @@ ROOT = Path(__file__).resolve().parent.parent
 # changes between runs.
 SOLVERS = {
     "baseline":    lambda cfg: BaselineSolver(cfg),
-    "agent-read":  lambda cfg: AgentSolver(cfg, allow_execution=False, require_proof=False),
-    "agent-exec":  lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=False),
-    "agent-proof": lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=True),
+    "agent-read":  lambda cfg: AgentSolver(cfg, allow_execution=False, require_proof=False,
+                                           variant="agent-read"),
+    "agent-exec":  lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=False,
+                                           variant="agent-exec"),
+    "agent-proof": lambda cfg: AgentSolver(cfg, allow_execution=True,  require_proof=True,
+                                           variant="agent-proof"),
 }
 
 
