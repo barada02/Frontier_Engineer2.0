@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prove It — slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap">
+<style>
+  :root{
+    --ground:#0B0F14;
+    --surface:#141C25;
+    --surface-2:#1B2530;
+    --ink:#E4E9EF;
+    --ink-dim:#7E8DA0;
+    --ink-faint:#4A5867;
+    --proven:#6FBF9A;
+    --unproven:#D9A441;
+    --rule:#243141;
+
+    --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+
+    --display:clamp(34px,4.9vw,72px);
+    --lead:clamp(18px,2.05vw,30px);
+    --body:clamp(14px,1.3vw,20px);
+    --label:clamp(10px,.92vw,14px);
+    --mono-sz:clamp(12px,1.12vw,18px);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+
+  /* ---------- stage ---------- */
+  .slide{
+    display:none;
+    position:absolute;
+    inset:0;
+    padding:clamp(36px,5.2vw,96px);
+    flex-direction:column;
+    justify-content:center;
+  }
+  .slide.is-active{display:flex}
+  @media (prefers-reduced-motion:no-preference){
+    .slide.is-active{animation:rise .32s ease-out both}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .inner{width:100%;max-width:1180px;margin:0 auto}
+
+  /* ---------- type ---------- */
+  .eyebrow{
+    font-size:var(--label);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:600;
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:var(--display);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    text-wrap:balance;
+    margin:0;
+  }
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(26px,3.3vw,50px);
+    line-height:1.1;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+    margin:0;
+  }
+  .lead{
+    font-size:var(--lead);
+    line-height:1.42;
+    color:var(--ink-dim);
+    max-width:34ch;
+    margin:0;
+  }
+  .note{
+    font-size:var(--body);
+    line-height:1.55;
+    color:var(--ink-dim);
+    max-width:62ch;
+    margin:0;
+  }
+  .note strong{color:var(--ink);font-weight:500}
+  .stack{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,28px)}
+  .stack-tight{display:flex;flex-direction:column;gap:clamp(8px,1vw,14px)}
+  em.hl{font-style:normal;color:var(--unproven)}
+  em.ok{font-style:normal;color:var(--proven)}
+
+  /* ---------- 1 title ---------- */
+  .title-rule{width:64px;height:2px;background:var(--unproven)}
+  .title-foot{
+    font-family:var(--mono);
+    font-size:var(--mono-sz);
+    color:var(--ink-faint);
+    display:flex;
+    gap:1.4em;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- 2 trust bars ---------- */
+  .bars{display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);margin-top:clamp(8px,1.4vw,18px)}
+  .bar-row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .bar-label{
+    font-size:var(--label);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    display:flex;
+    justify-content:space-between;
+    gap:1em;
+  }
+  .bar-track{height:clamp(14px,1.8vw,26px);background:var(--surface);border-radius:2px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:2px}
+  .bar-fill.earn{width:14%;background:var(--proven)}
+  .bar-fill.spend{width:86%;background:var(--unproven)}
+
+  /* ---------- 3 claim grid ---------- */
+  .claims{display:flex;gap:clamp(20px,3vw,56px);align-items:flex-end;flex-wrap:wrap}
+  .grid12{display:grid;grid-template-columns:repeat(4,clamp(38px,4.4vw,64px));gap:clamp(8px,1vw,14px)}
+  .cell{aspect-ratio:1;border-radius:3px}
+  .cell.solid{background:var(--proven)}
+  .cell.hollow{border:2px dashed var(--unproven);background:transparent}
+  .figures{display:flex;flex-direction:column;gap:clamp(12px,1.6vw,22px)}
+  .fig{display:flex;flex-direction:column;gap:2px}
+  .fig-n{
+    font-family:var(--mono);
+    font-size:clamp(30px,3.9vw,58px);
+    font-weight:500;
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .fig-n.dim{color:var(--unproven)}
+  .fig-n.good{color:var(--proven)}
+  .fig-k{font-size:var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+
+  /* ---------- 4 pipeline ---------- */
+  .flow{display:flex;align-items:stretch;gap:clamp(10px,1.5vw,22px);flex-wrap:wrap}
+  .node{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:clamp(12px,1.5vw,22px);
+    flex:1 1 210px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    min-width:0;
+  }
+  .node .n-k{font-size:var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+  .node .n-v{font-family:var(--mono);font-size:var(--mono-sz);color:var(--ink);line-height:1.45}
+  .node.oracle{border-color:var(--unproven)}
+  .node.oracle .n-k{color:var(--unproven)}
+  .arrow{display:flex;align-items:center;color:var(--ink-faint);font-family:var(--mono);font-size:var(--mono-sz)}
+
+  /* ---------- 4b architecture ---------- */
+  .node.wide{flex:1.9 1 290px}
+  .node.scoring{border-color:var(--proven)}
+  .node.scoring .n-k{color:var(--proven)}
+  .tool{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1.2em;
+    padding:clamp(5px,.6vw,9px) 0;
+    border-bottom:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:var(--mono-sz);
+  }
+  .tool:last-child{border-bottom:none}
+  .tool .t-n{color:var(--ink);white-space:nowrap}
+  .tool .t-r{color:var(--ink-faint);font-size:.86em;text-align:right;font-family:var(--sans)}
+  .tool.exec .t-n{color:var(--unproven)}
+  .gate{
+    font-family:var(--sans);
+    font-size:.72em;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:1px 6px;
+    margin-left:.6em;
+    white-space:nowrap;
+  }
+  .check{font-family:var(--mono);font-size:var(--mono-sz);line-height:1.75;color:var(--ink-dim)}
+  .check b{color:var(--proven);font-weight:500}
+
+  /* ---------- 5 convergence ---------- */
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,32px)}
+  .panel{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .panel-head{
+    padding:clamp(9px,1vw,14px) clamp(12px,1.3vw,20px);
+    border-bottom:1px solid var(--rule);
+    font-size:var(--label);
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    background:var(--surface-2);
+  }
+  .panel.left .panel-head{color:var(--ink-dim)}
+  .panel.right .panel-head{color:var(--proven)}
+  pre{
+    margin:0;
+    padding:clamp(12px,1.4vw,22px);
+    font-family:var(--mono);
+    font-size:var(--mono-sz);
+    line-height:1.6;
+    color:var(--ink);
+    overflow-x:auto;
+    white-space:pre;
+    tab-size:4;
+  }
+  .kw{color:var(--unproven)}
+  .fn{color:var(--proven)}
+  .cm{color:var(--ink-faint)}
+
+  /* ---------- 6 table ---------- */
+  .table-wrap{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+  th,td{
+    text-align:right;
+    padding:clamp(9px,1.15vw,17px) clamp(8px,1vw,16px);
+    border-bottom:1px solid var(--rule);
+    font-size:var(--body);
+  }
+  th:first-child,td:first-child{text-align:left}
+  thead th{
+    font-size:var(--label);
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    font-weight:600;
+    border-bottom-color:var(--ink-faint);
+  }
+  tbody td{font-family:var(--mono);color:var(--ink-dim)}
+  tbody td:first-child{font-family:var(--sans);color:var(--ink)}
+  tr.primary td{color:var(--ink);font-size:clamp(16px,1.7vw,26px)}
+  tr.primary td:first-child{font-weight:600}
+  .v-good{color:var(--proven)}
+  .v-warn{color:var(--unproven)}
+
+  /* ---------- 7 iterations ---------- */
+  .steps{display:flex;flex-direction:column}
+  .step{
+    display:grid;
+    grid-template-columns:clamp(46px,5vw,74px) 1fr clamp(118px,12.5vw,196px) clamp(96px,11vw,168px);
+    gap:clamp(10px,1.6vw,26px);
+    align-items:baseline;
+    padding:clamp(10px,1.25vw,19px) 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .step:last-child{border-bottom:none}
+  .step-n{font-family:var(--mono);font-size:var(--label);color:var(--ink-faint);letter-spacing:.1em}
+  .step-t{font-size:var(--body);color:var(--ink)}
+  .step-m{font-family:var(--mono);font-size:var(--body);text-align:right;font-variant-numeric:tabular-nums}
+  .step-d{font-size:var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);text-align:right}
+  .step.kept .step-m{color:var(--proven)}
+  .step.cut .step-m{color:var(--unproven)}
+  .step.base .step-m{color:var(--ink-dim)}
+
+  /* ---------- 8 closing ---------- */
+  .quote{
+    font-family:var(--serif);
+    font-size:clamp(26px,3.5vw,54px);
+    line-height:1.16;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+    margin:0;
+    max-width:20ch;
+  }
+  .diffline{font-family:var(--mono);font-size:var(--mono-sz);line-height:1.7}
+  .diffline .minus{color:var(--ink-faint)}
+  .diffline .plus{color:var(--unproven)}
+
+  /* ---------- chrome ---------- */
+  .chrome{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:clamp(14px,1.6vw,26px) clamp(20px,2.4vw,40px);
+    font-family:var(--mono);
+    font-size:clamp(10px,.9vw,13px);
+    color:var(--ink-faint);
+    pointer-events:none;
+    letter-spacing:.08em;
+  }
+  body.no-chrome .chrome{display:none}
+  .progress{position:fixed;top:0;left:0;height:2px;background:var(--unproven);transition:width .3s ease}
+  body.no-chrome .progress{display:none}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- 1 ─────────────────────────────────────────── -->
+<section class="slide is-active">
+  <div class="inner stack">
+    <div class="eyebrow">Code review, verified</div>
+    <h1>Prove&nbsp;It</h1>
+    <div class="title-rule"></div>
+    <p class="lead">A review agent that has to demonstrate a defect with a failing test before it is allowed to report one.</p>
+    <div class="title-foot">
+      <span>21 cases</span><span>15 bugs</span><span>6 controls</span><span>3 real repositories</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">The problem</div>
+    <h2>Nobody stops reading an AI reviewer because it misses bugs.<br>They stop because it is wrong.</h2>
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-label"><span>Trust earned by a correct finding</span><span>a little</span></div>
+        <div class="bar-track"><div class="bar-fill earn"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Trust lost to a false finding</span><span>all of it</span></div>
+        <div class="bar-track"><div class="bar-fill spend"></div></div>
+      </div>
+    </div>
+    <p class="note">Every false finding costs a human the full price of investigating it. Precision, not recall, decides whether the tool stays switched on.</p>
+  </div>
+</section>
+
+<!-- 3 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">The gap</div>
+    <h2>It looked like an 80% reviewer.</h2>
+    <div class="claims">
+      <div class="grid12">
+        <div class="cell solid"></div><div class="cell solid"></div><div class="cell solid"></div><div class="cell solid"></div>
+        <div class="cell solid"></div><div class="cell solid"></div><div class="cell solid"></div><div class="cell solid"></div>
+        <div class="cell solid"></div><div class="cell hollow"></div><div class="cell hollow"></div><div class="cell hollow"></div>
+      </div>
+      <div class="figures">
+        <div class="fig"><span class="fig-n">12</span><span class="fig-k">Findings claimed</span></div>
+        <div class="fig"><span class="fig-n good">9</span><span class="fig-k">Backed by a test that discriminates</span></div>
+        <div class="fig"><span class="fig-n dim">3</span><span class="fig-k">Proved nothing</span></div>
+      </div>
+    </div>
+    <p class="note">Scored the usual way — did it name the right file? — the baseline reads <strong>80%</strong>. Scored on whether its findings hold up, it is a <strong>60%</strong> reviewer, and one more was a bug it invented in code that was correct.</p>
+  </div>
+</section>
+
+<!-- 4 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">The agent</div>
+    <h2>It can read the repository, and it can run its own test.</h2>
+    <div class="flow">
+      <div class="node">
+        <span class="n-k">Input</span>
+        <span class="n-v">the diff<br>under review</span>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node wide">
+        <span class="n-k">Tools, behind a policy gate</span>
+        <div class="tool">
+          <span class="t-n">read_file<span class="gate">allow</span></span>
+          <span class="t-r">how the changed code is actually used</span>
+        </div>
+        <div class="tool">
+          <span class="t-n">list_dir<span class="gate">allow</span></span>
+          <span class="t-r">where to look</span>
+        </div>
+        <div class="tool exec">
+          <span class="t-n">run_proof_test<span class="gate">ask first</span></span>
+          <span class="t-r">writes a candidate test, returns raw pytest output</span>
+        </div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node scoring">
+        <span class="n-k">Scoring · never trusts the agent</span>
+        <div class="check">
+          run it on the bug<br>
+          <b>must fail</b><br>
+          apply the real human fix<br>
+          <b>must pass</b>
+        </div>
+      </div>
+    </div>
+    <p class="note">The choice that matters is the <strong>raw pytest output</strong>. An import error means the agent's own test is wrong; an assertion failure means the code is. It has to tell those apart itself — and that distinction is the entire difference between a finding and noise.</p>
+  </div>
+</section>
+
+<!-- 5 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">Ground truth</div>
+    <h2>The answer key is written by human maintainers.</h2>
+    <div class="flow">
+      <div class="node">
+        <span class="n-k">A real commit</span>
+        <span class="n-v">fixes source code<br>+ adds a regression test</span>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node">
+        <span class="n-k">Revert it</span>
+        <span class="n-v">the defect returns<br>the test disappears</span>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node oracle">
+        <span class="n-k">The deleted test</span>
+        <span class="n-v">becomes the oracle<br>never shown to the agent</span>
+      </div>
+    </div>
+    <p class="note">A candidate only becomes a case if its oracle discriminates — fails on the bug, passes on the fix. <strong>15 of 17 survived.</strong> The rejects are the point: plenty of commits labelled “fix” carry tests that pass either way.</p>
+  </div>
+</section>
+
+<!-- 6 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">Convergence</div>
+    <h2>It did not just find the bug.</h2>
+    <div class="pair">
+      <div class="panel left">
+        <div class="panel-head">The maintainer · deleted before the run</div>
+<pre><span class="kw">def</span> <span class="fn">test_no_iterables</span>(self):
+    self.assertEqual(
+        list(mi.interleave_evenly([])), [])
+    self.assertEqual(
+        list(mi.interleave_evenly(
+            [], lengths=[])), [])</pre>
+      </div>
+      <div class="panel right">
+        <div class="panel-head">The agent · step 6 · never saw it</div>
+<pre><span class="kw">def</span> <span class="fn">test_interleave_evenly_empty</span>():
+    <span class="kw">assert</span> list(
+        interleave_evenly([])) == []
+    <span class="kw">assert</span> list(
+        interleave_evenly(
+            [], lengths=[])) == []</pre>
+      </div>
+    </div>
+    <p class="note">Same two assertions, in the same order — including the second one, with an explicit empty <strong>lengths</strong> argument, which is not the obvious thing to check.</p>
+  </div>
+</section>
+
+<!-- 7 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">Results · same 21 cases, same scoring</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>Simple baseline</th><th>Agent · run 1</th><th>Agent · run 2</th></tr>
+        </thead>
+        <tbody>
+          <tr class="primary">
+            <td>Verified detection</td>
+            <td>60.0%</td>
+            <td class="v-good">73.3%</td>
+            <td class="v-good">66.7%</td>
+          </tr>
+          <tr><td>Precision — proven / claimed</td><td>75.0%</td><td>100%</td><td>90.9%</td></tr>
+          <tr class="primary">
+            <td>False alarms</td>
+            <td class="v-warn">16.7%</td>
+            <td class="v-good">0.0%</td>
+            <td class="v-good">0.0%</td>
+          </tr>
+          <tr><td>Cost per case</td><td>$0.0067</td><td>~$0.10</td><td>~$0.11</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Two runs of the shipped configuration, on identical inputs, reported as measured. The spread is one case. <strong>A project that refuses to take an agent's word for a finding does not get to headline its luckiest run.</strong></p>
+  </div>
+</section>
+
+<!-- 8 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">Improvement changelog</div>
+    <h2>Four iterations. One of them went backwards.</h2>
+    <div class="steps">
+      <div class="step base">
+        <span class="step-n">00</span>
+        <span class="step-t">One prompt with the diff. No tools, no repository.</span>
+        <span class="step-m">60.0%</span>
+        <span class="step-d">Baseline</span>
+      </div>
+      <div class="step kept">
+        <span class="step-n">01</span>
+        <span class="step-t">Gave the agent the repository to read.</span>
+        <span class="step-m">73.3%</span>
+        <span class="step-d">Kept · biggest gain</span>
+      </div>
+      <div class="step kept">
+        <span class="step-n">02</span>
+        <span class="step-t">Let it run its own candidate test. Ran twice.</span>
+        <span class="step-m">73.3 / 66.7%</span>
+        <span class="step-d">Kept · shipped</span>
+      </div>
+      <div class="step cut">
+        <span class="step-n">03</span>
+        <span class="step-t">Required proof before any finding could be reported.</span>
+        <span class="step-m">66.7%</span>
+        <span class="step-d">Removed</span>
+      </div>
+      <div class="step cut">
+        <span class="step-n">04</span>
+        <span class="step-t">Raised the step ceiling to isolate the cause.</span>
+        <span class="step-m">73.3%</span>
+        <span class="step-d">Diagnosis only</span>
+      </div>
+    </div>
+    <p class="note">Context made the agent <strong>credible, not perceptive</strong> — it made the same claims about the same files, and they simply became correct.</p>
+  </div>
+</section>
+
+<!-- 9 ─────────────────────────────────────────── -->
+<section class="slide">
+  <div class="inner stack">
+    <div class="eyebrow">Hot take</div>
+    <p class="quote">A verification requirement is not free. It spends the same budget the agent needs to investigate.</p>
+    <p class="note">Three runs hit the step ceiling mid-investigation after 11, 15 and 16 proof attempts. They never concluded anything — and the harness logged that silence as “no bug found”, which downstream is indistinguishable from a considered verdict.</p>
+    <div class="stack-tight">
+      <div class="eyebrow">And one bug survived every configuration</div>
+      <div class="diffline">
+        <span class="minus">while sis and not sis[-1][1] &lt;  value:</span><br>
+        <span class="plus">while s   and not s[-1][1]   &lt;= value:</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="chrome">
+  <span id="slug">Prove It</span>
+  <span><span id="pos">1</span> / <span id="total">8</span> &nbsp;·&nbsp; &larr; &rarr; to move &nbsp;·&nbsp; C hides this</span>
+</div>
+
+<script>
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var i = 0;
+  var posEl = document.getElementById("pos");
+  var progress = document.getElementById("progress");
+  document.getElementById("total").textContent = slides.length;
+
+  function show(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle("is-active", k === i); });
+    posEl.textContent = i + 1;
+    progress.style.width = ((i + 1) / slides.length * 100) + "%";
+  }
+
+  document.addEventListener("keydown", function(e){
+    var k = e.key;
+    if (k === "ArrowRight" || k === "PageDown" || k === " ") { e.preventDefault(); show(i + 1); }
+    else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); show(i - 1); }
+    else if (k === "Home") { show(0); }
+    else if (k === "End") { show(slides.length - 1); }
+    else if (k === "c" || k === "C") { document.body.classList.toggle("no-chrome"); }
+    else if (k >= "1" && k <= "9") { show(parseInt(k, 10) - 1); }
+  });
+
+  document.addEventListener("click", function(e){
+    show(e.clientX < window.innerWidth * 0.25 ? i - 1 : i + 1);
+  });
+
+  show(0);
+</script>
+</body>
+</html>
