@@ -7,6 +7,7 @@ is the evidence every changelog claim points back to.
 from __future__ import annotations
 
 import json
+import os
 import time
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
@@ -31,8 +32,15 @@ class RunStats:
 class Trajectory:
     def __init__(self, run_id: str | None = None, meta: dict | None = None):
         RUNS_DIR.mkdir(exist_ok=True)
-        self.run_id = run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        # Every invocation gets its own file. Records are appended as the run
+        # proceeds, so a deterministic name would silently splice a re-run onto
+        # the previous one -- and these files are a submission deliverable, so
+        # the run to ship should be chosen rather than being whichever ran last.
+        self.run_id = f"{run_id}_{stamp}" if run_id else stamp
         self.path = RUNS_DIR / f"{self.run_id}.jsonl"
+        if self.path.exists():                      # same second, same case
+            self.path = RUNS_DIR / f"{self.run_id}_{os.getpid()}.jsonl"
         self.stats = RunStats()
         self._t0 = time.time()
         self.record("run_start", meta or {})

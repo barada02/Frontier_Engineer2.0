@@ -16,6 +16,15 @@ from core.config import Config
 from core.llm import LLMResponse, ToolCall, Usage
 from core.tools import Registry, allow, ask_user, deny, make_fs_tools
 
+# runs/ is a tracked submission deliverable. Redirect trajectory output into a
+# temp directory so running the tests never leaves stray files there.
+import tempfile as _tempfile
+from pathlib import Path as _Path
+
+import core.trajectory as _traj
+
+_traj.RUNS_DIR = _Path(_tempfile.mkdtemp(prefix="test_runs_"))
+
 
 class ScriptedLLM:
     """Replays a fixed list of responses, recording the history it was given."""
@@ -152,6 +161,26 @@ def test_max_steps_guard(tmp: Path) -> None:
     print("  max-steps guard            OK")
 
 
+def test_repeat_runs_get_separate_trajectories() -> None:
+    """Regression: records are appended, so a deterministic run_id spliced a
+    re-run onto the previous one. Trajectories are a deliverable -- two runs
+    must never end up in one file."""
+    from core.trajectory import Trajectory
+
+    a = Trajectory("agent-exec_some-case", meta={"n": 1})
+    b = Trajectory("agent-exec_some-case", meta={"n": 2})
+    try:
+        assert a.path != b.path, "repeat run reused the trajectory file"
+        for t in (a, b):
+            starts = sum(1 for line in t.path.read_text(encoding="utf-8").splitlines()
+                         if '"run_start"' in line)
+            assert starts == 1, f"{t.path.name} holds {starts} runs"
+        print("  one file per run           OK")
+    finally:
+        for t in (a, b):
+            t.path.unlink(missing_ok=True)
+
+
 def test_schema_generation() -> None:
     reg = Registry(make_fs_tools(Path.cwd()))
     d = {t["name"]: t for t in reg.declarations()}
@@ -175,5 +204,6 @@ if __name__ == "__main__":
             t(d)
         finally:
             shutil.rmtree(d, ignore_errors=True)
+    test_repeat_runs_get_separate_trajectories()
     test_schema_generation()
     print("\nall spine tests passed")
